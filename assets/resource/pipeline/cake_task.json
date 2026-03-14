@@ -1,237 +1,546 @@
 {
+    "$__mpe_config_cake_task": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": -650,
+                "y": 30,
+                "zoom": 0.8
+            },
+            "filename": "cake_task",
+            "version": "v1.2.3"
+        }
+    },
     "好感": {
         "post_delay": 3000,
         "timeout": 60000,
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 1191
+            }
+        },
         "next": [
             "[JumpBack]羁绊剧情",
             "[JumpBack]选中角色页面"
         ]
     },
     "选中角色页面": {
-        "timeout": 180000,
-        "action": "Click",
-        "target": [
-            269,
-            680,
-            0,
-            0
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    269,
+                    680
+                ]
+            }
+        },
+        "timeout": 60000,
         "post_delay": 3000,
+        "$__mpe_code": {
+            "position": {
+                "x": 332,
+                "y": 1207
+            }
+        },
         "next": [
-            "选择角色分类"
+            "选择角色排序"
         ]
     },
-    "选择角色分类": {
-        "timeout": 60000,
-        "action": "Click",
+    "选择角色排序": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    900,
+                    30
+                ]
+            }
+        },
         "post_delay": 1220,
-        "target": [
-            924,
-            36,
-            0,
-            0
-        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 1223
+            }
+        },
         "next": [
-            "选择角色分类2"
+            "选择角色升序"
         ]
     },
-    "选择角色分类2": {
-        "action": "Click",
-        "post_delay": 1310,
-        "target": [
-            388,
-            331,
-            0,
-            0
-        ],
+    "选择角色升序": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    400,
+                    170
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 1253
+            }
+        },
         "next": [
-            "选择角色分类3"
+            "选择按羁绊排序"
         ]
     },
-    "选择角色分类3": {
-        "timeout": 60000,
-        "action": "Click",
-        "post_delay": 1790,
-        "target": [
-            819,
-            633,
-            0,
-            0
-        ],
+    "选择按羁绊排序": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    400,
+                    460
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 1223
+            }
+        },
         "next": [
-            "确定角色页面是否是升序",
-            "选择角色分类4"
-        ]
-    },
-    "选择角色分类4": {
-        "action": "Click",
-        "post_delay": 2213,
-        "target": [
-            1057,
-            28,
-            0,
-            0
-        ],
-        "next": [
-            "选择角色分类5"
-        ]
-    },
-    "确定角色页面是否是升序": {
-        "timeout": 60000,
-        "pre_delay": 1879,
-        "recognition": "OCR",
-        "expected": "升序",
-        "next": [
-            "选择角色分类5"
-        ]
-    },
-    "选择角色分类5": {
-        "action": "Click",
-        "post_delay": 3250,
-        "target": [
-            244,
-            198,
-            0,
-            0
+            "排序页面点击OK"
         ]
     },
     "羁绊剧情": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/羁绊剧情.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
         "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/羁绊剧情.png"
-        ],
-        "action": "Click",
         "post_delay": 1835,
+        "$__mpe_code": {
+            "position": {
+                "x": 332,
+                "y": 271
+            }
+        },
         "next": [
-            "羁绊剧情1"
+            "点击羁绊等级提升"
         ]
     },
-    "羁绊剧情1": {
-        "action": "Click",
+    "点击羁绊等级提升": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    801,
+                    637
+                ]
+            }
+        },
         "post_delay": 2550,
-        "target": [
-            801,
-            637,
-            0,
-            0
-        ],
-        "next": [
-            "羁绊剧情2"
-        ]
-    },
-    "羁绊剧情2": {
-        "timeout": 120000,
-        "action": "Click",
-        "post_delay": 1800,
-        "target": [
-            891,
-            295,
-            0,
-            0
-        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 287
+            }
+        },
         "next": [
             "[JumpBack]羁绊已满",
-            "羁绊剧情3"
+            "点击最大强化"
+        ]
+    },
+    "点击最大强化": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    891,
+                    295
+                ]
+            }
+        },
+        "post_delay": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 320
+            }
+        },
+        "next": [
+            "点击赠送"
         ]
     },
     "羁绊已满": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/羁绊已上限.png",
-            "jp/蛋糕不足.png"
-        ],
-        "action": "ClickKey",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/羁绊等级max.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 111
+            }
+        },
         "post_delay": 710,
-        "key": 111,
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 12
+            }
+        },
         "next": [
-            "羁绊已满2"
+            "完成羁绊提升"
         ]
     },
-    "羁绊已满2": {
-        "post_delay": 597,
-        "action": "ClickKey",
-        "key": 111,
-        "next": [
-            "羁绊已满3"
-        ]
+    "完成羁绊提升": {
+        "action": {
+            "type": "StopTask",
+            "param": {}
+        },
+        "focus": {
+            "Node.Action.Succeeded": "已完成角色羁绊提升"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 44
+            }
+        }
     },
-    "羁绊已满3": {
-        "post_delay": 1236,
-        "action": "ClickKey",
-        "key": 111,
-        "next": [
-            "羁绊已满4"
-        ]
-    },
-    "羁绊已满4": {
-        "post_delay": 1301,
-        "action": "ClickKey",
-        "key": 111,
-        "next": [
-            "完成羁绊剧情"
-        ]
-    },
-    "完成羁绊剧情": {
-        "action": "StopTask"
-    },
-    "羁绊剧情3": {
-        "timeout": 60000,
-        "action": "Click",
+    "点击赠送": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    819,
+                    648
+                ]
+            }
+        },
         "post_delay": 2810,
-        "target": [
-            819,
-            648,
-            0,
-            0
-        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 288
+            }
+        },
         "next": [
-            "羁绊剧情4",
-            "[JumpBack]羁绊剧情跳过"
+            "[JumpBack]演出确认",
+            "[JumpBack]羁绊剧情跳过",
+            "关闭解放列表"
         ]
     },
     "羁绊剧情跳过": {
-        "timeout": 120000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/羁绊剧情跳过.png"
-        ],
-        "action": "Click"
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/羁绊剧情跳过.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 34
+            }
+        }
     },
-    "羁绊剧情4": {
-        "timeout": 60000,
-        "post_delay": 1220,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/羁绊剧情离开.png"
-        ],
-        "action": "Click",
+    "关闭解放列表": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/羁绊剧情离开.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 598
+            }
+        },
         "next": [
-            "羁绊剧情5"
+            "关闭羁绊剧情列表"
         ]
     },
-    "羁绊剧情5": {
-        "action": "Click",
-        "post_delay": 1817,
-        "target": [
-            517,
-            640,
-            0,
-            0
-        ],
+    "关闭羁绊剧情列表": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    517,
+                    640
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 598
+            }
+        },
         "next": [
-            "羁绊剧情6"
+            "进入下一位角色界面"
         ]
     },
-    "羁绊剧情6": {
-        "action": "Click",
-        "post_delay": 3217,
-        "target": [
-            1236,
-            363,
-            0,
-            0
+    "进入下一位角色界面": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1236,
+                    363
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 2252,
+                "y": 598
+            }
+        }
+    },
+    "角色界面滑动1栏": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    640,
+                    176
+                ],
+                "end": [
+                    640,
+                    100
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 1218
+            }
+        }
+    },
+    "排序页面点击OK": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/OK.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 1223
+            }
+        },
+        "next": [
+            "判断是否拥有角色左",
+            "判断是否拥有角色中",
+            "判断是否拥有角色右",
+            "[JumpBack]角色界面滑动1栏"
         ]
+    },
+    "演出确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/演出确认.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    470,
+                    350
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 256
+            }
+        },
+        "next": [
+            "点击今后不再显示"
+        ]
+    },
+    "判断是否拥有角色左": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/角色未收藏.png",
+                    "jp/角色已收藏.png"
+                ],
+                "roi": [
+                    300,
+                    70,
+                    150,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    220,
+                    170
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 1466
+            }
+        }
+    },
+    "判断是否拥有角色中": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/角色未收藏.png",
+                    "jp/角色已收藏.png"
+                ],
+                "roi": [
+                    700,
+                    70,
+                    150,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    620,
+                    170
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 876
+            }
+        }
+    },
+    "判断是否拥有角色右": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/角色未收藏.png",
+                    "jp/角色已收藏.png"
+                ],
+                "roi": [
+                    1100,
+                    70,
+                    150,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1020,
+                    170
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 1808
+            }
+        }
+    },
+    "点击今后不再显示": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    470,
+                    480
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 288
+            }
+        },
+        "next": [
+            "点击OK"
+        ]
+    },
+    "点击OK": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/OK.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 2252,
+                "y": 288
+            }
+        }
     }
 }
