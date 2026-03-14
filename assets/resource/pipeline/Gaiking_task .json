@@ -1,0 +1,73 @@
+{
+    "免费扭蛋": {
+        "post_delay": 3000,
+        "timeout": 60000,
+        "next": [
+            "判断扭蛋是否抽完返回主页",
+            "扭蛋更新了",
+            "[JumpBack]开始免费普通扭蛋",
+            "[JumpBack]普通扭蛋",
+            "[JumpBack]选中扭蛋界面"
+        ]
+    },
+    "选中扭蛋界面": {
+        "recognition": "TemplateMatch",
+        "template": "jp/扭蛋2.png",
+        "action": "Click"
+    },
+    "普通扭蛋": {
+        "recognition": "OCR",
+        "expected": "普通",
+        "action": "Click",
+        "post_delay": 1330
+    },
+    "开始免费普通扭蛋": {
+        "recognition": "TemplateMatch",
+        "template": "jp/免费10连抽.png",
+        "action": "Click",
+        "next": [
+            "确定免费扭蛋"
+        ]
+    },
+    "确定免费扭蛋": {
+        "recognition": "TemplateMatch",
+        "template": "jp/OK.png",
+        "action": "Click",
+        "next": [
+            "确定免费扭蛋OK"
+        ]
+    },
+    "确定免费扭蛋OK": {
+        "recognition": "TemplateMatch",
+        "template": "jp/OK3.png",
+        "action": "Click",
+        "post_delay": 1510
+    },
+    "判断扭蛋是否抽完返回主页": {
+        "recognition": "FeatureMatch",
+        "template": "jp/已抽完免费十连抽.png",
+        "green_mask": true,
+        "action": "ClickKey",
+        "key": 111
+    },
+    "扭蛋更新了": {
+        "recognition": "TemplateMatch",
+        "template": "jp/扭蛋更新了.png",
+        "post_delay": 3320,
+        "next": [
+            "扭蛋更新了下一步"
+        ]
+    },
+    "扭蛋更新了下一步": {
+        "action": "ClickKey",
+        "key": 111,
+        "post_delay": 2810,
+        "next": [
+            "关闭扭蛋更新"
+        ]
+    },
+    "关闭扭蛋更新": {
+        "action": "ClickKey",
+        "key": 111
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "领取任务奖励": {
+        "timeout": 60000,
+        "post_delay": 3000,
+        "next": [
+            "暂无任务奖励领取",
+            "全部领取任务奖励",
+            "[JumpBack]开始领取任务奖励"
+        ]
+    },
+    "开始领取任务奖励": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/任务.png"
+        ],
+        "action": "Click",
+        "post_delay": 3520
+    },
+    "全部领取任务奖励": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/每日任务界面.png",
+        "next": [
+            "开始全部领取任务奖励"
+        ]
+    },
+    "开始全部领取任务奖励": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/全部领取.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "确定全部领取任务奖励"
+        ]
+    },
+    "确定全部领取任务奖励": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/关闭按钮.png"
+        ],
+        "action": "Click",
+        "post_delay": 2130,
+        "next": [
+            "[JumpBack]等级提升",
+            "暂无任务奖励领取下一步"
+        ]
+    },
+    "暂无任务奖励领取": {
+        "timeout": 60000,
+        "recognition": "FeatureMatch",
+        "green_mask": true,
+        "template": "jp/任务奖励全部领取if.png",
+        "next": [
+            "暂无任务奖励领取下一步"
+        ]
+    },
+    "暂无任务奖励领取下一步": {
+        "action": "ClickKey",
+        "key": 111
+    },
+    "等级提升": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/等级提升.png"
+        ],
+        "next": [
+            "等级提升下一步"
+        ]
+    },
+    "等级提升下一步": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/等级提升OK.png"
+        ],
+        "action": "Click"
+    }
+}
