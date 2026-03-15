@@ -1,152 +1,218 @@
 {
-	"商店买公主竞技场角色碎片":{
-        "post_delay":3000,
-        "timeout":60000,
-        "next":[
-            "进入公主竞技场商店"
-        ]
-    },
-    "进入公主竞技场商店":{
-        "timeout":60000,
-        "threshold":0.9,
-		"recognition":"TemplateMatch",
-		"template":["jp/商店.png"],
-		"action": "Click",
-        "next":[
-             "进入公主竞技场商店2"
-        ]
-    },
-    "进入公主竞技场商店2":{
-        "timeout":60000,
-        "threshold":0.6,
-        "roi":[194,72,1000,40],
-        "recognition":"TemplateMatch",
-		"template":"jp/公主竞技场商店.png",
-		"action":"Click",
-        "post_delay":2000,
-        "next":[
-            "识别公主竞技场碎片0"
-        ]
-    },
-    "识别公主竞技场碎片0":{
-        "timeout":60000,
-        "post_delay":2000,
+    "商店买公主竞技场角色碎片": {
+        "post_delay": 3000,
+        "timeout": 60000,
         "next": [
-        	"识别公主竞技场碎片",
-        	"[JumpBack]识别碎片滑动"
+            "进入公主竞技场商店",
+            "[JumpBack]回到主页"
         ]
     },
-    "识别公主竞技场碎片":{
-        "timeout":60000,
-        "post_delay":2000,
+    "进入公主竞技场商店": {
+        "timeout": 60000,
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/商店.png"
+        ],
+        "action": "Click",
         "next": [
-        	"识别公主竞技场碎片2",
-        	"[JumpBack]识别碎片滑动"
+            "进入公主竞技场商店2"
         ]
     },
-    "识别公主竞技场碎片2":{
-        "timeout":60000,
-        "post_delay":2000,
+    "进入公主竞技场商店2": {
+        "timeout": 60000,
+        "threshold": 0.6,
+        "roi": [
+            194,
+            72,
+            1000,
+            40
+        ],
+        "recognition": "TemplateMatch",
+        "template": "jp/公主竞技场商店.png",
+        "action": "Click",
+        "post_delay": 2000,
         "next": [
-        	"识别公主竞技场碎片3",
-        	"[JumpBack]识别碎片滑动"
+            "识别公主竞技场碎片"
         ]
     },
-    "识别公主竞技场碎片3":{
-        "timeout":60000,
-        "post_delay":1000,
-        "next":[
+    "识别公主竞技场碎片": {
+        "timeout": 60000,
+        "post_delay": 2000,
+        "next": [
+            "公主竞技场碎片千歌_夏日",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片千歌_夏日": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片真琴_灰姑娘",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片真琴_灰姑娘": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片坊希",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片坊希": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片玲奈",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片玲奈": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片宫子",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片宫子": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片香织",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片香织": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片初音",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片初音": {
+        "timeout": 60000,
+        "next": [
+            "公主竞技场碎片杏奈",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "公主竞技场碎片杏奈": {
+        "timeout": 60000,
+        "next": [
             "公主竞技场碎片购买确认"
         ]
     },
-    "公主竞技场碎片购买确认":{
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/角色碎片一次购买.png"],
-		"target":[995,583,0,0],
-		"action":"Click",
-		"next":[
-			"公主竞技场碎片购买确认2"
-		]
-	},
-	"公主竞技场碎片购买确认2":{
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片购买确认0.png"],
-		"action":"Click",
-		"next":[
-			"公主竞技场碎片购买确认3"
-		]
-	},
-	"公主竞技场碎片购买确认3":{
-        "timeout":120000,
-        "recognition":"TemplateMatch",
-		"template":["jp/购买完成.png"],
-		"action":"Click",
-        "target":[ 647, 640,0,0],
-        "post_delay":4000,
-        "next":[
+    "公主竞技场碎片购买确认": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/角色碎片一次购买.png"
+        ],
+        "target": [
+            995,
+            583
+        ],
+        "action": "Click",
+        "next": [
+            "公主竞技场碎片购买确认2"
+        ]
+    },
+    "公主竞技场碎片购买确认2": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/碎片购买确认0.png"
+        ],
+        "action": "Click",
+        "next": [
+            "公主竞技场碎片购买确认3"
+        ]
+    },
+    "公主竞技场碎片购买确认3": {
+        "timeout": 120000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/购买完成.png"
+        ],
+        "action": "Click",
+        "target": [
+            647,
+            640
+        ],
+        "post_delay": 4000,
+        "next": [
             "公主竞技场碎片刷新次数x"
-        ]  
-	},
-    "公主竞技场碎片刷新次数x":{
-        "post_delay":2000,
-        "next": [
-        	"公主竞技场碎片刷新次数",
-        	"[JumpBack]点击公主竞技场碎片刷新"
         ]
     },
-    "公主竞技场碎片刷新次数":{
-        "post_delay":3000,
+    "公主竞技场碎片刷新次数x": {
+        "post_delay": 2000,
         "next": [
-        	"不刷新公主竞技场碎片",
-        	"[JumpBack]点击公主竞技场碎片刷新"
+            "公主竞技场碎片刷新次数",
+            "[JumpBack]点击公主竞技场碎片刷新"
         ]
     },
-    "不刷新公主竞技场碎片":{
-        "post_delay":2000,
-        "next":[
+    "公主竞技场碎片刷新次数": {
+        "post_delay": 3000,
+        "next": [
+            "不刷新公主竞技场碎片",
+            "[JumpBack]点击公主竞技场碎片刷新"
+        ]
+    },
+    "不刷新公主竞技场碎片": {
+        "post_delay": 2000,
+        "next": [
             "角色碎片回到主页"
         ]
     },
-    "公主竞技场角色碎片刷新1回":{
-        "threshold":0.9,
-        "recognition":"TemplateMatch",
-		"template":["jp/用10立即更新.png"],
-        "action":"Click",
-        "post_delay":1000,
-        "next":[
+    "公主竞技场角色碎片刷新1回": {
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/用10立即更新.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
             "公主竞技场碎片重置确认1回刷新"
         ]
     },
-    "公主竞技场碎片重置确认1回刷新":{
-        "threshold":0.9,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片重置确认.png"],
-        "action":"Click",
-        "target":[812,500,0,0],
-        "post_delay":4000,
-        "next":[
+    "公主竞技场碎片重置确认1回刷新": {
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/碎片重置确认.png"
+        ],
+        "action": "Click",
+        "target": [
+            812,
+            500
+        ],
+        "post_delay": 4000,
+        "next": [
             "角色碎片回到主页"
         ]
     },
-    "公主竞技场碎片重置确认":{
-        "timeout":60000,
-        "threshold":0.9,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片重置确认.png"],
-        "action":"Click",
-        "target":[812,500,0,0],
-        "post_delay":4000,
-        "next":[
+    "公主竞技场碎片重置确认": {
+        "timeout": 60000,
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/碎片重置确认.png"
+        ],
+        "action": "Click",
+        "target": [
+            812,
+            500
+        ],
+        "post_delay": 4000,
+        "next": [
             "识别公主竞技场碎片"
         ]
-
     },
-    "点击公主竞技场碎片刷新":{
-        "target":[794,583,0,0],
-		"action":"Click",
-        "next":[
+    "点击公主竞技场碎片刷新": {
+        "target": [
+            794,
+            583
+        ],
+        "action": "Click",
+        "next": [
             "公主竞技场碎片重置确认"
         ]
     }
