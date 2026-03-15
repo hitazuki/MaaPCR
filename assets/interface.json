@@ -142,9 +142,7 @@
             "name": "地下城角色碎片",
             "entry": "商店买地下城角色碎片",
             "option": [
-                "地下城角色碎片购买项",
-                "地下城角色碎片购买项2",
-                "地下城角色碎片购买项3",
+                "地下城角色碎片选择",
                 "刷新次数"
             ]
         },
@@ -555,758 +553,280 @@
             ],
             "type": "select"
         },
-        "地下城角色碎片购买项": {
+        "地下城角色碎片选择": {
             "cases": [
                 {
-                    "name": "不额外购买",
+                    "name": "纯_圣诞节",
                     "pipeline_override": {
-                        "识别地下城碎片": {
-                            "action": "DoNothing"
+                        "地下城碎片纯_圣诞节": {
+                            "threshold": 0.9,
+                            "recognition": "TemplateMatch",
+                            "template": "role/纯_圣诞节.png",
+                            "action": "Click",
+                            "target_offset": [
+                                110,
+                                0,
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "杏奈_海盗",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片杏奈_海盗": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/杏奈_海盗.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "玲奈_万圣节",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片玲奈_万圣节": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/玲奈_万圣节.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "克萝依_圣学祭",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片克萝依_圣学祭": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/克萝依_圣学祭.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "步末",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片步末": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/步末.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "茉莉",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片茉莉": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/茉莉.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "美里",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片美里": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/美里.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "铃",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片铃": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/铃.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "凯露",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片凯露": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/凯露.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "由加利",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片由加利": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/由加利.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "茜里",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片茜里": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/茜里.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "空花",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片空花": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/空花.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "深月",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片深月": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/深月.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "真步",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片真步": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/真步.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 },
                 {
                     "name": "望",
                     "pipeline_override": {
-                        "识别地下城碎片": {
+                        "地下城碎片望": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/望.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 2000
                         }
                     }
                 }
             ],
-            "type": "select"
-        },
-        "地下城角色碎片购买项2": {
-            "cases": [
-                {
-                    "name": "不额外购买",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "action": "DoNothing"
-                        }
-                    }
-                },
-                {
-                    "name": "杏奈_海盗",
-                    "pipeline_override": {
-                        "识别地下城碎片": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/杏奈_海盗.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "玲奈_万圣节",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/玲奈_万圣节.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "克萝依_圣学祭",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/克萝依_圣学祭.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "步末",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/步末.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "茉莉",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/茉莉.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "美里",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/美里.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "铃",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/铃.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "凯露",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/凯露.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "由加利",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/由加利.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "茜里",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/茜里.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "空花",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/空花.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "深月",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/深月.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "真步",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/真步.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "望",
-                    "pipeline_override": {
-                        "识别地下城碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/望.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                }
-            ],
-            "type": "select"
-        },
-        "地下城角色碎片购买项3": {
-            "cases": [
-                {
-                    "name": "不额外购买",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "action": "DoNothing"
-                        }
-                    }
-                },
-                {
-                    "name": "杏奈_海盗",
-                    "pipeline_override": {
-                        "识别地下城碎片": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/杏奈_海盗.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "玲奈_万圣节",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/玲奈_万圣节.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "克萝依_圣学祭",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/克萝依_圣学祭.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "步末",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/步末.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "茉莉",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/茉莉.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "美里",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/美里.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "铃",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/铃.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "凯露",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/凯露.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "由加利",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/由加利.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "茜里",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/茜里.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "空花",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/空花.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "深月",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/深月.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "真步",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/真步.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "望",
-                    "pipeline_override": {
-                        "识别地下城碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/望.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                }
-            ],
-            "type": "select"
+            "type": "checkbox"
         },
         "竞技场角色碎片购买项": {
             "cases": [
@@ -2312,7 +1832,11 @@
                         "碎片刷新次数": {
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用10立即更新.png"
+                                "jp/用10立即更新.png",
+                                "jp/用50立即更新.png",
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ],
                             "threshold": 0.9
                         },
@@ -2326,7 +1850,10 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用50立即更新.png"
+                                "jp/用50立即更新.png",
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
@@ -2338,7 +1865,9 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用100立即更新.png"
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
@@ -2350,7 +1879,8 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用200立即更新.png"
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
