@@ -1,153 +1,240 @@
 {
-	"商店买竞技场角色碎片":{
-        "post_delay":3000,
-        "timeout":60000,
-        "next":[
-            "进入竞技场商店"
-        ]
-    },
-    "进入竞技场商店":{
-        "timeout":60000,
-        "threshold":0.9,
-		"recognition":"TemplateMatch",
-		"template":["jp/商店.png"],
-		"action": "Click",
-        "next":[
-             "进入竞技场商店2"
-        ]
-    },
-    "进入竞技场商店2":{
-        "timeout":60000,
-        "threshold":0.6,
-        "roi":[194,72,1000,40],
-        "recognition":"TemplateMatch",
-		"template":"jp/竞技场商店.png",
-		"action":"Click",
-        "post_delay":2000,
-        "next":[
-            "识别竞技场碎片0"
-        ]
-    },
-    "识别竞技场碎片0":{
-        "timeout":60000,
-        "post_delay":2000,
+    "商店买竞技场角色碎片": {
+        "post_delay": 3000,
+        "timeout": 60000,
         "next": [
-        	"识别竞技场碎片",
-        	"[JumpBack]识别碎片滑动"
+            "进入竞技场商店",
+            "[JumpBack]回到主页"
         ]
     },
-    "识别竞技场碎片":{
-        "timeout":60000,
-        "post_delay":2000,
+    "进入竞技场商店": {
+        "timeout": 60000,
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/商店.png"
+        ],
+        "action": "Click",
         "next": [
-        	"识别竞技场碎片2",
-        	"[JumpBack]识别碎片滑动"
+            "进入竞技场商店2"
         ]
     },
-    "识别竞技场碎片2":{
-        "timeout":60000,
-        "post_delay":2000,
+    "进入竞技场商店2": {
+        "timeout": 60000,
+        "threshold": 0.6,
+        "roi": [
+            194,
+            72,
+            1000,
+            40
+        ],
+        "recognition": "TemplateMatch",
+        "template": "jp/竞技场商店.png",
+        "action": "Click",
+        "post_delay": 2000,
         "next": [
-        	"识别竞技场碎片3",
-        	"[JumpBack]识别碎片滑动"
+            "识别竞技场碎片"
         ]
     },
-    "识别竞技场碎片3":{
-        "timeout":60000,
-        "post_delay":2000,
-        "next":[
+    "识别竞技场碎片": {
+        "timeout": 60000,
+        "post_delay": 2000,
+        "next": [
+            "竞技场碎片栞_游侠",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片栞_游侠": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片优衣_夏日",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片优衣_夏日": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片璃乃_圣诞节",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片璃乃_圣诞节": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片碧_工作服",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片碧_工作服": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片七七香",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片七七香": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片铃音",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片铃音": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片日和",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片日和": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片未奏希",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片未奏希": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片珠希",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片珠希": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片莫妮卡",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片莫妮卡": {
+        "timeout": 60000,
+        "next": [
+            "竞技场碎片璃乃",
+            "[JumpBack]识别碎片滑动"
+        ]
+    },
+    "竞技场碎片璃乃": {
+        "timeout": 60000,
+        "next": [
             "竞技场碎片购买确认"
         ]
     },
-    "竞技场碎片购买确认":{
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/角色碎片一次购买.png"],
-		"target":[995,583,0,0],
-		"action":"Click",
-		"next":[
-			"竞技场碎片购买确认2"
-		]
-	},
-	"竞技场碎片购买确认2":{
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片购买确认0.png"],
-		"action":"Click",
-		"next":[
-			"竞技场碎片购买确认3"
-		]
-	},
-	"竞技场碎片购买确认3":{
-        "timeout":120000,
-        "recognition":"TemplateMatch",
-		"template":["jp/购买完成.png"],
-		"action":"Click",
-        "target":[ 647, 640,0,0],
-        "post_delay":4000,
-        "next":[
+    "竞技场碎片购买确认": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/角色碎片一次购买.png"
+        ],
+        "target": [
+            995,
+            583
+        ],
+        "action": "Click",
+        "next": [
+            "竞技场碎片购买确认2"
+        ]
+    },
+    "竞技场碎片购买确认2": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/OK.png"
+        ],
+        "action": "Click",
+        "next": [
+            "竞技场碎片购买确认3"
+        ]
+    },
+    "竞技场碎片购买确认3": {
+        "timeout": 120000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/购买完成.png"
+        ],
+        "action": "Click",
+        "target": [
+            647,
+            640
+        ],
+        "post_delay": 4000,
+        "next": [
             "竞技场碎片刷新次数x"
-        ]  
-	},
-    "竞技场碎片刷新次数x":{
-        "post_delay":2000,
-        "next": [
-        	"竞技场碎片刷新次数",
-        	"[JumpBack]点击竞技场碎片刷新"
         ]
     },
-    "竞技场碎片刷新次数":{
-        "post_delay":3000,
+    "竞技场碎片刷新次数x": {
+        "post_delay": 2000,
         "next": [
-        	"不刷新竞技场碎片",
-        	"[JumpBack]点击竞技场碎片刷新"
+            "竞技场碎片刷新次数",
+            "[JumpBack]点击竞技场碎片刷新"
         ]
     },
-    "不刷新竞技场碎片":{
-        "post_delay":2000,
-        "next":[
+    "竞技场碎片刷新次数": {
+        "post_delay": 3000,
+        "next": [
+            "不刷新竞技场碎片",
+            "[JumpBack]点击竞技场碎片刷新"
+        ]
+    },
+    "不刷新竞技场碎片": {
+        "post_delay": 2000,
+        "next": [
             "角色碎片回到主页"
         ]
     },
-    "竞技场角色碎片刷新1回":{
-        "timeout":60000,
-        "threshold":0.9,
-        "recognition":"TemplateMatch",
-		"template":["jp/用10立即更新.png"],
-        "action":"Click",
-        "next":[
+    "竞技场角色碎片刷新1回": {
+        "timeout": 60000,
+        "threshold": 0.9,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/用10立即更新.png"
+        ],
+        "action": "Click",
+        "next": [
             "竞技场碎片重置确认1回刷新"
         ]
     },
-    "竞技场碎片重置确认1回刷新":{
-        "threshold":0.9,
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片重置确认.png"],
-        "action":"Click",
-        "target":[812,500,0,0],
-        "post_delay":4000,
-        "next":[
+    "竞技场碎片重置确认1回刷新": {
+        "threshold": 0.9,
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/碎片重置确认.png"
+        ],
+        "action": "Click",
+        "target": [
+            812,
+            500
+        ],
+        "post_delay": 4000,
+        "next": [
             "角色碎片回到主页"
         ]
     },
-    "竞技场碎片重置确认":{
-        "threshold":0.9,
-        "timeout":60000,
-        "recognition":"TemplateMatch",
-		"template":["jp/碎片重置确认.png"],
-        "action":"Click",
-        "target":[812,500,0,0],
-        "post_delay":4000,
-        "next":[
+    "竞技场碎片重置确认": {
+        "threshold": 0.9,
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/碎片重置确认.png"
+        ],
+        "action": "Click",
+        "target": [
+            812,
+            500
+        ],
+        "post_delay": 4000,
+        "next": [
             "识别竞技场碎片"
         ]
-
     },
-    "点击竞技场碎片刷新":{
-        "target":[794,583,0,0],
-		"action":"Click",
-        "next":[
+    "点击竞技场碎片刷新": {
+        "target": [
+            794,
+            583
+        ],
+        "action": "Click",
+        "next": [
             "竞技场碎片重置确认"
         ]
     }

@@ -150,9 +150,7 @@
             "name": "竞技场角色碎片",
             "entry": "商店买竞技场角色碎片",
             "option": [
-                "竞技场角色碎片购买项",
-                "竞技场角色碎片购买项2",
-                "竞技场角色碎片购买项3",
+                "竞技场角色碎片选择",
                 "竞技场商店刷新次数"
             ]
         },
@@ -569,7 +567,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -587,7 +585,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -605,7 +603,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -623,7 +621,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -641,7 +639,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -659,7 +657,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -677,7 +675,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -695,7 +693,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -713,7 +711,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -731,7 +729,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -749,7 +747,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -767,7 +765,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -785,7 +783,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -803,7 +801,7 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -821,561 +819,215 @@
                                 -70,
                                 -60
                             ],
-                            "post_delay": 2000
+                            "post_delay": 1000
                         }
                     }
                 }
             ],
             "type": "checkbox"
         },
-        "竞技场角色碎片购买项": {
+        "竞技场角色碎片选择": {
             "cases": [
                 {
-                    "name": "不额外购买",
+                    "name": "栞_游侠",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
-                            "action": "DoNothing"
+                        "竞技场碎片栞_游侠": {
+                            "threshold": 0.9,
+                            "recognition": "TemplateMatch",
+                            "template": "role/栞_游侠.png",
+                            "action": "Click",
+                            "target_offset": [
+                                110,
+                                0,
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
-                    "name": "优衣(夏日)",
+                    "name": "优衣_夏日",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片优衣_夏日": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/优衣_夏日.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "璃乃_圣诞节",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片璃乃_圣诞节": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/璃乃_圣诞节_妹妹真可爱.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "碧_工作服",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片碧_工作服": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/碧_工作服.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "七七香",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片七七香": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/七七香.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "铃音",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片铃音": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/铃音.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "日和",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片日和": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/日和.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "未奏希",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片未奏希": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/未奏希.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "珠希",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片珠希": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/珠希.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "莫妮卡",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片莫妮卡": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/莫妮卡.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
                 {
                     "name": "璃乃",
                     "pipeline_override": {
-                        "识别竞技场碎片": {
+                        "竞技场碎片璃乃": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": "role/璃乃_好可爱.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 }
             ],
-            "type": "select"
-        },
-        "竞技场角色碎片购买项2": {
-            "cases": [
-                {
-                    "name": "不额外购买",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "action": "DoNothing"
-                        }
-                    }
-                },
-                {
-                    "name": "优衣(夏日)",
-                    "pipeline_override": {
-                        "识别竞技场碎片": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/优衣_夏日.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "璃乃_圣诞节",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/璃乃_圣诞节_妹妹真可爱.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "碧_工作服",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/碧_工作服.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "七七香",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/七七香.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "铃音",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/铃音.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "日和",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/日和.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "未奏希",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/未奏希.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "珠希",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/珠希.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "莫妮卡",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/莫妮卡.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "璃乃",
-                    "pipeline_override": {
-                        "识别竞技场碎片2": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/璃乃_好可爱.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                }
-            ],
-            "type": "select"
-        },
-        "竞技场角色碎片购买项3": {
-            "cases": [
-                {
-                    "name": "不额外购买",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "action": "DoNothing"
-                        }
-                    }
-                },
-                {
-                    "name": "优衣(夏日)",
-                    "pipeline_override": {
-                        "识别竞技场碎片": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/优衣_夏日.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "璃乃_圣诞节",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/璃乃_圣诞节_妹妹真可爱.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "碧_工作服",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/碧_工作服.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "七七香",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/七七香.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "铃音",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/铃音.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "日和",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/日和.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "未奏希",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/未奏希.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "珠希",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/珠希.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "莫妮卡",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/莫妮卡.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "璃乃",
-                    "pipeline_override": {
-                        "识别竞技场碎片3": {
-                            "threshold": 0.9,
-                            "recognition": "TemplateMatch",
-                            "template": "role/璃乃_好可爱.png",
-                            "action": "Click",
-                            "target_offset": [
-                                70,
-                                -12,
-                                0,
-                                0
-                            ]
-                        }
-                    }
-                }
-            ],
-            "type": "select"
+            "type": "checkbox"
         },
         "公主竞技场角色碎片购买项": {
             "cases": [
@@ -1396,11 +1048,12 @@
                             "template": "role/千歌_夏日.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1413,11 +1066,12 @@
                             "template": "role/真琴_灰姑娘.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1430,11 +1084,12 @@
                             "template": "role/坊希.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1447,11 +1102,12 @@
                             "template": "role/玲奈.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1464,11 +1120,12 @@
                             "template": "role/宫子.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1481,11 +1138,12 @@
                             "template": "role/香织.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1498,11 +1156,12 @@
                             "template": "role/初音.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 },
@@ -1515,11 +1174,12 @@
                             "template": "role/杏奈.png",
                             "action": "Click",
                             "target_offset": [
-                                70,
-                                -12,
+                                110,
                                 0,
-                                0
-                            ]
+                                -70,
+                                -60
+                            ],
+                            "post_delay": 1000
                         }
                     }
                 }
@@ -1918,7 +1578,11 @@
                         "竞技场碎片刷新次数": {
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用10立即更新.png"
+                                "jp/用10立即更新.png",
+                                "jp/用50立即更新.png",
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ],
                             "threshold": 0.9
                         },
@@ -1932,7 +1596,10 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用50立即更新.png"
+                                "jp/用50立即更新.png",
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
@@ -1944,7 +1611,9 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用100立即更新.png"
+                                "jp/用100立即更新.png",
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
@@ -1956,7 +1625,8 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用200立即更新.png"
+                                "jp/用200立即更新.png",
+                                "jp/用500立即更新.png"
                             ]
                         }
                     }
