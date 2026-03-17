@@ -139,6 +139,22 @@ def install_agent():
         install_path / "agent",
         dirs_exist_ok=True,
     )
+    
+    with open(install_path / "interface.json", "r", encoding="utf-8") as f:
+        interface = jsonc.load(f)
+
+    if sys.platform.startswith("win"):
+        interface["agent"]["child_exec"] = r"./python/python.exe"
+    elif sys.platform.startswith("darwin"):
+        interface["agent"]["child_exec"] = r"./python/bin/python3"
+    elif sys.platform.startswith("linux"):
+        interface["agent"]["child_exec"] = r"python3"
+
+    interface["agent"]["child_args"] = ["-u", r"./agent/main.py"]
+
+    with open(install_path / "interface.json", "w", encoding="utf-8") as f:
+        jsonc.dump(interface, f, ensure_ascii=False, indent=4)
+
 
 
 if __name__ == "__main__":
