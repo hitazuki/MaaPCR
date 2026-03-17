@@ -1,6 +1,17 @@
 {
 	"究极练成词条": {
 		"next": [
+			"设置词条模板"
+		]
+	},
+	"设置词条模板": {
+		"action": "Custom",
+		"custom_action": "SetTermTemplates",
+		"custom_action_param": {
+			"type": "魔法防御贯通",
+			"value": "3"
+		},
+		"next": [
 			"确认位于炼成界面"
 		]
 	},
@@ -12,8 +23,36 @@
 			"jp/炼成.png"
 		],
 		"next": [
-			"开始炼成"
+			"炼成词条"
 		]
+	},
+	"炼成词条": {
+		"next": [
+			"判断词条a类型",
+			"判断词条b类型",
+			"判断词条c类型",
+			"判断词条d类型",
+			"识别上锁数量"
+		]
+	},
+	"识别上锁数量": {
+		"recognition": "Custom",
+		"custom_recognition": "AlwaysTrueTemplateMatch",
+		"custom_recognition_param": {
+			"template": "jp/炼成已上锁.png",
+			"threshold": 0.9,
+			"roi": [
+				31,
+				308,
+				529,
+				81
+			]
+		},
+		"action": "Custom",
+		"custom_action": "CountLocks",
+		"custom_action_param": {
+			"expected_count": 1
+		}
 	},
 	"开始炼成": {
 		"timeout": 60000,
@@ -44,16 +83,14 @@
 		"action": "Click",
 		"target": [
 			647,
-			381,
-			0,
-			0
+			381
 		],
 		"next": [
 			"炼成结果确定"
 		]
 	},
 	"炼成结果确定": {
-		"timeout": 60000,
+		"timeout": 30000,
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
@@ -62,6 +99,9 @@
 		"action": "Click",
 		"next": [
 			"确定炼金已返回页面"
+		],
+		"on_error": [
+			"确定炼成"
 		]
 	},
 	"确定炼金已返回页面": {
@@ -75,49 +115,60 @@
 			"炼成词条"
 		]
 	},
-	"炼成词条": {
-		"next": [
-			"判断贯通等级1",
-			"判断贯通等级2",
-			"判断贯通等级3",
-			"判断贯通等级4",
-			"确认位于炼成界面"
-		]
-	},
-	"判断贯通等级1": {
+	"判断词条a类型": {
 		"timeout": 60000,
-		"threshold": 0.8,
+		"threshold": 0.9,
 		"roi": [
-			201,
-			316,
-			100,
+			37,
+			311,
+			264,
 			40
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通3.png"
+			"jp/炼成魔法防御贯通.png"
 		],
 		"next": [
-			"判断贯通是否上锁1",
-			"贯通上锁1"
+			"判断词条a数值",
+			"判断词条b类型",
+			"判断词条c类型",
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"贯通上锁1": {
+	"判断词条a数值": {
+		"timeout": 60000,
+		"threshold": 0.9,
+		"roi": [
+			37,
+			311,
+			264,
+			40
+		],
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/炼成紫色_3.png"
+		],
+		"next": [
+			"判断词条a是否上锁",
+			"[JumpBack]词条a上锁"
+		]
+	},
+	"词条a上锁": {
+		"post_delay": 2000,
 		"action": "Click",
 		"target": [
 			176,
-			331,
-			0,
-			0
+			331
 		],
 		"focus": {
 			"Node.Action.succeed": {
-				"content": "璃乃已上锁了一个新的贯通3",
+				"content": "璃乃已上锁词条a",
 				"display": "toast"
 			}
 		}
 	},
-	"判断贯通是否上锁1": {
+	"判断词条a是否上锁": {
 		"timeout": 60000,
 		"threshold": 0.8,
 		"roi": [
@@ -128,49 +179,68 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通上锁.png"
+			"jp/炼成已上锁.png"
 		],
 		"next": [
-			"判断贯通等级2",
-			"判断贯通等级3",
-			"判断贯通等级4",
-			"确认位于炼成界面"
+			"判断词条b类型",
+			"判断词条c类型",
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"判断贯通等级2": {
+	"判断词条b类型": {
 		"timeout": 60000,
-		"threshold": 0.8,
+		"threshold": 0.9,
 		"roi": [
-			453,
-			320,
-			100,
-			36
+			294,
+			311,
+			264,
+			40
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通3.png"
+			"jp/炼成魔法防御贯通.png"
 		],
 		"next": [
-			"判断贯通是否上锁2",
-			"贯通上锁2"
+			"判断词条b数值",
+			"判断词条c类型",
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"贯通上锁2": {
+	"判断词条b数值": {
+		"timeout": 60000,
+		"threshold": 0.9,
+		"roi": [
+			294,
+			311,
+			264,
+			40
+		],
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/炼成紫色_3.png"
+		],
+		"next": [
+			"判断词条b是否上锁",
+			"[JumpBack]词条b上锁"
+		]
+	},
+	"词条b上锁": {
+		"post_delay": 2000,
 		"action": "Click",
 		"target": [
 			427,
-			331,
-			0,
-			0
+			331
 		],
 		"focus": {
 			"Node.Action.succeed": {
-				"content": "璃乃已上锁了一个新的贯通3",
+				"content": "璃乃已上锁词条b",
 				"display": "toast"
 			}
 		}
 	},
-	"判断贯通是否上锁2": {
+	"判断词条b是否上锁": {
 		"timeout": 60000,
 		"threshold": 0.8,
 		"roi": [
@@ -181,48 +251,66 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通上锁.png"
+			"jp/炼成已上锁.png"
 		],
 		"next": [
-			"判断贯通等级3",
-			"判断贯通等级4",
-			"确认位于炼成界面"
+			"判断词条c类型",
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"判断贯通等级3": {
+	"判断词条c类型": {
 		"timeout": 60000,
-		"threshold": 0.8,
+		"threshold": 0.9,
 		"roi": [
-			190,
-			352,
-			100,
-			36
+			37,
+			348,
+			264,
+			40
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通3.png"
+			"jp/炼成魔法防御贯通.png"
 		],
 		"next": [
-			"判断贯通是否上锁3",
-			"贯通上锁3"
+			"判断词条c数值",
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"贯通上锁3": {
+	"判断词条c数值": {
+		"timeout": 60000,
+		"threshold": 0.9,
+		"roi": [
+			37,
+			348,
+			264,
+			40
+		],
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/炼成紫色_3.png"
+		],
+		"next": [
+			"判断词条c是否上锁",
+			"[JumpBack]词条c上锁"
+		]
+	},
+	"词条c上锁": {
+		"post_delay": 2000,
 		"action": "Click",
 		"target": [
 			176,
-			370,
-			0,
-			0
+			370
 		],
 		"focus": {
 			"Node.Action.succeed": {
-				"content": "璃乃已上锁了一个新的贯通3",
+				"content": "璃乃已上锁词条c",
 				"display": "toast"
 			}
 		}
 	},
-	"判断贯通是否上锁3": {
+	"判断词条c是否上锁": {
 		"timeout": 60000,
 		"threshold": 0.8,
 		"roi": [
@@ -233,47 +321,64 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通上锁.png"
+			"jp/炼成已上锁.png"
 		],
 		"next": [
-			"判断贯通等级4",
-			"确认位于炼成界面"
+			"判断词条d类型",
+			"识别上锁数量"
 		]
 	},
-	"判断贯通等级4": {
+	"判断词条d类型": {
 		"timeout": 60000,
-		"threshold": 0.8,
+		"threshold": 0.9,
 		"roi": [
-			453,
-			356,
-			100,
-			36
+			294,
+			348,
+			264,
+			40
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通3.png"
+			"jp/炼成魔法防御贯通.png"
 		],
 		"next": [
-			"判断贯通是否上锁4",
-			"贯通上锁4"
+			"判断词条d数值",
+			"识别上锁数量"
 		]
 	},
-	"贯通上锁4": {
+	"判断词条d数值": {
+		"timeout": 60000,
+		"threshold": 0.9,
+		"roi": [
+			294,
+			348,
+			264,
+			40
+		],
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/炼成紫色_3.png"
+		],
+		"next": [
+			"判断词条d是否上锁",
+			"[JumpBack]词条d上锁"
+		]
+	},
+	"词条d上锁": {
+		"post_delay": 2000,
 		"action": "Click",
 		"target": [
 			427,
-			367,
-			0,
-			0
+			367
 		],
 		"focus": {
 			"Node.Action.succeed": {
-				"content": "璃乃已上锁了一个新的贯通3",
+				"content": "璃乃已上锁词条d",
 				"display": "toast"
 			}
 		}
 	},
-	"判断贯通是否上锁4": {
+	"判断词条d是否上锁": {
 		"timeout": 60000,
 		"threshold": 0.8,
 		"roi": [
@@ -284,10 +389,10 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/贯通上锁.png"
+			"jp/炼成已上锁.png"
 		],
 		"next": [
-			"确认位于炼成界面"
+			"识别上锁数量"
 		]
 	}
 }
