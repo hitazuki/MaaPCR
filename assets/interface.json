@@ -5,7 +5,7 @@
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
     "name": "MaaPCR",
-    //"description": "这是一个使用 MaaFramework 创建的新项目。",
+    "description": "这是pcr日服小助手 MaaPCR。",
     //"contact": "QQ群: 123456789",
     "license": "GPL-3.0",
     "welcome": "首次使用！欢迎使用 MaaPCR!",
@@ -31,8 +31,8 @@
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
                 "screencap": "FramePool", // 截图方式
-                "mouse": "SendMessageWithCursorPos", // 鼠标控制方式
-                "keyboard": "SendMessageWithCursorPos" // 键盘控制方式
+                "mouse": "SendMessage", // 鼠标控制方式
+                "keyboard": "SendMessage" // 键盘控制方式
             }
         }
     ],
@@ -203,9 +203,11 @@
             "name": "小工具-究极炼成(需炼成页面)",
             "entry": "究极练成词条",
             "option": [
-                "目标词条(自动上锁)",
-                "目标词条数(根据上锁数判断)"
-            ]
+                "目标词条",
+                "目标词条数",
+                "忽略词条数值"
+            ],
+            "description": "每次炼成前会自动上锁符合词条\n目标词条：自动上锁\n目标词条数：大于上锁数时继续炼成\n忽略词条数值：类型符合即上锁\n"
         },
         {
             "name": "小工具-角色倒下暂停(可先开启)",
@@ -1837,7 +1839,7 @@
             ],
             "type": "select"
         },
-        "目标词条(自动上锁)": {
+        "目标词条": {
             "cases": [
                 {
                     "name": "魔法防御贯通3",
@@ -1894,7 +1896,7 @@
             ],
             "type": "select"
         },
-        "目标词条数(根据上锁数判断)": {
+        "目标词条数": {
             "cases": [
                 {
                     "name": "1条",
@@ -1936,7 +1938,45 @@
                         }
                     }
                 }
-            ]
+            ],
+            "type": "select"
+        },
+        "忽略词条数值": {
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "判断词条a类型": {
+                            "next": [
+                                "判断词条a是否上锁",
+                                "[JumpBack]词条a上锁"
+                            ]
+                        },
+                        "判断词条b类型": {
+                            "next": [
+                                "判断词条b是否上锁",
+                                "[JumpBack]词条b上锁"
+                            ]
+                        },
+                        "判断词条c类型": {
+                            "next": [
+                                "判断词条c是否上锁",
+                                "[JumpBack]词条c上锁"
+                            ]
+                        },
+                        "判断词条d类型": {
+                            "next": [
+                                "判断词条d是否上锁",
+                                "[JumpBack]词条d上锁"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "switch"
         }
     }
 }
