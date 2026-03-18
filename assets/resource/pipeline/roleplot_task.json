@@ -37,6 +37,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
+            "是否已完成角色剧情",
             "选中角色new"
         ]
     },
@@ -45,7 +46,7 @@
         "post_delay": 2004,
         "pre_delay": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/角色剧情已完成.png",
+        "template": "jp/角色剧情_已完成.png",
         "action": "ClickKey",
         "key": 111,
         "next": [
@@ -133,6 +134,7 @@
         "timeout": 300000,
         "recognition": "TemplateMatch",
         "template": [
+            "jp/无配音2.png",
             "jp/无配音.png"
         ],
         "action": "Click"

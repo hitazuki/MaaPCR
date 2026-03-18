@@ -31,8 +31,8 @@
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
                 "screencap": "FramePool", // 截图方式
-                "mouse": "SendMessage", // 鼠标控制方式
-                "keyboard": "SendMessage" // 键盘控制方式
+                "mouse": "SendMessageWithWindowPos", // 鼠标控制方式
+                "keyboard": "SendMessageWithWindowPos" // 键盘控制方式
             }
         }
     ],
@@ -178,7 +178,6 @@
             "name": "角色剧情",
             "entry": "角色剧情"
         },
-        /*
         {
             "name": "单个活动剧情",
             "entry": "活动剧情x",
@@ -198,11 +197,10 @@
             "name": "主线剧情",
             "entry": "主线剧情"
         },
-        {
-            "name": "小屋Like(需小屋页面)",
-            "entry": "公会小屋Like"
-        },
-        */
+        //{
+        //    "name": "小屋Like(需小屋页面)",
+        //    "entry": "公会小屋Like"
+        //},
         {
             "name": "小工具-究极炼成(需炼成页面)",
             "entry": "究极练成词条",
