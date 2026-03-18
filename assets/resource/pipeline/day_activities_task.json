@@ -80,7 +80,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线冒险扫荡.png"
+            "jp/主线扫荡.png"
         ],
         "action": "Click",
         "post_delay": 1500,
