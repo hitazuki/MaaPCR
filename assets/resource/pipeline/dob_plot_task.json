@@ -1,7 +1,21 @@
 {
     "生日剧情": {
+        "timeout": 60000,
+        "post_delay": 1000,
         "next": [
-            "开始生日剧情",
+            "生日剧情ADB"
+        ]
+    },
+    "生日剧情ADB": {
+        "timeout": 360000,
+        "next": [
+            "[JumpBack]开始生日剧情",
+            "[JumpBack]对话框选项",
+            "[JumpBack]生日剧情跳过",
+            "[JumpBack]判断生日剧情列表",
+            "[JumpBack]继续角色剧情",
+            "[JumpBack]跳过视频",
+            "[JumpBack]剧情下载发生错误",
             "[JumpBack]选中剧情页面"
         ]
     },
@@ -20,15 +34,11 @@
         "action": "Swipe",
         "begin": [
             900,
-            564,
-            0,
-            0
+            600
         ],
         "end": [
-            906,
-            31,
-            0,
-            0
+            900,
+            20
         ],
         "post_delay": 1500,
         "next": [
@@ -39,77 +49,153 @@
         "action": "Click",
         "target": [
             985,
-            540,
-            0,
-            0
+            540
         ],
         "post_delay": 1500,
         "next": [
-            "进入生日剧情2"
+            "选择new生日剧情类型",
+            "生日剧情回到主页并结束"
         ]
     },
-    "进入生日剧情2": {
+    "生日剧情回到主页并结束": {
         "action": "Click",
         "target": [
-            927,
-            198,
+            136,
+            680
+        ],
+        "post_delay": 2000,
+        "next": [
+            "结束任务"
+        ]
+    },
+    "选择new生日剧情类型": {
+        "timeout": 60000,
+        "threshold": 0.5,
+        "roi": [
+            417,
+            72,
+            700,
+            550
+        ],
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/角色剧情new.png"
+        ],
+        "action": "Click",
+        "target_offset": [
+            20,
+            20,
             0,
             0
         ],
         "next": [
-            "生日剧情下载资料"
+            "判断生日剧情列表"
         ]
     },
-    "生日剧情下载资料": {
-        "timeout": 3600000,
-        "recognition": "OCR",
-        "expected": [
-            "OK",
-            "确认"
+    "判断生日剧情列表": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "threshold": 0.9,
+        "roi": [
+            600,
+            0,
+            680,
+            100
         ],
-        "action": "Click",
-        "next": [
-            "生日剧情一问一答"
-        ]
-    },
-    "生日剧情一问一答": {
-        "timeout": 3600000,
-        "recognition": "OCR",
-        "expected": [
-            "本日的公主生日"
+        "template": [
+            "jp/生日剧情列表.png"
         ],
-        "action": "Click",
-        "post_delay": 1500,
         "next": [
-            "跳过生日剧情"
+            "选择new生日剧情",
+            "生日剧情回到主页"
         ]
     },
-    "跳过生日剧情": {
+    "生日剧情回到主页": {
         "action": "Click",
         "target": [
-            798,
-            493,
+            136,
+            680
+        ]
+    },
+    "选择new生日剧情": {
+        "timeout": 60000,
+        "threshold": 0.5,
+        "roi": [
+            417,
+            72,
+            700,
+            550
+        ],
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/角色剧情new.png"
+        ],
+        "action": "Click",
+        "target_offset": [
+            20,
+            20,
             0,
             0
         ],
         "next": [
-            "生日获得道具"
+            "追加角色剧情资料下载",
+            "追加生日剧情资料下载"
         ]
     },
+    "追加生日剧情资料下载": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/追加资料下载_无配音.png"
+        ],
+        "action": "Click",
+        "target": [
+            790,
+            490
+        ],
+        "post_delay": 2000
+    },
+    "生日剧情跳过": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/生日剧情跳过.png"
+        ],
+        "action": "Click",
+        "next": [
+            "生日剧情跳过确定"
+        ]
+    },
+    "生日剧情跳过确定": {
+        "timeout": 60000,
+        "pre_delay": 800,
+        "recognition": "DirectHit",
+        "target": [
+            819,
+            493
+        ],
+        "action": "Click",
+        "post_delay": 2110
+    }
+    /*
+    //暂时没用到，先注释掉
     "生日获得道具": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/料理获得道具.png",
+        "template": "jp/获得道具.png",
         "next": [
             "生日获得道具2"
         ]
     },
     "生日获得道具2": {
-        "action": "ClickKey",
-        "key": 111,
-        "post_delay": 1500,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/关闭.png"
+        ],
+        "action": "Click",
         "next": [
-            "进入生日剧情2"
+            "判断生日剧情列表"
         ]
     }
+    */
 }

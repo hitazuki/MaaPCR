@@ -41,7 +41,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/关闭按钮.png"
+            "jp/关闭.png"
         ],
         "action": "Click",
         "post_delay": 2130,
