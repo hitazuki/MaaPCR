@@ -157,6 +157,7 @@
         "timeout": 380000,
         "recognition": "TemplateMatch",
         "template": [
+            "jp/无配音2.png",
             "jp/无配音.png"
         ],
         "action": "Click",
