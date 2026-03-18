@@ -62,13 +62,13 @@
     "识别主线扫荡是否有次数": {
         "rate_limit": 2000,
         "next": [
-            "主线扫荡恢复次数",
+            "主线扫荡回复次数",
             "主线扫荡体力不足",
-            "主线体力恢复",
+            "主线体力回复",
             "主线扫荡开始"
         ]
     },
-    "主线体力恢复": {
+    "主线体力回复": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
@@ -80,7 +80,7 @@
             496
         ],
         "next": [
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "主线扫荡体力不足": {
@@ -105,12 +105,61 @@
             "主线扫荡开始"
         ]
     },
-    "主线扫荡恢复次数": {
+    "主线扫荡回复次数": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/主线扫荡_挑战次数回复.png"
         ],
+        "next": [
+            "扫荡不回复次数并继续",
+            "扫荡取消回复次数"
+        ]
+    },
+    "扫荡不回复次数并继续": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/不回复并继续.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "主线扫荡体力不足",
+            "主线体力回复_不回复次数",
+            "主线扫荡开始"
+        ]
+    },
+    "主线体力回复_不回复次数": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/主线扫荡_体力不足.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "target": [
+            488,
+            496
+        ],
+        "next": [
+            "扫荡取消_不回复次数"
+        ]
+    },
+    "扫荡取消_不回复次数": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/取消_小.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "主线扫荡退出"
+        ]
+    },
+    "扫荡取消回复次数": {
+        "timeout": 60000,
         "action": "Click",
         "post_delay": 1500,
         "target": [
@@ -118,7 +167,7 @@
             644
         ],
         "next": [
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "主线扫荡开始": {
@@ -145,11 +194,31 @@
             640
         ],
         "pre_delay": 300,
+        "post_delay": 1000,
         "next": [
-            "主线扫荡开始3"
+            "主线扫荡跳过",
+            "主线扫荡结果确认"
         ]
     },
-    "主线扫荡开始3": {
+    "主线扫荡跳过": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "roi": [
+            344,
+            521,
+            600,
+            193
+        ],
+        "template": [
+            "jp/跳过动画2.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "主线扫荡结果确认"
+        ]
+    },
+    "主线扫荡结果确认": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
@@ -163,7 +232,7 @@
             "限定商店",
             "工会战次数增加页面",
             "活动日常特别内容解放",
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "扫荡结束确认": {
@@ -195,7 +264,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "工会战次数增加页面": {
@@ -211,7 +280,7 @@
             583
         ],
         "next": [
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "主线扫荡等级提升": {
@@ -235,7 +304,7 @@
         "next": [
             "限定商店",
             "工会战次数增加页面",
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
     "限定商店": {
@@ -254,15 +323,15 @@
         "key": 111,
         "post_delay": 2500,
         "next": [
-            "主线扫荡开始4"
+            "主线扫荡退出"
         ]
     },
-    "主线扫荡开始4": {
-        "action": "Click",
-        "target": [
-            787,
-            633
+    "主线扫荡退出": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/取消.png"
         ],
+        "action": "Click",
         "post_delay": 3000,
         "next": [
             "主线扫荡返回主页"
