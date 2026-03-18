@@ -40,17 +40,17 @@
             900,
             20
         ],
-        "post_delay": 1500,
+        "post_delay": 1000,
         "next": [
-            "进入生日剧情"
+            "进入生日剧情",
+            "生日剧情滑动"
         ]
     },
     "进入生日剧情": {
+        "recognition": "TemplateMatch",
+        "template": "jp/生日剧情.png",
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            985,
-            540
-        ],
         "post_delay": 1500,
         "next": [
             "选择new生日剧情类型",
