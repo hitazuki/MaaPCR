@@ -138,6 +138,10 @@ jobs:
           
           echo "Building for platform: ${platform_tag}"
           
+          # 安装install.py依赖的jsonc库
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
           # 运行安装脚本，传入版本号和平台标签
           python ./tools/install.py ${{ needs.meta.outputs.tag }} ${platform_tag}
 
@@ -210,7 +214,7 @@ jobs:
           
           # 安装install.py依赖的jsonc库
           python -m pip install --upgrade pip
-          python -m pip install -r ./tools/requirements.txt
+          python -m pip install -r requirements.txt
 
           # 运行安装脚本，传入版本号和平台标签
           python ./tools/install.py ${{ needs.meta.outputs.tag }} ${platform_tag}
