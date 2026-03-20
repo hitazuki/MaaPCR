@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import shutil
+import os
 import sys
 
 try:
@@ -12,91 +13,58 @@ except ModuleNotFoundError as e:
         "Or add it to your project's requirements."
     ) from e
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(script_dir)
+
 from configure import configure_ocr_model
 
 
-working_dir = Path(__file__).parent.parent.resolve()
+working_dir = Path(__file__).parent.parent
 install_path = working_dir / Path("install")
 version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
-
-# the first parameter is self name
-if sys.argv.__len__() < 4:
-    print("Usage: python install.py <version> <os> <arch>")
-    print("Example: python install.py v1.0.0 win x86_64")
-    sys.exit(1)
-
-os_name = sys.argv[2]
-arch = sys.argv[3]
+platform_tag = len(sys.argv) > 2 and sys.argv[2] or ""
 
 
-def get_dotnet_platform_tag():
-    """自动检测当前平台并返回对应的dotnet平台标签"""
-    if os_name == "win" and arch == "x86_64":
-        platform_tag = "win-x64"
-    elif os_name == "win" and arch == "aarch64":
-        platform_tag = "win-arm64"
-    elif os_name == "macos" and arch == "x86_64":
-        platform_tag = "osx-x64"
-    elif os_name == "macos" and arch == "aarch64":
-        platform_tag = "osx-arm64"
-    elif os_name == "linux" and arch == "x86_64":
-        platform_tag = "linux-x64"
-    elif os_name == "linux" and arch == "aarch64":
-        platform_tag = "linux-arm64"
-    else:
-        print("Unsupported OS or architecture.")
-        print("available parameters:")
-        print("version: e.g., v1.0.0")
-        print("os: [win, macos, linux, android]")
-        print("arch: [aarch64, x86_64]")
-        sys.exit(1)
+def install_deps(platform: str):
+    """安装 MaaFramework 依赖到对应架构路径
 
-    return platform_tag
+    Args:
+        platform: 平台标签，如 win-x64, linux-arm64, osx-arm64
+    """
+    if not platform:
+        raise ValueError("platform_tag is required")
 
+    print(f"Installing MaaFramework dependencies for platform: {platform}")
 
-def install_deps():
-    if not (working_dir / "deps" / "bin").exists():
-        print('Please download the MaaFramework to "deps" first.')
-        print('请先下载 MaaFramework 到 "deps"。')
-        sys.exit(1)
+    # 将 Framework 的库文件复制到对应平台的 runtimes 目录
+    shutil.copytree(
+        working_dir / "deps" / "bin",
+        install_path / "runtimes" / platform / "native",
+        ignore=shutil.ignore_patterns(
+            "*MaaDbgControlUnit*",
+            "*MaaThriftControlUnit*",
+            "*MaaRpc*",
+            "*MaaHttp*",
+            "plugins",
+            "*.node",
+            "*MaaPiCli*",
+        ),
+        dirs_exist_ok=True,
+    )
 
-    if os_name == "android":
-        shutil.copytree(
-            working_dir / "deps" / "bin",
-            install_path,
-            dirs_exist_ok=True,
-        )
-        shutil.copytree(
-            working_dir / "deps" / "share" / "MaaAgentBinary",
-            install_path / "MaaAgentBinary",
-            dirs_exist_ok=True,
-        )
-    else:
-        shutil.copytree(
-            working_dir / "deps" / "bin",
-            install_path / "runtimes" / get_dotnet_platform_tag() / "native",
-            ignore=shutil.ignore_patterns(
-                "*MaaDbgControlUnit*",
-                "*MaaThriftControlUnit*",
-                "*MaaRpc*",
-                "*MaaHttp*",
-                "plugins",
-                "*.node",
-                "*MaaPiCli*",
-            ),
-            dirs_exist_ok=True,
-        )
-        shutil.copytree(
-            working_dir / "deps" / "share" / "MaaAgentBinary",
-            install_path / "libs" / "MaaAgentBinary",
-            dirs_exist_ok=True,
-        )
-        shutil.copytree(
-            working_dir / "deps" / "bin" / "plugins",
-            install_path / "plugins" / get_dotnet_platform_tag(),
-            dirs_exist_ok=True,
-        )
+    # 复制 MaaAgentBinary
+    shutil.copytree(
+        working_dir / "deps" / "share" / "MaaAgentBinary",
+        install_path / "MaaAgentBinary",
+        dirs_exist_ok=True,
+    )
+    shutil.copytree(
+        working_dir / "deps" / "bin" / "plugins",
+        install_path / "plugins" / platform_tag,
+        dirs_exist_ok=True,
+    )
 
+    print(f"MaaFramework dependencies installed to runtimes/{platform}/native")
 
 
 def install_resource():
@@ -117,20 +85,24 @@ def install_resource():
         interface = jsonc.load(f)
 
     interface["version"] = version
+    interface["title"] = f"MaaPCR {version} | pcr日服小助手"
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)
 
 
 def install_chores():
-    shutil.copy2(
-        working_dir / "README.md",
-        install_path,
-    )
-    shutil.copy2(
-        working_dir / "LICENSE",
-        install_path,
-    )
+    for file in ["README.md", "LICENSE", "requirements.txt"]:
+        shutil.copy2(
+            working_dir / file,
+            install_path,
+        )
+    #shutil.copytree(
+    #    working_dir / "docs",
+    #    install_path / "docs",
+    #    dirs_exist_ok=True,
+    #    ignore=shutil.ignore_patterns("*.yaml"),
+    #)
 
 
 def install_agent():
@@ -139,7 +111,7 @@ def install_agent():
         install_path / "agent",
         dirs_exist_ok=True,
     )
-    
+
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
         interface = jsonc.load(f)
 
@@ -156,9 +128,8 @@ def install_agent():
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)
 
 
-
 if __name__ == "__main__":
-    install_deps()
+    install_deps(platform_tag)
     install_resource()
     install_chores()
     install_agent()
