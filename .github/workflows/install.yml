@@ -113,15 +113,15 @@ jobs:
           case "${{ matrix.os }}" in
             windows)
               os_name="win"
-              echo "maa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
+              echo "maa_tag=${os_name}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
               ;;
             linux)
               os_name="linux"
-              echo "maa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
+              echo "maa_tag=${os_name}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
               ;;
             macos)
               os_name="osx"
-              echo "maa_tag=${{ matrix.os }}-${arch_name}" >> $GITHUB_OUTPUT
+              echo "maa_tag=${{ matrix.os }}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
               ;;
           esac
           echo "os_name=${os_name}" >> $GITHUB_OUTPUT
@@ -129,15 +129,10 @@ jobs:
           # 组合平台标签
           echo "mfa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
 
-      - name: Debug platform variables
-        shell: bash
-        run: |
-          echo "Matrix OS: ${{ matrix.os }}"
-          echo "Matrix Arch: ${{ matrix.arch }}"
-          echo "arch_name from output: ${{ steps.platform.outputs.arch_name }}"
-          echo "os_name from output: ${{ steps.platform.outputs.os_name }}"
-          echo "maa_tag from output: ${{ steps.platform.outputs.maa_tag }}"
-          echo "mfa_tag from output: ${{ steps.platform.outputs.mfa_tag }}"
+          # 输出变量
+          echo "::set-output name=os_name::${os_name}"
+          echo "::set-output name=arch_name::${arch_name}"
+          echo "::set-output name=mfa_tag::${os_name}-${arch_name}"
           
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
