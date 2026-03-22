@@ -102,37 +102,47 @@ jobs:
         id: platform
         shell: bash
         run: |
+          os_name="unknown"
+          arch_name="unknown"
+
           # 架构标签
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
-            echo "arch_name=x64" >> $GITHUB_OUTPUT
+            arch_name="x64"
           else
-            echo "arch_name=arm64" >> $GITHUB_OUTPUT
+            arch_name="arm64"
           fi
 
           # 操作系统名（用于文件名）
           case "${{ matrix.os }}" in
             windows)
               os_name="win"
-              echo "maa_tag=${os_name}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
+              maa_tag_tmp="${os_name}-${{ matrix.arch }}"
               ;;
             linux)
               os_name="linux"
-              echo "maa_tag=${os_name}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
+              maa_tag_tmp="${os_name}-${{ matrix.arch }}"
               ;;
             macos)
               os_name="osx"
-              echo "maa_tag=${{ matrix.os }}-${{ matrix.arch }}" >> $GITHUB_OUTPUT
+              maa_tag_tmp="${{ matrix.os }}-${{ matrix.arch }}"
               ;;
           esac
-          echo "os_name=${os_name}" >> $GITHUB_OUTPUT
-
-          # 组合平台标签
-          echo "mfa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
 
           # 输出变量
-          echo "::set-output name=os_name::${os_name}"
-          echo "::set-output name=arch_name::${arch_name}"
-          echo "::set-output name=mfa_tag::${os_name}-${arch_name}"
+          echo "os_name=${os_name}" >> $GITHUB_OUTPUT
+          echo "arch_name=${arch_name}" >> $GITHUB_OUTPUT
+          echo "maa_tag=${maa_tag_tmp}" >> $GITHUB_OUTPUT
+          echo "mfa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
+
+      - name: Debug platform variables
+        shell: bash
+        run: |
+          echo "Matrix OS: ${{ matrix.os }}"
+          echo "Matrix Arch: ${{ matrix.arch }}"
+          echo "arch_name from output: ${{ steps.platform.outputs.arch_name }}"
+          echo "os_name from output: ${{ steps.platform.outputs.os_name }}"
+          echo "maa_tag from output: ${{ steps.platform.outputs.maa_tag }}"
+          echo "mfa_tag from output: ${{ steps.platform.outputs.mfa_tag }}"
           
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
