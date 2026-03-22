@@ -159,13 +159,16 @@ jobs:
         shell: bash
         run: |
           case "${{ matrix.os }}" in
-            windows|macos)
-              python${{ matrix.os == 'windows' && '' || '3' }} tools/ci/setup_embed_python.py
-              EMBED_PYTHON="./install/python/bin/python${{ matrix.os == 'windows' && '.exe' || '3' }}"
-              [ -f "$EMBED_PYTHON" ] && chmod +x "$EMBED_PYTHON"
+            windows)
+              python tools/ci/setup_embed_python.py
               ;;
             linux)
               # 系统 Python 已存在
+              ;;
+            macos)
+              python3 tools/ci/setup_embed_python.py
+              EMBED_PYTHON="./install/python/bin/python3"
+              [ -f "$EMBED_PYTHON" ] && chmod +x "$EMBED_PYTHON"
               ;;
           esac
 
