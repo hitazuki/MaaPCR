@@ -64,168 +64,171 @@ jobs:
       is_release: ${{ steps.set_tag.outputs.is_release }}
       is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
 
-  windows:
+  install:
     needs: meta
-    runs-on: windows-latest
     strategy:
       matrix:
-        arch: [aarch64, x86_64]
+        include: 
+          # Windows
+          - os: windows
+            arch: x86_64
+            runner: windows-latest
+          - os: windows
+            arch: aarch64
+            runner: windows-11-arm
+          # Linux
+          - os: linux
+            arch: x86_64
+            runner: ubuntu-latest
+          - os: linux
+            arch: aarch64
+            runner: ubuntu-latest
+          # macOS
+          - os: macos
+            arch: x86_64
+            runner: macos-15-intel
+          - os: macos
+            arch: aarch64
+            runner: macos-latest
       fail-fast: false
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
 
+      - name: Set platform variables
+        id: platform
+        shell: bash
+        run: |
+          # 架构标签
+          if [ "${{ matrix.arch }}" = "x86_64" ]; then
+            echo "arch_name=x64" >> $GITHUB_OUTPUT
+          else
+            echo "arch_name=arm64" >> $GITHUB_OUTPUT
+          fi
+
+          # 操作系统名（用于文件名）
+          case "${{ matrix.os }}" in
+            windows)
+              os_name="win"
+              ;;
+            linux)
+              os_name="linux"
+              ;;
+            macos)
+              os_name="osx"
+              ;;
+          esac
+          echo "os_name=${os_name}" >> $GITHUB_OUTPUT
+
+          # 组合平台标签
+          echo "tag=${os_name}-${arch_name}*" >> $GITHUB_OUTPUT
+          
       - name: Download MFAAvalonia
+        id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MFAAvalonia
-          fileName: "MFAAvalonia-*-win-x64*"
+          fileName: "MFAAvalonia-*-${{ steps.platform.outputs.tag }}*"
           latest: true
-          out-file-path: "install"
+          out-file-path: "MFA"
           extract: true
+
+      - name: Clean up archive
+        shell: bash
+        run: |
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup executed for ${{ matrix.os }}"
 
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MaaFramework
-          fileName: "MAA-win-${{ matrix.arch }}*"
+          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
           latest: true
           out-file-path: "deps"
           extract: true
-
+          
       - name: Setup Embed Python
-        shell: powershell
-        run: |
-          ./tools/ci/setup_embed_python.ps1
-
-      - name: Rename MFAAvalonia to MaaPCR
         shell: bash
         run: |
-          # 查找 MFAAvalonia.exe 的位置
-          exe_path=$(find install -name "MFAAvalonia.exe" | head -n 1)
-          
-          if [ -z "$exe_path" ]; then
-            echo "Warning: MFAAvalonia.exe not found in install directory."
-            exit 1
-          fi
-          
-          echo "Found MFAAvalonia.exe at: $exe_path"
-          
-          # 获取目录路径
-          exe_dir=$(dirname "$exe_path")
-          
-          # 重命名为 MaaPCR.exe
-          mv "$exe_path" "$exe_dir/MaaPCR.exe"
-          
-          if [ $? -eq 0 ]; then
-            echo "MFAAvalonia.exe renamed to MaaPCR.exe successfully"
-          else
-            echo "Failed to rename MFAAvalonia.exe"
-            exit 1
-          fi
+          case "${{ matrix.os }}" in
+            windows|macos)
+              python${{ matrix.os == 'windows' && '' || '3' }} tools/ci/setup_embed_python.py
+              EMBED_PYTHON="./install/python/bin/python${{ matrix.os == 'windows' && '.exe' || '3' }}"
+              [ -f "$EMBED_PYTHON" ] && chmod +x "$EMBED_PYTHON"
+              ;;
+            linux)
+              # 系统 Python 已存在
+              ;;
+          esac
+
+      - name: Download Python dependencies
+        shell: bash
+        run: |
+          # 提前准备依赖，加速客户端安装
+          case "${{ matrix.os }}" in
+            windows)
+              ./install/python/python.exe tools/ci/download_deps.py --deps-dir install/deps
+              ;;
+            macos)
+              ./install/python/bin/python3 tools/ci/download_deps.py --deps-dir install/deps
+              ;;
+            linux)
+              python tools/ci/download_deps.py --deps-dir install/deps
+              ;;
+          esac
 
       - name: Install
         shell: bash
         run: |
-          # 确定平台标签
-          if [ "${{ matrix.arch }}" == "x86_64" ]; then
-            platform_tag="win-x64"
-          else
-            platform_tag="win-arm64"
-          fi
-          
-          echo "Building for platform: ${platform_tag}"
-          
+          case "${{ matrix.os }}" in
+            windows)
+              PYTHON="./install/python/python.exe"
+              ;;
+            linux)
+              PYTHON="python"
+              ;;
+            macos)
+              PYTHON="./install/python/bin/python3"
+              ;;
+          esac
+
           # 安装install.py依赖的jsonc库
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          python -m pip install json-with-comments
 
           # 运行安装脚本，传入版本号和平台标签
-          python ./tools/install.py ${{ needs.meta.outputs.tag }} ${platform_tag}
+          $PYTHON ./tools/ci/install.py ${{ needs.meta.outputs.tag }} ${{ steps.platform.outputs.tag }}
 
-          # 清理zip文件
-          echo "Cleaning up zip files..."
-          find install -name "MFAAvalonia-*.zip" -delete 2>/dev/null || true
+      - name: Copy MFA files
+        shell: bash
+        run: |
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            if [ "${{ matrix.os }}" = "windows" ]; then
+              cp -rpvn MFA/. install/
+              if [ -f "install/MFAAvalonia.exe" ]; then
+                mv -f install/MFAAvalonia.exe install/MaaPCR.exe
+              fi
+            else
+              rsync -av --ignore-existing MFA/ install/
+              if [ -f "install/MFAAvalonia" ]; then
+                mv -f install/MFAAvalonia install/MaaPCR
+              fi
+            fi
+            # 删除原始 Assets
+            rm -rf install/Assets 2>/dev/null || true
+          else
+            echo "MFA directory not found, skipping copy."
+          fi
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaPCR-win-${{ matrix.arch }}
-          path: "install"
-
-  unix:
-    needs: meta
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        arch: [aarch64, x86_64]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Download MFAAvalonia
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ matrix.os == 'ubuntu-latest' && 'linux' || 'osx' }}-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
-          latest: true
-          out-file-path: "install"
-          extract: true
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-${{ matrix.os == 'ubuntu-latest' && 'linux' || 'macos' }}-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
-
-      - name: Setup Embed Python (macOS)
-        if: matrix.os == 'macos-latest'
-        shell: bash
-        run: |
-          chmod +x ./tools/ci/setup_embed_python.sh
-          ./tools/ci/setup_embed_python.sh ${{ matrix.arch }}
-
-      - name: Install
-        shell: bash
-        run: |
-          # 确定平台标签
-          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            os_name="linux"
-          else
-            os_name="osx"
-          fi
-          
-          if [ "${{ matrix.arch }}" == "x86_64" ]; then
-            arch_name="x64"
-          else
-            arch_name="arm64"
-          fi
-          
-          platform_tag="${os_name}-${arch_name}"
-          echo "Building for platform: ${platform_tag}"
-          
-          # 安装install.py依赖的jsonc库
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-
-          # 运行安装脚本，传入版本号和平台标签
-          python ./tools/install.py ${{ needs.meta.outputs.tag }} ${platform_tag}
-
-          # 清理zip文件
-          echo "Cleaning up zip files..."
-          find install -name "MFAAvalonia-*.zip" -delete 2>/dev/null || true
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MaaPCR-${{ matrix.os == 'ubuntu-latest' && 'linux' || 'macos' }}-${{ matrix.arch }}
+          name: MaaPCR-${{ matrix.os }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
           path: "install"
 
   changelog:
@@ -256,7 +259,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, unix, changelog]
+    needs: [meta, install, changelog]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

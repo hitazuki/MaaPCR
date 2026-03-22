@@ -55,7 +55,7 @@ def install_deps(platform: str):
     # 复制 MaaAgentBinary
     shutil.copytree(
         working_dir / "deps" / "share" / "MaaAgentBinary",
-        install_path / "MaaAgentBinary",
+        install_path / "libs" / "MaaAgentBinary",
         dirs_exist_ok=True,
     )
     shutil.copytree(
