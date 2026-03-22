@@ -133,16 +133,6 @@ jobs:
           echo "arch_name=${arch_name}" >> $GITHUB_OUTPUT
           echo "maa_tag=${maa_tag_tmp}" >> $GITHUB_OUTPUT
           echo "mfa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
-
-      - name: Debug platform variables
-        shell: bash
-        run: |
-          echo "Matrix OS: ${{ matrix.os }}"
-          echo "Matrix Arch: ${{ matrix.arch }}"
-          echo "arch_name from output: ${{ steps.platform.outputs.arch_name }}"
-          echo "os_name from output: ${{ steps.platform.outputs.os_name }}"
-          echo "maa_tag from output: ${{ steps.platform.outputs.maa_tag }}"
-          echo "mfa_tag from output: ${{ steps.platform.outputs.mfa_tag }}"
           
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
