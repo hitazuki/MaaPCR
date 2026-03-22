@@ -113,25 +113,37 @@ jobs:
           case "${{ matrix.os }}" in
             windows)
               os_name="win"
+              echo "maa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
               ;;
             linux)
               os_name="linux"
+              echo "maa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
               ;;
             macos)
               os_name="osx"
+              echo "maa_tag=${{ matrix.os }}-${arch_name}" >> $GITHUB_OUTPUT
               ;;
           esac
           echo "os_name=${os_name}" >> $GITHUB_OUTPUT
 
           # 组合平台标签
-          echo "tag=${os_name}-${arch_name}*" >> $GITHUB_OUTPUT
+          echo "mfa_tag=${os_name}-${arch_name}" >> $GITHUB_OUTPUT
           
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-${{ steps.platform.outputs.maa_tag }}*"
+          latest: true
+          out-file-path: "deps"
+          extract: true
+
       - name: Download MFAAvalonia
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ steps.platform.outputs.tag }}*"
+          fileName: "MFAAvalonia-*-${{ steps.platform.outputs.mfa_tag }}*"
           latest: true
           out-file-path: "MFA"
           extract: true
@@ -142,15 +154,6 @@ jobs:
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup executed for ${{ matrix.os }}"
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
           
       - name: Setup Embed Python
         shell: bash
