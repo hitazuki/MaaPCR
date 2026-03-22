@@ -204,10 +204,10 @@ jobs:
           esac
 
           # 安装install.py依赖的jsonc库
-          python -m pip install json-with-comments
+          $PYTHON -m pip install json-with-comments
 
           # 运行安装脚本，传入版本号和平台标签
-          $PYTHON ./tools/ci/install.py ${{ needs.meta.outputs.tag }} ${{ steps.platform.outputs.tag }}
+          $PYTHON ./tools/ci/install.py ${{ needs.meta.outputs.tag }} ${{ steps.platform.outputs.mfa_tag }}
 
       - name: Copy MFA files
         shell: bash
