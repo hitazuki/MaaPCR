@@ -239,7 +239,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaPCR-${{ matrix.os }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
+          name: MaaPCR-${{ steps.platform.outputs.os_name }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
           path: "install"
 
   changelog:
@@ -285,33 +285,45 @@ jobs:
             exit 1
           fi
 
-      - name: Compress and generate checksums
+      - name: Process and package artifacts
         run: |
           cd assets
-          echo "Generating checksums for all zip files..."
-          checksum_file="checksums.sha256"
-          touch "$checksum_file"
-
           for f in *; do
-            if [ -d "$f" ]; then
-              echo "Processing directory: $f"
-              zip_file="$f-${{ needs.meta.outputs.tag }}.zip"
-              (cd "$f" && zip -r "../$zip_file" .)
-              if [ $? -eq 0 ]; then
-                echo "ZIP file created: ../$zip_file"
-                echo "Processing directory: $f"
-                sha256sum "$zip_file" >> "$checksum_file"
-                echo "" >> "$checksum_file"
-              else
-                echo "Failed to create ZIP file: ../$zip_file"
-                exit 1
-              fi
+            if [[ $f == *"win"* ]]; then
+              (cd "$f" && zip -r "../$f.zip" .)
             else
-              echo "Skipping non-directory: $f"
+              echo "Processing Unix artifact: $f"
+
+              find "$f" -type f -name "MFAAvalonia*" -exec chmod +x {} \; 2>/dev/null || true
+              echo "Set execute permission for all MFAAvalonia files"
+
+              find "$f" -type f -name "MFAUpdater*" -exec chmod +x {} \; 2>/dev/null || true
+              echo "Set execute permission for all MFAUpdater files"
+
+              if [[ -f "$f/MaaPCR" ]]; then
+                chmod +x "$f/MaaPCR"
+                echo "Set execute permission for $f/MaaPCR"
+              fi
+
+              PYTHON_PATHS=(
+                "$f/python/bin/python3"
+                "$f/python/python"
+                "$f/python/bin/python"
+                "$f/python/python.exe"
+              )
+              for PYTHON_PATH in "${PYTHON_PATHS[@]}"; do
+                if [[ -f "$PYTHON_PATH" ]]; then
+                  chmod +x "$PYTHON_PATH"
+                  echo "Set execute permission for $PYTHON_PATH"
+                fi
+              done
+
+              tar -cpzf "$f.tar.gz" -C "$f" .
+              echo "Created archive with preserved permissions: $f.tar.gz"
             fi
           done
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v2.2.2
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
