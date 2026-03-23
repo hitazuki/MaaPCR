@@ -10,9 +10,7 @@
         "action": "Click",
         "target": [
             729,
-            684,
-            0,
-            0
+            684
         ],
         "post_delay": 3000,
         "next": [
@@ -49,9 +47,7 @@
         "post_delay": 2000,
         "target": [
             859,
-            648,
-            0,
-            0
+            648
         ],
         "next": [
             "探险再次出发1"
@@ -61,9 +57,7 @@
         "action": "Click",
         "target": [
             1114,
-            662,
-            0,
-            0
+            662
         ],
         "next": [
             "探险出发弹窗"
@@ -71,8 +65,38 @@
     },
     "探险出发弹窗": {
         "next": [
+            "探险跳过结束",
             "探险回忆事件",
             "探险再次出发",
+            "探险所持上限",
+            "探险出发弹窗"
+        ]
+    },
+    "探险跳过结束": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/探险跳过结束.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "探险出发弹窗"
+        ]
+    },
+    "探险所持上限": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/探险所持上限.png"
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            500
+        ],
+        "post_delay": 500,
+        "next": [
             "探险出发弹窗"
         ]
     },
@@ -84,25 +108,17 @@
         ],
         "action": "Click",
         "post_delay": 2500,
-        "target": [
-            1046,
-            655,
-            0,
-            0
-        ],
         "next": [
             "探险再次出发2"
         ]
     },
     "探险再次出发2": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/探险出发.png"
+        ],
         "action": "Click",
         "post_delay": 3000,
-        "target": [
-            1046,
-            655,
-            0,
-            0
-        ],
         "next": [
             "探险确定再次出发"
         ]
@@ -123,9 +139,7 @@
         "action": "Click",
         "target": [
             1157,
-            648,
-            0,
-            0
+            648
         ],
         "next": [
             "探险再次出发"
@@ -136,9 +150,7 @@
         "post_delay": 2000,
         "target": [
             1157,
-            648,
-            0,
-            0
+            648
         ],
         "next": [
             "探险确定再次出发2"
@@ -149,20 +161,22 @@
         "post_delay": 1000,
         "target": [
             711,
-            583,
-            0,
-            0
+            583
         ],
         "next": [
-            "探险离开"
+            "探险离开",
+            "识别返回主页并结束任务"
         ]
     },
     "探险离开": {
-        "action": "ClickKey",
-        "key": 111,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/关闭.png"
+        ],
+        "action": "Click",
         "post_delay": 1000,
         "next": [
-            "探险返回主页"
+            "识别返回主页并结束任务"
         ]
     },
     "点击探险": {
@@ -174,14 +188,12 @@
         "action": "Click",
         "target": [
             1222,
-            565,
-            0,
-            0
+            565
         ],
         "post_delay": 600,
         "next": [
             "探险没有已返回的队伍",
-            "点击探险2"
+            "探险出发弹窗"
         ]
     },
     "探险没有已返回的队伍": {
@@ -191,69 +203,15 @@
             "jp/探险没有已返回的队伍.png"
         ],
         "next": [
-            "探险返回主页"
+            "识别返回主页并结束任务"
         ]
     },
-    "点击探险2": {
-        "action": "Click",
-        "target": [
-            1146,
-            655,
-            0,
-            0
+    "识别返回主页并结束任务": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/主页.png"
         ],
-        "post_delay": 810,
-        "next": [
-            "点击探险2x"
-        ]
-    },
-    "点击探险2x": {
         "action": "Click",
-        "target": [
-            1146,
-            655,
-            0,
-            0
-        ],
-        "post_delay": 1500,
-        "next": [
-            "点击探险3"
-        ]
-    },
-    "点击探险3": {
-        "action": "Click",
-        "target": [
-            1136,
-            633,
-            0,
-            0
-        ],
-        "post_delay": 2210,
-        "next": [
-            "点击探险4"
-        ]
-    },
-    "点击探险4": {
-        "action": "Click",
-        "target": [
-            690,
-            579,
-            0,
-            0
-        ],
-        "post_delay": 1920,
-        "next": [
-            "探险返回主页"
-        ]
-    },
-    "探险返回主页": {
-        "action": "Click",
-        "target": [
-            136,
-            680,
-            0,
-            0
-        ],
         "post_delay": 1000,
         "next": [
             "结束任务"
