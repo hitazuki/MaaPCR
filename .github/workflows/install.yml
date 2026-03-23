@@ -239,7 +239,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaPCR-${{ steps.platform.outputs.os_name }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
+          name: MaaPCR-${{ matrix.os }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
           path: "install"
 
   changelog:
