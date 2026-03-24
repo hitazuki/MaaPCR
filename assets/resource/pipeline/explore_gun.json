@@ -70,7 +70,8 @@
 		"action": "Click",
 		"next": [
 			"探险券未设定",
-			"点击缩短时间2"
+			"点击缩短时间2",
+			"点击缩短时间"
 		]
 	},
 	"探险券未设定": {
@@ -102,14 +103,23 @@
 		"post_delay": 1000
 	},
 	"点击缩短时间2": {
-		"target": [
-			769,
-			644
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/OK.png"
 		],
 		"action": "Click",
 		"post_delay": 2500,
 		"next": [
-			"探险有返回的队伍",
+			"返回探险队伍一览界面判断",
+			"探险出发弹窗"
+		]
+	},
+	"返回探险队伍一览界面判断": {
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/探险队伍一览.png"
+		],
+		"next": [
 			"[JumpBack]点击关闭",
 			"识别返回主页并结束任务"
 		]
