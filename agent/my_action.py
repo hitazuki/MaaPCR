@@ -4,6 +4,8 @@ from maa.context import Context
 import json
 import os
 
+from utils import logger
+
 
 @AgentServer.custom_action("my_action_111")
 class MyCustomAction(CustomAction):
@@ -66,25 +68,25 @@ class SetTermTemplatesAction(CustomAction):
 
             # 根据类型和数值确定模板 
             if 'type' not in params or 'value' not in params:
-                print("设置词条模板时出错: 必须包含词条类型和词条数值两个模板")
+                logger.error("设置词条模板时出错: 必须包含词条类型和词条数值两个模板")
                 return CustomAction.RunResult(success=False)
             
             type_template = params["type"]  
             value_template = params["value"]  
             
             if not isinstance(type_template, str) or not isinstance(value_template, str):
-                print("设置词条模板时出错: 模板必须为文件路径字符串")
+                logger.error("设置词条模板时出错: 模板必须为文件路径字符串")
                 return CustomAction.RunResult(success=False)
             
             type_path = f"resource/image/{type_template}"  
             value_path = f"resource/image/{value_template}" 
 
             if not os.path.isfile(type_path):
-                print(f"设置词条模板时出错: 模板文件不存在: {type_path} {os.getcwd()}")
+                logger.error(f"设置词条模板时出错: 模板文件不存在: {type_path} {os.getcwd()}")
                 return CustomAction.RunResult(success=False)
             
             if not os.path.isfile(value_path):
-                print(f"设置词条模板时出错: 模板文件不存在: {value_path} {os.getcwd()}")
+                logger.error(f"设置词条模板时出错: 模板文件不存在: {value_path} {os.getcwd()}")
                 return CustomAction.RunResult(success=False)
 
             # 动态设置所有相关节点的模板  
@@ -101,7 +103,7 @@ class SetTermTemplatesAction(CustomAction):
             context.override_pipeline(override) 
 
         except Exception as e:  
-            print(f"处理识别详情时出错: {e}")  
+            logger.error(f"处理识别详情时出错: {e}")  
             return CustomAction.RunResult(success=False) 
         
         return CustomAction.RunResult(success=True)

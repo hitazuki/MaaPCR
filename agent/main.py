@@ -7,6 +7,9 @@ import subprocess
 from pathlib import Path
 from typing import Optional
 
+import my_action
+import my_reco
+
 # utf-8
 sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
 

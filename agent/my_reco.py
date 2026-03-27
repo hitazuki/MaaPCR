@@ -3,6 +3,8 @@ from maa.custom_recognition import TemplateMatchResult, CustomRecognition
 from maa.context import Context
 import json
 
+from utils import logger
+
 @AgentServer.custom_recognition("my_reco_222")
 class MyRecongition(CustomRecognition):
 
@@ -101,7 +103,7 @@ class AlwaysTrueTemplateMatchRecognition(CustomRecognition):
                     }  
                 )  
         except Exception as e:  
-            print(f"自定义识别 AlwaysTrueTemplateMatch 失败: {e}")  
+            logger.error(f"自定义识别 AlwaysTrueTemplateMatch 失败: {e}")  
           
         # 匹配失败，返回默认位置但仍然成功  
         # 使用 ROI 的中心作为默认位置  
