@@ -1,24 +1,22 @@
 {
     "全部强化": {
-        "post_delay": 3000,
+        "post_delay": 2500,
         "timeout": 60000,
         "next": [
             "全部强化选中角色页面"
         ]
     },
     "全部强化选中角色页面": {
-        "timeout": 180000,
+        "timeout": 60000,
         "action": "Click",
         "target": [
             269,
-            680,
-            0,
-            0
+            680
         ],
-        "post_delay": 3000,
+        "post_delay": 2000,
         "next": [
             "选择角色一键强化",
-            "[JumpBack]选中角色页面"
+            "全部强化选中角色页面"
         ]
     },
     "选择角色一键强化": {
@@ -26,7 +24,7 @@
         "recognition": "TemplateMatch",
         "template": "jp/角色全部强化.png",
         "action": "Click",
-        "post_delay": 2500,
+        "post_delay": 2000,
         "next": [
             "一键强化选择全部"
         ]
@@ -35,29 +33,56 @@
         "action": "Click",
         "target": [
             93,
-            154,
-            0,
-            0
+            154
         ],
         "post_delay": 1000,
         "next": [
-            "一键强化目标"
+            "进入强化对象设定页面"
         ]
     },
-    "一键强化目标": {
+    "进入强化对象设定页面": {
+        "timeout": 60000,
+        "action": "Click",
         "target": [
             133,
-            518,
-            0,
-            0
+            518
         ],
-        "action": "Click",
         "post_delay": 1000,
         "next": [
-            "是否全部强化完成"
+            "选择对象rank提升"
         ]
     },
-    "是否全部强化完成": {
+    "选择对象自动强化": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/自动强化对象设定.png",
+        "action": "Click",
+        "target": [
+            390,
+            180
+        ],
+        "next": [
+            "从强化对象设定页面返回"
+        ]
+    },
+    "选择对象rank提升": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/自动强化对象设定.png",
+        "action": "Click",
+        "target": [
+            390,
+            270
+        ],
+        "next": [
+            "从强化对象设定页面返回"
+        ]
+    },
+    "从强化对象设定页面返回": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/OK.png",
+        "action": "Click",
         "next": [
             "一键强化自动选择"
         ]
@@ -75,14 +100,13 @@
     "确定一键强化": {
         "target": [
             794,
-            644,
-            0,
-            0
+            644
         ],
         "action": "Click",
         "next": [
             "角色已全部强化完成",
             "一键强化确认",
+            "一键强化完成",
             "确定一键强化"
         ]
     },
@@ -91,47 +115,33 @@
         "recognition": "TemplateMatch",
         "template": "jp/请选择角色.png",
         "next": [
-            "Rank提升",
-            "一键强化Rank"
+            "判断是否为Rank提升",
+            "退出自动强化页面"
         ]
     },
-    "Rank提升": {
+    "判断是否为Rank提升": {
         "threshold": 0.9,
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": "jp/Rank提升.png",
-        "next": [
-            "返回一键强化"
-        ]
-    },
-    "返回一键强化": {
-        "action": "ClickKey",
-        "key": 111,
-        "post_delay": 1000,
-        "next": [
-            "返回一键强化2"
-        ]
-    },
-    "返回一键强化2": {
-        "action": "ClickKey",
-        "key": 111,
-        "next": [
-            "结束任务"
-        ]
-    },
-    "一键强化Rank": {
+        "roi": [
+            24,
+            474,
+            250,
+            140
+        ],
         "action": "Click",
-        "post_delay": 1000,
         "next": [
-            "不继续强化",
-            "一键强化自动选择"
+            "选择对象自动强化"
         ]
     },
-    "不继续强化": {
+    "退出自动强化页面": {
+        "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/角色全部强化.png",
+        "template": "jp/取消.png",
+        "action": "Click",
         "next": [
-            "返回一键强化2"
+            "识别返回主页并结束任务"
         ]
     },
     "一键强化确认": {
@@ -140,11 +150,10 @@
         "template": "jp/强化确认.png",
         "target": [
             794,
-            637,
-            0,
-            0
+            637
         ],
         "action": "Click",
+        "post_delay": 500,
         "next": [
             "一键强化完成"
         ]
@@ -152,16 +161,17 @@
     "一键强化完成": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/自动强化完成.png",
+        "template": [
+            "jp/自动强化完成.png",
+            "jp/Rank提升完成.png"
+        ],
         "target": [
             654,
-            644,
-            0,
-            0
+            644
         ],
         "action": "Click",
         "next": [
-            "是否全部强化完成"
+            "一键强化自动选择"
         ]
     }
 }
