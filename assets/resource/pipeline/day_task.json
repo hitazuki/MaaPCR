@@ -4,7 +4,8 @@
 		"timeout": 60000,
 		"next": [
 			"全部一键执行",
-			"[JumpBack]进入行程表"
+			"[JumpBack]进入行程表",
+			"[JumpBack]回到主页"
 		]
 	},
 	"进入行程表": {
