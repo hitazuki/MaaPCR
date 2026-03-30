@@ -57,20 +57,21 @@
 			"jp/探险无法再缩短时间.png",
 			"jp/未持有加速券.png"
 		],
-		"post_delay": 1000,
+		"post_delay": 500,
 		"next": [
 			"点击缩短时间"
 		]
 	},
 	"点击缩短时间": {
-		"target": [
-			776,
-			640
+		"pre_delay": 500,
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/探险缩短时间.png"
 		],
 		"action": "Click",
 		"next": [
 			"探险券未设定",
-			"点击缩短时间2",
+			"点击缩短时间确认",
 			"点击缩短时间"
 		]
 	},
@@ -102,7 +103,7 @@
 		"action": "Click",
 		"post_delay": 1000
 	},
-	"点击缩短时间2": {
+	"点击缩短时间确认": {
 		"recognition": "TemplateMatch",
 		"template": [
 			"jp/OK.png"
@@ -121,7 +122,7 @@
 		],
 		"next": [
 			"[JumpBack]点击关闭",
-			"识别返回主页并结束任务"
+			"点击探险"
 		]
 	},
 	"探险中的队伍状态确认": {
