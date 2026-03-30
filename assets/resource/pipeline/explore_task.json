@@ -26,7 +26,7 @@
 			"jp/探险文字.png"
 		],
 		"action": "Click",
-		"post_delay": 5000
+		"post_delay": 3000
 	},
 	"开始进入探险事件": {
 		"timeout": 60000,
@@ -34,7 +34,6 @@
 		"template": [
 			"jp/冒险目的地.png"
 		],
-		"post_delay": 3500,
 		"next": [
 			"[JumpBack]进入探险事件new",
 			"探险事件已完成"
