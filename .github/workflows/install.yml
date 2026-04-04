@@ -223,7 +223,7 @@ jobs:
               echo "Processing Windows x86_64 icon..."
 
               # 检查 ImageMagick 是否已安装
-              if ! choco list -l imagemagick | grep -q "imagemagick"; then
+              if ! command -v convert &>/dev/null; then
                 echo "ImageMagick not found, installing..."
                 choco install imagemagick -y
               else
