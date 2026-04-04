@@ -27,7 +27,7 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                //"window_regex": "PrincessConnect",
+                "window_regex": "PrincessConnect",
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
                 "screencap": "FramePool", // 截图方式
