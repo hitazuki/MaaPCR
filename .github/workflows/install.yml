@@ -214,55 +214,55 @@ jobs:
           # 运行安装脚本，传入版本号和平台标签
           $PYTHON ./tools/ci/install.py ${{ needs.meta.outputs.tag }} ${{ steps.platform.outputs.mfa_tag }}
 
-      - name: Handle icons for different platforms
+      - name: Convert PNG to ICO
         shell: bash
         run: |
-          case "${{ matrix.os }}-${{ matrix.arch }}" in
-            windows-x86_64)
-              # Windows x86_64: Convert PNG to ICO and modify exe icon
-              echo "Processing Windows x86_64 icon..."
+          echo "Converting PNG to ICO..."
 
-              # 检查 ImageMagick 是否已安装
-              if ! command -v convert &>/dev/null; then
-                echo "ImageMagick not found, installing..."
-                choco install imagemagick -y
-              else
-                echo "ImageMagick already installed, skipping installation"
-              fi
-
-              # 转换 PNG 到 ICO
-              convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
-
-              # 下载 rcedit
-              curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
-
-              # 修改 exe 图标
-              ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "maaPCR.ico"
-              ;;
-            windows-aarch64)
-              # Windows aarch64: Skip icon processing
-              echo "Skipping icon processing for Windows aarch64"
-              ;;
-            linux-x86_64|linux-aarch64|macos-x86_64|macos-aarch64)
-              # Linux and macOS: Convert PNG to ICO (no exe modification needed)
-              echo "Processing icon for ${{ matrix.os }} ${{ matrix.arch }}..."
-
-              # 安装 ImageMagick
-              case "${{ matrix.os }}" in
-                linux)
-                  sudo apt-get update && sudo apt-get install -y imagemagick
+          # 安装 ImageMagick 并转换图标
+          case "${{ matrix.os }}" in
+            windows)
+              case "${{ matrix.arch }}" in
+                x86_64)
+                  choco install imagemagick -y
+                  magick convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
                   ;;
-                macos)
-                  brew install imagemagick
+                aarch64)
+                  # ARM64 Windows 跳过此步骤
                   ;;
               esac
-
-              # 转换 PNG 到 ICO
+              
+              ;;
+            linux)
+              sudo apt-get update && sudo apt-get install -y imagemagick
               convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
+              ;;
+            macos)
+              brew install imagemagick
+              magick convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
               ;;
           esac
 
-          echo "MFAAvalonia icon modified successfully"
+      - name: Modify MFAAvalonia exe icon (Windows only)
+        if: matrix.os == 'windows' && matrix.arch == 'x86_64'
+        shell: bash
+        run: |
+          echo "Modifying MFAAvalonia exe icon..."
+
+          # 下载 rcedit
+          curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
+
+          # 修改 exe 图标
+          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "maaPCR.ico"
+
+      - name: Copy custom icons
+        shell: bash
+        run: |
+          # MFAA 版本的图标放根目录
+          if [ -f "maaPCR.ico" ]; then
+            cp maaPCR.ico install/logo.ico
+            echo "Copied maaPCR.ico to install/logo.ico"
+          fi
 
       - name: Copy MFA files
         shell: bash
