@@ -226,7 +226,7 @@ jobs:
               choco install imagemagick -y
 
               # 转换 PNG 到 ICO
-              magick convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
+              convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
 
               # 下载 rcedit
               curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
@@ -253,7 +253,7 @@ jobs:
               esac
 
               # 转换 PNG 到 ICO
-              magick convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
+              convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
               ;;
           esac
 
