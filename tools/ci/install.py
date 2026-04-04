@@ -97,12 +97,12 @@ def install_chores():
             working_dir / file,
             install_path,
         )
-    #shutil.copytree(
-    #    working_dir / "docs",
-    #    install_path / "docs",
-    #    dirs_exist_ok=True,
-    #    ignore=shutil.ignore_patterns("*.yaml"),
-    #)
+    shutil.copytree(
+        working_dir / "docs",
+        install_path / "docs",
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns("*.yaml"),
+    )
 
 
 def install_agent():

@@ -214,6 +214,37 @@ jobs:
           # 运行安装脚本，传入版本号和平台标签
           $PYTHON ./tools/ci/install.py ${{ needs.meta.outputs.tag }} ${{ steps.platform.outputs.mfa_tag }}
 
+      - name: Convert PNG to ICO
+        shell: bash
+        run: |
+          # 安装 ImageMagick
+          case "${{ matrix.os }}" in
+            windows)
+              choco install imagemagick -y
+              ;;
+            linux)
+              sudo apt-get update && sudo apt-get install -y imagemagick
+              ;;
+            macos)
+              brew install imagemagick
+              ;;
+          esac
+
+          # 转换 PNG 到 ICO
+          magick convert docs/images/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 maaPCR.ico
+
+      - name: Modify MFAAvalonia exe icon (Windows only)
+        if: matrix.os == 'windows'
+        shell: bash
+        run: |
+          # 下载 rcedit
+          curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
+
+          # 修改 exe 图标
+          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "maaPCR.ico"
+
+          echo "MFAAvalonia icon modified successfully"
+
       - name: Copy MFA files
         shell: bash
         run: |
@@ -233,6 +264,12 @@ jobs:
             fi
             # 删除原始 Assets
             rm -rf install/Assets 2>/dev/null || true
+
+            # 复制自定义图标
+            if [ -f "maaPCR.ico" ]; then
+              cp maaPCR.ico install/logo.ico
+              echo "Copied custom icon to install/logo.ico"
+            fi
           else
             echo "MFA directory not found, skipping copy."
           fi
