@@ -319,8 +319,11 @@
         ]
     },
     "限定商店2": {
-        "action": "ClickKey",
-        "key": 111,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/取消.png"
+        ],
+        "action": "Click",
         "post_delay": 2500,
         "next": [
             "公会战次数增加页面",
