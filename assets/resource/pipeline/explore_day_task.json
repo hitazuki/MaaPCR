@@ -109,7 +109,8 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "探险再次出发2"
+            "探险再次出发2",
+            "周回追加完了"
         ]
     },
     "探险再次出发2": {
@@ -121,6 +122,23 @@
         "post_delay": 3000,
         "next": [
             "探险确定再次出发"
+        ]
+    },
+    "周回追加完了": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/周回追加完了.png"
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            580
+        ],
+        "post_delay": 1000,
+        "next": [
+            "探险离开",
+            "识别返回主页并结束任务"
         ]
     },
     "探险回忆事件": {
