@@ -191,6 +191,7 @@
 		"pre_delay": 1000,
 		"recognition": "OCR",
 		"expected": [
+			"獲得",
 			"得了",
 			"获得了"
 		],
