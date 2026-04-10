@@ -178,46 +178,19 @@
         ],
         "action": "Click",
         "next": [
-            "主线扫荡开始2"
-        ]
-    },
-    "主线扫荡开始2": {
-        "timeout": 60000,
-        "threshold": 0.6,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/主线扫荡_扫荡结果.png"
-        ],
-        "action": "Click",
-        "target": [
-            636,
-            640
-        ],
-        "pre_delay": 300,
-        "post_delay": 1000,
-        "next": [
-            "主线扫荡跳过",
+            "[JumpBack]点击跳过完了",
             "主线扫荡结果确认"
         ]
     },
-    "主线扫荡跳过": {
+    "点击跳过完了": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "roi": [
-            344,
-            521,
-            600,
-            193
-        ],
         "template": [
-            "jp/跳过动画2.png"
+            "jp/跳过完了.png"
         ],
         "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "主线扫荡结果确认",
-            "扫荡后续流程表"
-        ]
+        "pre_delay": 300,
+        "post_delay": 1000
     },
     "主线扫荡结果确认": {
         "timeout": 60000,

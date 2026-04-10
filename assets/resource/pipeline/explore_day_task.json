@@ -76,7 +76,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险跳过结束.png"
+            "jp/跳过完了.png"
         ],
         "action": "Click",
         "post_delay": 1000,
