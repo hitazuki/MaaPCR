@@ -69,6 +69,7 @@
 			"jp/探险缩短时间.png"
 		],
 		"action": "Click",
+		"post_delay": 1000,
 		"next": [
 			"探险券未设定",
 			"点击缩短时间确认",
