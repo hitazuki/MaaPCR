@@ -179,8 +179,7 @@
         "action": "Click",
         "next": [
             "[JumpBack]点击跳过完了",
-            "主线扫荡结果确认",
-            "扫荡后续流程表"
+            "主线扫荡结果确认"
         ]
     },
     "点击跳过完了": {
@@ -197,9 +196,13 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK2.png"
+            "jp/主线扫荡_跳过完了.png"
         ],
         "action": "Click",
+        "target": [
+            640,
+            640
+        ],
         "post_delay": 2000,
         "next": [
             "扫荡后续流程表"
@@ -208,6 +211,7 @@
     "扫荡后续流程表": {
         "timeout": 60000,
         "next": [
+            "主线扫荡结果确认",
             "扫荡结束确认",
             "主线扫荡等级提升",
             "限定商店",
