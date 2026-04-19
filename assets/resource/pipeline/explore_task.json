@@ -96,7 +96,7 @@
 	"概率事件": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/概率事件70.png",
+		"template": "jp/探险事件概率70.png",
 		"next": [
 			"怪鸟来袭选项"
 		]
@@ -169,8 +169,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险门失败.png",
-			"jp/探索结束.png"
+			"jp/探险门失败.png"
 		],
 		"post_delay": 2000,
 		"next": [

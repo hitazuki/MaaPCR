@@ -475,7 +475,7 @@
                     "pipeline_override": {
                         "怪鸟来袭选项": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/概率获得100.png"
+                            "template": "jp/探险事件概率100.png"
                         }
                     }
                 },
@@ -484,7 +484,7 @@
                     "pipeline_override": {
                         "怪鸟来袭选项": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/概率事件70.png"
+                            "template": "jp/探险事件概率70.png"
                         }
                     }
                 }
