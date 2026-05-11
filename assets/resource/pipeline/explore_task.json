@@ -88,8 +88,8 @@
 		"next": [
 			"探险门",
 			"探险对话事件",
-			"探险获得装备",
 			"概率事件",
+			"探险获得装备",
 			"探险事件判断"
 		]
 	},
@@ -118,10 +118,12 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": "jp/探险门.png",
+		"threshold": 0.6,
 		"post_delay": 1000,
 		"action": "Click",
 		"next": [
-			"探险门前进"
+			"探险门前进",
+			"探险门"
 		]
 	},
 	"探险门前进": {
