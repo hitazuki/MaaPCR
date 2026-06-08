@@ -84,6 +84,14 @@
         "template": "jp/OK.png",
         "action": "Click",
         "next": [
+            "一键强化主页面"
+        ]
+    },
+    "一键强化主页面": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/一键强化主页面.png",
+        "next": [
             "一键强化自动选择"
         ]
     },
@@ -105,9 +113,7 @@
         "action": "Click",
         "next": [
             "角色已全部强化完成",
-            "一键强化确认",
-            "一键强化完成",
-            "确定一键强化"
+            "一键强化确认LOOP"
         ]
     },
     "角色已全部强化完成": {
@@ -144,19 +150,29 @@
             "识别返回主页并结束任务"
         ]
     },
+    "一键强化确认LOOP": {
+        "timeout": 60000,
+        "pre_delay": 1000,
+        "next": [
+            "[JumpBack]一键强化确认",
+            "[JumpBack]一键强化完成",
+            "[JumpBack]装备强化物品返还-点击OK2",
+            "一键强化主页面"
+        ]
+    },
     "一键强化确认": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/强化确认.png",
+        "template": [
+            "jp/强化确认.png",
+            "jp/Rank提升确认.png"
+        ],
         "target": [
             794,
             637
         ],
         "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "一键强化完成"
-        ]
+        "post_delay": 2000
     },
     "一键强化完成": {
         "timeout": 60000,
@@ -170,8 +186,13 @@
             644
         ],
         "action": "Click",
-        "next": [
-            "一键强化自动选择"
-        ]
+        "post_delay": 500
+    },
+    "装备强化物品返还-点击OK2": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/OK2.png",
+        "action": "Click",
+        "post_delay": 1000
     }
 }

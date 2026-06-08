@@ -452,3 +452,7 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+
+# Claude
+.claude/
+claude/
