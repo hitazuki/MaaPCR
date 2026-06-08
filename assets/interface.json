@@ -1813,6 +1813,97 @@
                     }
                 },
                 {
+                    "name": "物理防御贯通5",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成物理防御贯通.png",
+                                "value": "jp/炼成紫色_5.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "HP5%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成HP.png",
+                                "value": "jp/炼成紫色_5pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "HP1.25%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成HP.png",
+                                "value": "jp/炼成紫色_1-25pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "TP上升3",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成TP上升.png",
+                                "value": "jp/炼成紫色_3.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "物理攻击力2%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成物理攻击力.png",
+                                "value": "jp/炼成紫色_2pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "物理攻击力2.5%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成物理攻击力.png",
+                                "value": "jp/炼成紫色_2-5pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "物理攻击力4%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成物理攻击力.png",
+                                "value": "jp/炼成紫色_4pc.png"
+                            }
+                        }
+                    }
+                },
+                {
                     "name": "魔法攻击力2%",
                     "pipeline_override": {
                         "设置词条模板": {
@@ -1821,6 +1912,32 @@
                             "custom_action_param": {
                                 "type": "jp/炼成魔法攻击力.png",
                                 "value": "jp/炼成紫色_2pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "魔法攻击力2.5%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成魔法攻击力.png",
+                                "value": "jp/炼成紫色_2-5pc.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "魔法攻击力4%",
+                    "pipeline_override": {
+                        "设置词条模板": {
+                            "action": "Custom",
+                            "custom_action": "SetTermTemplates",
+                            "custom_action_param": {
+                                "type": "jp/炼成魔法攻击力.png",
+                                "value": "jp/炼成紫色_4pc.png"
                             }
                         }
                     }
