@@ -121,6 +121,41 @@
         "recognition": "TemplateMatch",
         "template": "jp/请选择角色.png",
         "next": [
+            "角色强化重试",
+            "判断是否为Rank提升"
+        ]
+    },
+    "角色强化重试": {
+        "next": [
+            "一键强化自动选择_重试"
+        ]
+    },
+    "一键强化自动选择_重试": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/自动选择.png",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "确定一键强化_重试"
+        ]
+    },
+    "确定一键强化_重试": {
+        "target": [
+            794,
+            644
+        ],
+        "action": "Click",
+        "next": [
+            "角色已全部强化完成_终",
+            "一键强化确认LOOP"
+        ]
+    },
+    "角色已全部强化完成_终": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/请选择角色.png",
+        "next": [
             "判断是否为Rank提升",
             "退出自动强化页面"
         ]
