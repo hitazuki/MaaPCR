@@ -13,7 +13,7 @@
 	"活动剧情页面All":{
 		"timeout":380000,
 		"recognition":"TemplateMatch",
-		"template":"jp/额外活动剧情.png",
+		"template":"jp/story/额外活动剧情.png",
 		"action":"Click",
 		"post_delay":2216,
 		"next":[
@@ -41,7 +41,7 @@
 		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"roi":[57,79,1200,530],
-		"template":["jp/活动剧情new.png"],
+		"template":["jp/event/活动剧情new.png"],
 		"action":"Click",
 		"target_offset":[0,23,0,0],
 		"post_delay":2000,

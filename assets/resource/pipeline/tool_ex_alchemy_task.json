@@ -20,7 +20,7 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成.png"
+			"jp/ex_alchemy/炼成.png"
 		],
 		"next": [
 			"炼成词条"
@@ -39,7 +39,7 @@
 		"recognition": "Custom",
 		"custom_recognition": "AlwaysTrueTemplateMatch",
 		"custom_recognition_param": {
-			"template": "jp/炼成已上锁.png",
+			"template": "jp/ex_alchemy/炼成已上锁.png",
 			"threshold": 0.9,
 			"roi": [
 				31,
@@ -59,7 +59,7 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成.png"
+			"jp/ex_alchemy/炼成.png"
 		],
 		"action": "Click",
 		"next": [
@@ -70,7 +70,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/OK.png"
+			"jp/common/OK.png"
 		],
 		"action": "Click",
 		"post_delay": 1500,
@@ -94,7 +94,7 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成结果确定.png"
+			"jp/ex_alchemy/炼成结果确定.png"
 		],
 		"action": "Click",
 		"next": [
@@ -109,7 +109,7 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成.png"
+			"jp/ex_alchemy/炼成.png"
 		],
 		"next": [
 			"炼成词条"
@@ -126,7 +126,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成魔法防御贯通.png"
+			"jp/ex_alchemy/炼成魔法防御贯通.png"
 		],
 		"next": [
 			"判断词条a数值",
@@ -147,7 +147,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成紫色_3.png"
+			"jp/ex_alchemy/炼成紫色_3.png"
 		],
 		"next": [
 			"判断词条a是否上锁",
@@ -179,7 +179,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成已上锁.png"
+			"jp/ex_alchemy/炼成已上锁.png"
 		],
 		"next": [
 			"判断词条b类型",
@@ -199,7 +199,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成魔法防御贯通.png"
+			"jp/ex_alchemy/炼成魔法防御贯通.png"
 		],
 		"next": [
 			"判断词条b数值",
@@ -219,7 +219,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成紫色_3.png"
+			"jp/ex_alchemy/炼成紫色_3.png"
 		],
 		"next": [
 			"判断词条b是否上锁",
@@ -251,7 +251,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成已上锁.png"
+			"jp/ex_alchemy/炼成已上锁.png"
 		],
 		"next": [
 			"判断词条c类型",
@@ -270,7 +270,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成魔法防御贯通.png"
+			"jp/ex_alchemy/炼成魔法防御贯通.png"
 		],
 		"next": [
 			"判断词条c数值",
@@ -289,7 +289,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成紫色_3.png"
+			"jp/ex_alchemy/炼成紫色_3.png"
 		],
 		"next": [
 			"判断词条c是否上锁",
@@ -321,7 +321,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成已上锁.png"
+			"jp/ex_alchemy/炼成已上锁.png"
 		],
 		"next": [
 			"判断词条d类型",
@@ -339,7 +339,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成魔法防御贯通.png"
+			"jp/ex_alchemy/炼成魔法防御贯通.png"
 		],
 		"next": [
 			"判断词条d数值",
@@ -357,7 +357,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成紫色_3.png"
+			"jp/ex_alchemy/炼成紫色_3.png"
 		],
 		"next": [
 			"判断词条d是否上锁",
@@ -389,7 +389,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/炼成已上锁.png"
+			"jp/ex_alchemy/炼成已上锁.png"
 		],
 		"next": [
 			"识别上锁数量"

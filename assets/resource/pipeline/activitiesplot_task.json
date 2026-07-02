@@ -19,7 +19,7 @@
     "活动剧情页面x": {
         "timeout": 380000,
         "recognition": "TemplateMatch",
-        "template": "jp/额外活动剧情.png",
+        "template": "jp/story/额外活动剧情.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -56,7 +56,7 @@
             530
         ],
         "template": [
-            "jp/活动剧情new.png"
+            "jp/event/活动剧情new.png"
         ],
         "action": "Click",
         "target_offset": [
@@ -81,7 +81,7 @@
             150
         ],
         "template": [
-            "jp/活动剧情new.png"
+            "jp/event/活动剧情new.png"
         ],
         "action": "Click",
         "target_offset": [
@@ -119,7 +119,7 @@
             530
         ],
         "template": [
-            "jp/活动剧情new.png"
+            "jp/event/活动剧情new.png"
         ],
         "target_offset": [
             0,
@@ -138,8 +138,6 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            //"jp/剧情跳过快进.png", //todo: add image
-            //"jp/剧情跳过2.png"     //todo: add image
         ],
         "action": "Click"
     },
@@ -147,7 +145,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/追加资料下载.png"
+            "jp/common/追加资料下载.png"
         ],
         "next": [
             "活动剧情无配音x"
@@ -157,8 +155,8 @@
         "timeout": 380000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/无配音2.png",
-            "jp/无配音.png"
+            "jp/common/无配音2.png",
+            "jp/common/无配音.png"
         ],
         "action": "Click",
         "post_delay": 3500

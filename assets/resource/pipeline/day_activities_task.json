@@ -9,7 +9,7 @@
     "开始日常活动": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/商店.png",
+        "template": "jp/shop/商店.png",
         "action": "Click",
         "target": [
             726,
@@ -27,8 +27,8 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/活动.png",
-            "jp/复刻活动.png"
+            "jp/event/活动.png",
+            "jp/event/复刻活动.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -47,7 +47,7 @@
         "threshold": 0.6,
         "timeout": 360000,
         "recognition": "TemplateMatch",
-        "template": "jp/剧情菜单.png",
+        "template": "jp/story/剧情菜单.png",
         "action": "Click",
         "target": [
             643,
@@ -63,7 +63,7 @@
     "日常活动登录奖励": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/活动登录奖励.png",
+        "template": "jp/event/活动登录奖励.png",
         "action": "Click",
         "target": [
             643,
@@ -80,7 +80,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡.png"
+            "jp/main_quest/主线扫荡.png"
         ],
         "action": "Click",
         "post_delay": 1500,
@@ -104,7 +104,7 @@
     "活动日常冒险一览": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/活动日常扫荡完成.png",
+        "template": "jp/event/活动日常扫荡完成.png",
         "action": "ClickKey",
         "key": 111,
         "next": [
@@ -176,7 +176,7 @@
     "击败一只活动BOSS": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/击败一只活动BOSS.png",
+        "template": "jp/event/击败一只活动BOSS.png",
         "action": "Click",
         "post_delay": 1500,
         "next": [
@@ -212,7 +212,7 @@
     "领取日常活动奖励": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/活动任务奖励.png",
+        "template": "jp/event/活动任务奖励.png",
         "action": "Click",
         "next": [
             "领取日常活动奖励2"
@@ -221,7 +221,7 @@
     "领取日常活动奖励2": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/领取活动任务奖励.png",
+        "template": "jp/event/领取活动任务奖励.png",
         "action": "Click",
         "next": [
             "领取日常活动奖励3"
@@ -230,7 +230,7 @@
     "领取日常活动奖励3": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/离开活动任务奖励.png",
+        "template": "jp/event/离开活动任务奖励.png",
         "action": "Click",
         "post_delay": 3000,
         "next": [

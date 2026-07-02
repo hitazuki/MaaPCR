@@ -31,8 +31,8 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/Scre.png",
-			"jp/ClashMeta.png"
+			"jp/system/Scre.png",
+			"jp/system/ClashMeta.png"
 		],
 		"action": "Click",
 		"post_delay": 1500,
@@ -44,7 +44,7 @@
 		"timeout": 180000,
 		"threshold": 0.7,
 		"recognition": "TemplateMatch",
-		"template": "jp/游戏图标.png",
+		"template": "jp/system/游戏图标.png",
 		"action": "Click",
 		"next": [
 			"开始加速"

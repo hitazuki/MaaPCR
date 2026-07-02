@@ -33,7 +33,7 @@
     "角色剧情页面": {
         "timeout": 300000,
         "recognition": "TemplateMatch",
-        "template": "jp/角色剧情.png",
+        "template": "jp/character/角色剧情.png",
         "action": "Click",
         "post_delay": 3000,
         "next": [
@@ -46,7 +46,7 @@
         "post_delay": 2004,
         "pre_delay": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/角色剧情_已完成.png",
+        "template": "jp/character/角色剧情_已完成.png",
         "action": "ClickKey",
         "key": 111,
         "next": [
@@ -98,7 +98,7 @@
         ],
         "recognition": "TemplateMatch",
         "template": [
-            "jp/角色剧情new.png"
+            "jp/character/角色剧情new.png"
         ],
         "action": "Click",
         "target_offset": [
@@ -115,7 +115,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/追加资料下载.png"
+            "jp/common/追加资料下载.png"
         ],
         "next": [
             "角色剧情无配音"
@@ -125,7 +125,7 @@
         "timeout": 300000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/无配音.png"
+            "jp/common/无配音.png"
         ],
         "action": "Click",
         "post_delay": 3500
@@ -134,8 +134,8 @@
         "timeout": 300000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/无配音2.png",
-            "jp/无配音.png"
+            "jp/common/无配音2.png",
+            "jp/common/无配音.png"
         ],
         "action": "Click"
     },
@@ -143,7 +143,7 @@
         "timeout": 3600000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/剧情菜单.png"
+            "jp/story/剧情菜单.png"
         ],
         "pre_delay": 2000,
         "action": "Click",
@@ -157,7 +157,7 @@
     "显示剧情速度": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/显示速度.png",
+        "template": "jp/story/显示速度.png",
         "next": [
             "跳过角色剧情日文"
         ]
@@ -211,7 +211,7 @@
         "timeout": 380000,
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/选择对话框.png",
+        "template": "jp/common/选择对话框.png",
         "action": "Click",
         "pre_delay": 2000,
         "post_delay": 1103
@@ -219,7 +219,7 @@
     "剧情下载发生错误": {
         "threshold": 0.8,
         "recognition": "TemplateMatch",
-        "template": "jp/下载发生错误.png",
+        "template": "jp/common/下载发生错误.png",
         "target": [
             801,
             500,

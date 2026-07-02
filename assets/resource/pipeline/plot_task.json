@@ -22,7 +22,7 @@
     "选择角色一键强化": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/角色全部强化.png",
+        "template": "jp/character/角色全部强化.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -55,7 +55,7 @@
     "选择对象自动强化": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/自动强化对象设定.png",
+        "template": "jp/character/自动强化对象设定.png",
         "action": "Click",
         "target": [
             390,
@@ -68,7 +68,7 @@
     "选择对象rank提升": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/自动强化对象设定.png",
+        "template": "jp/character/自动强化对象设定.png",
         "action": "Click",
         "target": [
             390,
@@ -81,7 +81,7 @@
     "从强化对象设定页面返回": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/OK.png",
+        "template": "jp/common/OK.png",
         "action": "Click",
         "next": [
             "一键强化主页面"
@@ -90,7 +90,7 @@
     "一键强化主页面": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/一键强化主页面.png",
+        "template": "jp/character/一键强化主页面.png",
         "next": [
             "一键强化自动选择"
         ]
@@ -98,7 +98,7 @@
     "一键强化自动选择": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/自动选择.png",
+        "template": "jp/character/自动选择.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -119,7 +119,7 @@
     "角色已全部强化完成": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/请选择角色.png",
+        "template": "jp/character/请选择角色.png",
         "next": [
             "角色强化重试",
             "判断是否为Rank提升"
@@ -133,7 +133,7 @@
     "一键强化自动选择_重试": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/自动选择.png",
+        "template": "jp/character/自动选择.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -154,7 +154,7 @@
     "角色已全部强化完成_终": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/请选择角色.png",
+        "template": "jp/character/请选择角色.png",
         "next": [
             "判断是否为Rank提升",
             "退出自动强化页面"
@@ -164,7 +164,7 @@
         "threshold": 0.9,
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/Rank提升.png",
+        "template": "jp/character/Rank提升.png",
         "roi": [
             24,
             474,
@@ -179,7 +179,7 @@
     "退出自动强化页面": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/取消.png",
+        "template": "jp/common/取消.png",
         "action": "Click",
         "next": [
             "识别返回主页并结束任务"
@@ -199,8 +199,8 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/强化确认.png",
-            "jp/Rank提升确认.png"
+            "jp/character/强化确认.png",
+            "jp/character/Rank提升确认.png"
         ],
         "target": [
             794,
@@ -213,8 +213,8 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/自动强化完成.png",
-            "jp/Rank提升完成.png"
+            "jp/character/自动强化完成.png",
+            "jp/character/Rank提升完成.png"
         ],
         "target": [
             654,
@@ -226,7 +226,7 @@
     "装备强化物品返还-点击OK2": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/OK2.png",
+        "template": "jp/common/OK2.png",
         "action": "Click",
         "post_delay": 1000
     }

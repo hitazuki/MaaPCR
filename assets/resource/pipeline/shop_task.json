@@ -14,7 +14,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店.png"
+            "jp/shop/商店.png"
         ],
         "action": "Click",
         "post_delay": 1000
@@ -23,7 +23,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店已购买.png"
+            "jp/shop/商店已购买.png"
         ],
         "action": "ClickKey",
         "key": 111
@@ -33,7 +33,7 @@
         "threshold": 0.6,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/已进入商店.png"
+            "jp/shop/已进入商店.png"
         ],
         "post_delay": 1000,
         "next": [
@@ -44,7 +44,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/一般商店.png"
+            "jp/shop/一般商店.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -66,7 +66,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/全部选择.png"
+            "jp/shop/全部选择.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -91,7 +91,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK.png"
+            "jp/common/OK.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -103,7 +103,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK.png"
+            "jp/common/OK.png"
         ],
         "action": "Click",
         "post_delay": 1000
@@ -112,7 +112,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店已购买.png"
+            "jp/shop/商店已购买.png"
         ],
         "action": "ClickKey",
         "post_delay": 1000,

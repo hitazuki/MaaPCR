@@ -12,7 +12,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店.png"
+            "jp/shop/商店.png"
         ],
         "action": "Click",
         "next": [
@@ -29,7 +29,7 @@
             40
         ],
         "recognition": "TemplateMatch",
-        "template": "jp/竞技场商店.png",
+        "template": "jp/arena/竞技场商店.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -124,7 +124,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/角色碎片一次购买.png"
+            "jp/shop/角色碎片一次购买.png"
         ],
         "target": [
             995,
@@ -139,7 +139,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK.png"
+            "jp/common/OK.png"
         ],
         "action": "Click",
         "next": [
@@ -150,7 +150,7 @@
         "timeout": 120000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/购买完成.png"
+            "jp/shop/购买完成.png"
         ],
         "action": "Click",
         "target": [
@@ -187,7 +187,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/用10立即更新.png"
+            "jp/shop/用10立即更新.png"
         ],
         "action": "Click",
         "next": [
@@ -199,7 +199,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/碎片重置确认.png"
+            "jp/shop/碎片重置确认.png"
         ],
         "action": "Click",
         "target": [
@@ -216,7 +216,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/碎片重置确认.png"
+            "jp/shop/碎片重置确认.png"
         ],
         "action": "Click",
         "target": [

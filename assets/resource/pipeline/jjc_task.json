@@ -11,7 +11,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/战斗jjc.png"
+            "jp/arena/战斗jjc.png"
         ],
         "post_delay": 3000,
         "rate_limit": 400,
@@ -26,7 +26,7 @@
         "timeout": 60000,
         "post_delay": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/竞技场已抵达主页.png"
+        "template": "jp/arena/竞技场已抵达主页.png"
     },
     "进入冒险页面": {
         "action": "Click",
@@ -42,7 +42,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/战斗jjc.png"
+            "jp/arena/战斗jjc.png"
         ],
         "pre_delay": 3000,
         "post_delay": 1000,
@@ -57,7 +57,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/已进入jjc.png"
+            "jp/arena/已进入jjc.png"
         ],
         "pre_delay": 3000,
         "post_delay": 2870,
@@ -85,7 +85,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc防御结果.png"
+            "jp/arena/jjc防御结果.png"
         ],
         "post_delay": 1000,
         "next": [
@@ -101,7 +101,7 @@
         "timeout": 120000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc战斗开始.png"
+            "jp/arena/jjc战斗开始.png"
         ],
         "action": "Click",
         "post_delay": 200,
@@ -113,7 +113,7 @@
         "timeout": 240000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc跳过.png"
+            "jp/arena/jjc跳过.png"
         ],
         "pre_delay": 300,
         "action": "Click",
@@ -143,7 +143,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc排名.png"
+            "jp/arena/jjc排名.png"
         ],
         "post_delay": 2510,
         "next": [
@@ -198,7 +198,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/公主jjc.png"
+            "jp/arena/公主jjc.png"
         ],
         "action": "Click",
         "post_delay": 3000,
@@ -252,7 +252,7 @@
         "timeout": 420000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc战斗开始.png"
+            "jp/arena/jjc战斗开始.png"
         ],
         "action": "Click",
         "next": [
@@ -263,7 +263,7 @@
         "timeout": 420000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc跳过.png"
+            "jp/arena/jjc跳过.png"
         ],
         "action": "Click",
         "pre_delay": 300,
@@ -288,13 +288,13 @@
     "结束公主jjc": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/jjc排名.png"
+        "template": "jp/arena/jjc排名.png"
     },
     "公主jjc有排名": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc排名.png"
+            "jp/arena/jjc排名.png"
         ],
         "post_delay": 3510,
         "next": [
@@ -335,7 +335,7 @@
     "jjc冷却中返回主页面": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/jjc冷却中.png"
+            "jp/arena/jjc冷却中.png"
         ],
         "action": "ClickKey",
         "key": 111,

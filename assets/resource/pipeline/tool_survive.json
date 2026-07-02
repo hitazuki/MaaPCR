@@ -88,7 +88,7 @@
 	"角色死亡立刻暂停":{
 		"timeout":6000000,
 		"recognition":"TemplateMatch",
-		"template":["jp/战斗页面菜单.png"],
+		"template":["jp/battle/战斗页面菜单.png"],
 		"action":"Click",
 		"pre_delay":10,
 		"post_delay":1000,

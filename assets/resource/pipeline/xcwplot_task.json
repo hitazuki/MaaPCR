@@ -13,7 +13,7 @@
 	"选中额外露娜塔": {
 		"timeout": 300000,
 		"recognition": "TemplateMatch",
-		"template": "jp/额外活动剧情.png",
+		"template": "jp/story/额外活动剧情.png",
 		"action": "Click",
 		"pre_delay": 3193,
 		"post_delay": 2143,
@@ -62,7 +62,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/露娜塔new.png"
+			"jp/tower/露娜塔new.png"
 		],
 		"post_delay": 1612,
 		"action": "Click",

@@ -20,7 +20,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店.png"
+            "jp/shop/商店.png"
         ],
         "action": "Click",
         "next": [
@@ -38,7 +38,7 @@
         ],
         "recognition": "TemplateMatch",
         "template": [
-            "jp/地下城商店.png"
+            "jp/shop/地下城商店.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -161,7 +161,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/角色碎片一次购买.png"
+            "jp/shop/角色碎片一次购买.png"
         ],
         "target": [
             995,
@@ -176,7 +176,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK.png"
+            "jp/common/OK.png"
         ],
         "action": "Click",
         "next": [
@@ -187,7 +187,7 @@
         "timeout": 120000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/购买完成.png"
+            "jp/shop/购买完成.png"
         ],
         "action": "Click",
         "target": [
@@ -223,7 +223,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/用10立即更新.png"
+            "jp/shop/用10立即更新.png"
         ],
         "action": "Click",
         "next": [
@@ -234,7 +234,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/碎片重置确认.png"
+            "jp/shop/碎片重置确认.png"
         ],
         "action": "Click",
         "target": [
@@ -251,7 +251,7 @@
         "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/碎片重置确认.png"
+            "jp/shop/碎片重置确认.png"
         ],
         "action": "Click",
         "target": [
@@ -301,7 +301,7 @@
     "PD刷新到50停止刷新": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/用50立即更新.png",
+        "template": "jp/shop/用50立即更新.png",
         "next": [
             "角色碎片回到主页"
         ]
@@ -315,7 +315,7 @@
     "PD刷新到100停止刷新": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/用100立即更新.png",
+        "template": "jp/shop/用100立即更新.png",
         "next": [
             "角色碎片回到主页"
         ]
@@ -329,7 +329,7 @@
     "PD刷新到200停止刷新": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/用200立即更新.png",
+        "template": "jp/shop/用200立即更新.png",
         "next": [
             "角色碎片回到主页"
         ]
@@ -343,7 +343,7 @@
     "PD刷新到500停止刷新": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/用500立即更新.png",
+        "template": "jp/shop/用500立即更新.png",
         "next": [
             "角色碎片回到主页"
         ]

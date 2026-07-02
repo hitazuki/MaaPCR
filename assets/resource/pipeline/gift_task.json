@@ -10,7 +10,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "green_mask": true,
-        "template": "jp/礼物.png",
+        "template": "jp/daily/礼物.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -21,7 +21,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/礼物全部领取.png"
+            "jp/daily/礼物全部领取.png"
         ],
         "action": "Click",
         "pre_delay": 1000,
@@ -47,7 +47,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/礼物持有上限.png"
+            "jp/daily/礼物持有上限.png"
         ],
         "action": "Click",
         "target": [

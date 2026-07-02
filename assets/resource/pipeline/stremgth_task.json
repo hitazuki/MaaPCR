@@ -8,7 +8,7 @@
 	},
 	"开始宝石买体力":{
 		"recognition":"TemplateMatch",
-		"template":["jp/购买体力.png"],
+		"template":["jp/shop/购买体力.png"],
 		"timeout":60000,
 		"action":"Click",
         "target":[427,46,0,0],
@@ -19,7 +19,7 @@
 	"体力恢复":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["jp/体力恢复.png"],
+		"template":["jp/stamina/体力恢复.png"],
 		"action":"Click",
         "target":[636,226,0,0],
 		"post_delay":1000,
@@ -44,7 +44,7 @@
 	"确定购买体力2":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["jp/确定购买体力.png"],
+		"template":["jp/stamina/确定购买体力.png"],
 		"action":"Click",
 		"next":[
 			"宝石购买体力恢复"
@@ -53,7 +53,7 @@
 	"宝石购买体力恢复":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["jp/宝石购买体力恢复.png"],
+		"template":["jp/stamina/宝石购买体力恢复.png"],
 		"action":"Click",
 		"target":[657,493,0,0],
 		"post_delay":1000

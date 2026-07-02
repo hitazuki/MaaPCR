@@ -11,7 +11,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/冒险目的地.png"
+			"jp/explore/冒险目的地.png"
 		],
 		"post_delay": 1500,
 		"next": [
@@ -53,9 +53,9 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险加速券已达到上限.png",
-			"jp/探险无法再缩短时间.png",
-			"jp/未持有加速券.png"
+			"jp/explore/探险加速券已达到上限.png",
+			"jp/explore/探险无法再缩短时间.png",
+			"jp/explore/未持有加速券.png"
 		],
 		"post_delay": 500,
 		"next": [
@@ -66,7 +66,7 @@
 		"pre_delay": 500,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险缩短时间.png"
+			"jp/explore/探险缩短时间.png"
 		],
 		"action": "Click",
 		"post_delay": 1000,
@@ -87,7 +87,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险加速券未设定.png"
+			"jp/explore/探险加速券未设定.png"
 		],
 		"post_delay": 1000,
 		"next": [
@@ -99,7 +99,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/关闭.png"
+			"jp/common/关闭.png"
 		],
 		"action": "Click",
 		"post_delay": 1000
@@ -107,7 +107,7 @@
 	"点击缩短时间确认": {
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/OK.png"
+			"jp/common/OK.png"
 		],
 		"action": "Click",
 		"post_delay": 2500,
@@ -119,7 +119,7 @@
 	"返回探险队伍一览界面判断": {
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险队伍一览.png"
+			"jp/explore/探险队伍一览.png"
 		],
 		"next": [
 			"[JumpBack]点击关闭",
@@ -130,7 +130,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险中的队伍状态确认.png"
+			"jp/explore/探险中的队伍状态确认.png"
 		],
 		"action": "Click",
 		"post_delay": 500,

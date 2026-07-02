@@ -10,7 +10,7 @@
 		"post_delay":1000,
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/公会小屋随机前往.png",
+		"template":"jp/guild/公会小屋随机前往.png",
 		"action":"Click",
 		"next":[
 			"公会随机外出确认"
@@ -19,7 +19,7 @@
 	"公会随机外出确认":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/随机外出确认.png",
+		"template":"jp/guild/随机外出确认.png",
 		"action":"Click",
 		"next":[
 			"公会Like"
@@ -28,7 +28,7 @@
 	"公会Like":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/Like.png",
+		"template":"jp/guild/Like.png",
 		"action":"Click",
 		"next":[
 			"已经Like",
@@ -38,7 +38,7 @@
 	"已经Like":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/已经Like.png",
+		"template":"jp/guild/已经Like.png",
 		"next":[
 			"公会小屋随机前往"
 		]
@@ -46,7 +46,7 @@
 	"获得Like奖励":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/获得Like奖励.png",
+		"template":"jp/guild/获得Like奖励.png",
 		"action":"Click",
 		"post_delay":2000,
 		"next":[

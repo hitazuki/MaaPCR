@@ -13,7 +13,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/支线活动.png"
+            "jp/event/支线活动.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -80,7 +80,7 @@
             500
         ],
         "recognition": "TemplateMatch",
-        "template": "jp/支线活动new.png",
+        "template": "jp/event/支线活动new.png",
         "action": "Click",
         "next": [
             "前往支线活动"
@@ -89,7 +89,7 @@
     "前往支线活动": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/前往支线活动.png"
+            "jp/event/前往支线活动.png"
         ],
         "action": "Click",
         "next": [
@@ -100,7 +100,7 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/资料下载.png"
+            "jp/common/资料下载.png"
         ],
         "action": "Click",
         "target": [
@@ -117,7 +117,7 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/已进入支线活动.png"
+            "jp/event/已进入支线活动.png"
         ],
         "post_delay": 2000,
         "next": [
@@ -173,7 +173,7 @@
         "timeout": 60000,
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/AUTO.png",
+        "template": "jp/event/AUTO.png",
         "action": "Click",
         "next": [
             "支线活动开始挑战"
@@ -182,7 +182,7 @@
     "支线活动开始挑战": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/支线活动进行挑战.png",
+        "template": "jp/event/支线活动进行挑战.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -192,7 +192,7 @@
     "支线活动编组": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/队伍编组.png",
+        "template": "jp/clan_battle/队伍编组.png",
         "action": "Click",
         "next": [
             "选择支线活动编组"
@@ -201,7 +201,7 @@
     "选择支线活动编组": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/我的队伍.png",
+        "template": "jp/clan_battle/我的队伍.png",
         "post_delay": 2000,
         "next": [
             "选择支线活动编组2"
@@ -222,7 +222,7 @@
     "支线活动下一步": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/支线活动下一步.png",
+        "template": "jp/event/支线活动下一步.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -259,7 +259,7 @@
     "活动特别内容解放": {
         "timeout": 1800000,
         "recognition": "TemplateMatch",
-        "template": "jp/活动特别内容解放.png",
+        "template": "jp/event/活动特别内容解放.png",
         "next": [
             "活动特别内容解放2"
         ]
@@ -302,8 +302,8 @@
         "timeout": 1800000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/活动冒险.png",
-            "jp/复刻活动.png"
+            "jp/event/活动冒险.png",
+            "jp/event/复刻活动.png"
         ],
         "action": "Click",
         "next": [
@@ -375,7 +375,7 @@
     "支线AUTO结束": {
         "timeout": 18000000,
         "recognition": "TemplateMatch",
-        "template": "jp/支线AUTO进行结束.png",
+        "template": "jp/event/支线AUTO进行结束.png",
         "action": "Click",
         "target": [
             640,
@@ -390,7 +390,7 @@
     },
     "支线AUTO停止下一步": {
         "recognition": "TemplateMatch",
-        "template": "jp/支线AUTO停止下一步.png",
+        "template": "jp/event/支线AUTO停止下一步.png",
         "action": "Click",
         "post_delay": 4000,
         "next": [
@@ -415,7 +415,7 @@
     },
     "支线活动解放商店": {
         "recognition": "TemplateMatch",
-        "template": "jp/支线活动解放内容.png",
+        "template": "jp/event/支线活动解放内容.png",
         "action": "Click",
         "target": [
             668,
@@ -427,7 +427,7 @@
     "支线BOSS位置": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/BOSS位置.png",
+        "template": "jp/event/BOSS位置.png",
         "action": "Click",
         "target_offset": [
             0,
@@ -442,7 +442,7 @@
     },
     "支线BOSS挑战": {
         "recognition": "TemplateMatch",
-        "template": "jp/支线BOSS挑战.png",
+        "template": "jp/event/支线BOSS挑战.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -465,7 +465,7 @@
         "timeout": 3600000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/支线活动剧情跳过.png"
+            "jp/event/支线活动剧情跳过.png"
         ],
         "pre_delay": 2600,
         "action": "Click",
@@ -492,7 +492,7 @@
         "timeout": 380000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/已击败支线BOSS.png"
+            "jp/event/已击败支线BOSS.png"
         ],
         "action": "Click",
         "target": [
@@ -530,7 +530,7 @@
         "timeout": 600000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/支线冒险页面.png"
+            "jp/event/支线冒险页面.png"
         ],
         "post_delay": 10000,
         "next": [
@@ -560,7 +560,7 @@
         "timeout": 600000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/支线冒险页面.png"
+            "jp/event/支线冒险页面.png"
         ],
         "next": [
             "开始支线活动冒险"

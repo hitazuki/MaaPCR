@@ -23,7 +23,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线冒险.png"
+            "jp/main_quest/主线冒险.png"
         ],
         "action": "Click",
         "next": [
@@ -34,7 +34,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡.png"
+            "jp/main_quest/主线扫荡.png"
         ],
         "action": "Click",
         "post_delay": 1500,
@@ -72,7 +72,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_体力不足.png"
+            "jp/main_quest/主线扫荡_体力不足.png"
         ],
         "post_delay": 2000,
         "target": [
@@ -87,7 +87,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_冒险体力不足.png"
+            "jp/main_quest/主线扫荡_冒险体力不足.png"
         ],
         "post_delay": 1000,
         "next": [
@@ -98,7 +98,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK.png"
+            "jp/common/OK.png"
         ],
         "action": "Click",
         "next": [
@@ -109,7 +109,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_挑战次数回复.png"
+            "jp/main_quest/主线扫荡_挑战次数回复.png"
         ],
         "next": [
             "扫荡不回复次数并继续",
@@ -120,7 +120,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/不回复并继续.png"
+            "jp/main_quest/不回复并继续.png"
         ],
         "action": "Click",
         "post_delay": 1500,
@@ -134,7 +134,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_体力不足.png"
+            "jp/main_quest/主线扫荡_体力不足.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -150,7 +150,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/取消_小.png"
+            "jp/common/取消_小.png"
         ],
         "action": "Click",
         "post_delay": 1500,
@@ -174,7 +174,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_进行挑战.png"
+            "jp/main_quest/主线扫荡_进行挑战.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -188,7 +188,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/跳过完了.png"
+            "jp/common/跳过完了.png"
         ],
         "action": "Click",
         "pre_delay": 300,
@@ -198,7 +198,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主线扫荡_跳过完了.png"
+            "jp/main_quest/主线扫荡_跳过完了.png"
         ],
         "action": "Click",
         "target": [
@@ -226,7 +226,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/勾选框_未勾选.png"
+            "jp/common/勾选框_未勾选.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -237,7 +237,7 @@
     "活动日常特别内容解放": {
         "timeout": 1800000,
         "recognition": "TemplateMatch",
-        "template": "jp/活动特别内容解放.png",
+        "template": "jp/event/活动特别内容解放.png",
         "next": [
             "点击OK2回到扫荡主页"
         ]
@@ -246,7 +246,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK2.png"
+            "jp/common/OK2.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -258,7 +258,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/公会战次数增加页面.png"
+            "jp/guild/公会战次数增加页面.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -274,7 +274,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/等级提升.png"
+            "jp/common/等级提升.png"
         ],
         "next": [
             "主线扫荡等级提升下一步"
@@ -284,7 +284,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/OK2.png"
+            "jp/common/OK2.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -298,7 +298,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/限定商店.png"
+            "jp/shop/限定商店.png"
         ],
         "post_delay": 2000,
         "next": [
@@ -308,7 +308,7 @@
     "限定商店2": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/取消.png"
+            "jp/common/取消.png"
         ],
         "action": "Click",
         "post_delay": 2500,
@@ -320,7 +320,7 @@
     "主线扫荡退出": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/取消.png"
+            "jp/common/取消.png"
         ],
         "action": "Click",
         "post_delay": 3000,

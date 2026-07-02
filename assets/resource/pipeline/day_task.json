@@ -10,7 +10,7 @@
 	},
 	"进入行程表": {
 		"recognition": "TemplateMatch",
-		"template": "jp/行程表.png",
+		"template": "jp/daily/行程表.png",
 		"action": "Click",
 		"post_delay": 3000
 	},
@@ -18,7 +18,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/行程表_一键执行.png"
+			"jp/daily/行程表_一键执行.png"
 		],
 		"action": "Click",
 		"next": [
@@ -30,7 +30,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/行程表_没有要扫荡的项目.png"
+			"jp/daily/行程表_没有要扫荡的项目.png"
 		],
 		"post_delay": 1000,
 		"next": [
@@ -52,7 +52,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/地下城失败.png"
+			"jp/relic/地下城失败.png"
 		],
 		"target": [
 			668,
@@ -68,7 +68,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/购买mana.png"
+			"jp/shop/购买mana.png"
 		],
 		"post_delay": 1000,
 		"next": [
@@ -100,7 +100,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/地下城扫荡.png"
+			"jp/relic/地下城扫荡.png"
 		],
 		"post_delay": 2000,
 		"target": [
@@ -125,7 +125,7 @@
 	"扫荡地下城下一步2": {
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/OK2.png"
+			"jp/common/OK2.png"
 		],
 		"timeout": 60000,
 		"target": [
@@ -141,7 +141,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/mana冒险.png"
+			"jp/main_quest/mana冒险.png"
 		],
 		"post_delay": 2000,
 		"target": [
@@ -166,7 +166,7 @@
 	"mana冒险下一步2": {
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/OK2.png"
+			"jp/common/OK2.png"
 		],
 		"timeout": 60000,
 		"target": [
@@ -182,7 +182,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/经验值冒险.png"
+			"jp/main_quest/经验值冒险.png"
 		],
 		"post_delay": 2000,
 		"target": [
@@ -208,7 +208,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/OK2.png"
+			"jp/common/OK2.png"
 		],
 		"target": [
 			661,
@@ -232,7 +232,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/公会点赞.png"
+			"jp/guild/公会点赞.png"
 		],
 		"target": [
 			647,
@@ -248,7 +248,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/行程表_领取奖励.png"
+			"jp/daily/行程表_领取奖励.png"
 		],
 		"target": [
 			647,

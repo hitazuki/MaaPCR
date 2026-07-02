@@ -11,7 +11,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/遗迹调查.png"
+            "jp/relic/遗迹调查.png"
         ],
         "action": "Click",
         "pre_delay": 3200,
@@ -75,7 +75,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/扫荡券确认.png"
+            "jp/main_quest/扫荡券确认.png"
         ],
         "action": "Click",
         "target": [
@@ -94,7 +94,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/确定要恢复吗.png"
+            "jp/common/确定要恢复吗.png"
         ],
         "action": "Click",
         "target": [
@@ -125,7 +125,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/调查扫荡结果.png"
+            "jp/relic/调查扫荡结果.png"
         ],
         "target": [
             672,
@@ -144,7 +144,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/遗迹扫荡完成.png"
+            "jp/relic/遗迹扫荡完成.png"
         ],
         "pre_delay": 500,
         "target": [
@@ -171,7 +171,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/限定商店.png"
+            "jp/shop/限定商店.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -190,7 +190,7 @@
         "threshold": 0.6,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/遗迹取消.png"
+            "jp/relic/遗迹取消.png"
         ],
         "action": "ClickKey",
         "key": 111,

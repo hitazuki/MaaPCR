@@ -25,8 +25,8 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/巡游.png",
-            "jp/巡游01.png"
+            "jp/cruise/巡游.png",
+            "jp/cruise/巡游01.png"
         ],
         "action": "Click",
         "next": [
@@ -36,7 +36,7 @@
     "巡游界面": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/已进入巡游.png",
+        "template": "jp/cruise/已进入巡游.png",
         "post_delay": 2000,
         "next": [
             "骰子次数判断",
@@ -56,8 +56,8 @@
         "rate_limit": 100,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/巡游吃料理.png",
-            "jp/吃料理2.png"
+            "jp/cruise/巡游吃料理.png",
+            "jp/cruise/吃料理2.png"
         ],
         "next": [
             "未持有料理",
@@ -71,7 +71,7 @@
         "timeout": 180000,
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/一回合只能吃一道料理.png",
+        "template": "jp/cruise/一回合只能吃一道料理.png",
         "next": [
             "掷骰子"
         ]
@@ -80,7 +80,7 @@
         "threshold": 0.9,
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/未持有料理.png",
+        "template": "jp/cruise/未持有料理.png",
         "next": [
             "掷骰子",
             "巡游事件"
@@ -90,7 +90,7 @@
         "threshold": 0.9,
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/料理选择界面.png",
+        "template": "jp/cruise/料理选择界面.png",
         "next": [
             "判断料理"
         ]
@@ -257,7 +257,7 @@
     "商店类料理无窗口确定食用": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认食用.png",
+        "template": "jp/common/确认食用.png",
         "action": "Click",
         "next": [
             "料理里程商店"
@@ -285,8 +285,8 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/料理获得道具.png",
-            "jp/料理获得宝物.png"
+            "jp/cruise/料理获得道具.png",
+            "jp/cruise/料理获得宝物.png"
         ],
         "target": [
             686,
@@ -303,7 +303,7 @@
     "活动料理食用": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认食用.png",
+        "template": "jp/common/确认食用.png",
         "action": "Click",
         "next": [
             "活动料理随机事件"
@@ -313,7 +313,7 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/巡游料理活动奖励.png"
+            "jp/cruise/巡游料理活动奖励.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -350,7 +350,7 @@
     "料理确认食用2": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认食用.png",
+        "template": "jp/common/确认食用.png",
         "action": "Click",
         "next": [
             "料理获得道具2"
@@ -360,8 +360,8 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/料理获得道具.png",
-            "jp/料理获得宝物.png"
+            "jp/cruise/料理获得道具.png",
+            "jp/cruise/料理获得宝物.png"
         ],
         "target": [
             686,
@@ -377,7 +377,7 @@
     "料理里程商店": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/里程商店.png",
+        "template": "jp/cruise/里程商店.png",
         "target": [
             1031,
             162,
@@ -393,7 +393,7 @@
     },
     "料理商店里程不足": {
         "recognition": "TemplateMatch",
-        "template": "jp/商店里程不足.png",
+        "template": "jp/shop/商店里程不足.png",
         "next": [
             "料理里程商店5"
         ]
@@ -454,7 +454,7 @@
     "料理确认食用无窗口": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认食用.png",
+        "template": "jp/common/确认食用.png",
         "action": "Click",
         "next": [
             "掷骰子"
@@ -463,7 +463,7 @@
     "料理确认食用": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认食用.png",
+        "template": "jp/common/确认食用.png",
         "action": "Click",
         "next": [
             "料理获得道具"
@@ -473,8 +473,8 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/料理获得道具.png",
-            "jp/料理获得宝物.png"
+            "jp/cruise/料理获得道具.png",
+            "jp/cruise/料理获得宝物.png"
         ],
         "target": [
             686,
@@ -509,8 +509,8 @@
         "threshold": 0.8,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/掷骰子.png",
-            "jp/3个骰子.png"
+            "jp/cruise/掷骰子.png",
+            "jp/cruise/3个骰子.png"
         ],
         "action": "Click",
         "next": [
@@ -522,7 +522,7 @@
         "timeout": 60000,
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/未持有骰子.png",
+        "template": "jp/cruise/未持有骰子.png",
         "target": [
             129,
             684,
@@ -568,7 +568,7 @@
     "巡游获得抽奖券": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游获得抽奖券.png",
+        "template": "jp/cruise/巡游获得抽奖券.png",
         "post_delay": 1000,
         "next": [
             "领取抽奖券"
@@ -580,7 +580,7 @@
     },
     "巡游获得奖励": {
         "recognition": "TemplateMatch",
-        "template": "jp/巡游活动奖励.png",
+        "template": "jp/cruise/巡游活动奖励.png",
         "action": "Click"
     },
     "巡游宝物获得": {
@@ -605,7 +605,7 @@
     },
     "巡游获得料理": {
         "recognition": "TemplateMatch",
-        "template": "jp/巡游获得料理.png",
+        "template": "jp/cruise/巡游获得料理.png",
         "post_delay": 5430,
         "next": [
             "巡游获得料理2"
@@ -624,7 +624,7 @@
     "巡游羁绊效果y": {
         "pre_delay": 2500,
         "recognition": "TemplateMatch",
-        "template": "jp/羁绊效果y.png",
+        "template": "jp/character/羁绊效果y.png",
         "target_offset": [
             -180,
             0,
@@ -638,8 +638,8 @@
         "timeout": 240000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/接水果.png",
-            "jp/接水果2.png"
+            "jp/cruise/接水果.png",
+            "jp/cruise/接水果2.png"
         ],
         "pre_delay": 1000,
         "action": "Click",
@@ -662,7 +662,7 @@
     "接水果宝箱": {
         "timeout": 10000,
         "recognition": "FeatureMatch",
-        "template": "jp/巡游游戏宝箱.png",
+        "template": "jp/cruise/巡游游戏宝箱.png",
         "action": "Click",
         "next": [
             "接水果游戏2"
@@ -680,7 +680,7 @@
     "接水果游戏3": {
         "timeout": 240000,
         "recognition": "TemplateMatch",
-        "template": "jp/接水果下一步.png",
+        "template": "jp/cruise/接水果下一步.png",
         "action": "Click",
         "target": [
             1136,
@@ -691,7 +691,7 @@
     },
     "巡游路口": {
         "recognition": "TemplateMatch",
-        "template": "jp/巡游路口.png",
+        "template": "jp/cruise/巡游路口.png",
         "target_offset": [
             0,
             100,
@@ -702,7 +702,7 @@
     },
     "巡游回合到达": {
         "recognition": "TemplateMatch",
-        "template": "jp/巡游回合到达.png",
+        "template": "jp/cruise/巡游回合到达.png",
         "target": [
             697,
             637,
@@ -753,7 +753,7 @@
     },
     "料理上限": {
         "recognition": "TemplateMatch",
-        "template": "jp/料理超过持有上限.png",
+        "template": "jp/cruise/料理超过持有上限.png",
         "action": "Click",
         "target": [
             654,
@@ -768,7 +768,7 @@
     },
     "料理已满": {
         "recognition": "TemplateMatch",
-        "template": "jp/料理已满.png",
+        "template": "jp/cruise/料理已满.png",
         "action": "Click",
         "post_delay": 1000,
         "target": [
@@ -834,7 +834,7 @@
     },
     "料理溢出": {
         "recognition": "TemplateMatch",
-        "template": "jp/料理溢出.png",
+        "template": "jp/cruise/料理溢出.png",
         "post_delay": 600,
         "next": [
             "料理已满"
@@ -843,8 +843,8 @@
     "里程商店": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/里程商店.png",
-            "jp/里程商店01.png"
+            "jp/cruise/里程商店.png",
+            "jp/cruise/里程商店01.png"
         ],
         "target": [
             1031,
@@ -863,7 +863,7 @@
     "商店里程不足": {
         "threshold": 0.8,
         "recognition": "TemplateMatch",
-        "template": "jp/商店里程不足.png",
+        "template": "jp/shop/商店里程不足.png",
         "next": [
             "里程商店5"
         ]
@@ -898,7 +898,7 @@
     "里程商店4": {
         "timeout": 120000,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游商店购买完成.png",
+        "template": "jp/cruise/巡游商店购买完成.png",
         "action": "Click",
         "target": [
             654,
@@ -923,7 +923,7 @@
     "里程商店购买完成": {
         "threshold": 0.9,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游商店购买完成.png",
+        "template": "jp/cruise/巡游商店购买完成.png",
         "action": "Click",
         "target": [
             654,
@@ -938,7 +938,7 @@
     },
     "里程转蛋": {
         "recognition": "TemplateMatch",
-        "template": "jp/稀有转蛋.png",
+        "template": "jp/cruise/稀有转蛋.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -961,7 +961,7 @@
     "巡游获得宝物": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游获得宝物.png",
+        "template": "jp/cruise/巡游获得宝物.png",
         "target": [
             607,
             637,
@@ -972,7 +972,7 @@
     },
     "巡游捷径": {
         "recognition": "TemplateMatch",
-        "template": "jp/巡游捷径.png",
+        "template": "jp/cruise/巡游捷径.png",
         "post_delay": 1000,
         "next": [
             "不走捷径"
@@ -981,7 +981,7 @@
     "不走捷径": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游捷径.png",
+        "template": "jp/cruise/巡游捷径.png",
         "action": "Click",
         "next": [
             "巡游离开捷径"
@@ -990,15 +990,15 @@
     "巡游离开捷径": {
         "timeout": 180000,
         "recognition": "TemplateMatch",
-        "template": "jp/巡游离开捷径.png",
+        "template": "jp/cruise/巡游离开捷径.png",
         "action": "Click"
     },
     "巡游骰子界面": {
         "threshold": 0.8,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/掷骰子.png",
-            "jp/3个骰子.png"
+            "jp/cruise/掷骰子.png",
+            "jp/cruise/3个骰子.png"
         ],
         "action": "DoNothing"
     }

@@ -25,7 +25,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/主线冒险.png"
+			"jp/main_quest/主线冒险.png"
 		],
 		"next": [
 			"进入露娜塔3"
@@ -35,7 +35,7 @@
 		"timeout": 4000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/露娜之塔.png"
+			"jp/tower/露娜之塔.png"
 		],
 		"action": "Click",
 		"next": [
@@ -47,7 +47,7 @@
 		"threshold": 0.9,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/露娜塔扫荡.png"
+			"jp/tower/露娜塔扫荡.png"
 		],
 		"action": "Click",
 		"next": [

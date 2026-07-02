@@ -23,7 +23,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险文字.png"
+			"jp/explore/探险文字.png"
 		],
 		"action": "Click",
 		"post_delay": 3000
@@ -32,7 +32,7 @@
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/冒险目的地.png"
+			"jp/explore/冒险目的地.png"
 		],
 		"next": [
 			"[JumpBack]进入探险事件new",
@@ -96,7 +96,7 @@
 	"概率事件": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/探险事件概率70.png",
+		"template": "jp/explore/探险事件概率70.png",
 		"next": [
 			"怪鸟来袭选项"
 		]
@@ -117,7 +117,7 @@
 	"探险门": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/探险门.png",
+		"template": "jp/explore/探险门.png",
 		"threshold": 0.6,
 		"post_delay": 1000,
 		"action": "Click",
@@ -129,7 +129,7 @@
 	"探险门前进": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/探险门前进.png",
+		"template": "jp/explore/探险门前进.png",
 		"action": "Click",
 		"post_delay": 6000,
 		"next": [
@@ -159,19 +159,19 @@
 	"探险门事件结束": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/探险全部返回.png"
+		"template": "jp/explore/探险全部返回.png"
 	},
 	"探险门获得装备": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
-		"template": "jp/探险门获得了.png",
+		"template": "jp/explore/探险门获得了.png",
 		"action": "Click"
 	},
 	"探险门失败": {
 		"timeout": 60000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险门失败.png"
+			"jp/explore/探险门失败.png"
 		],
 		"post_delay": 2000,
 		"next": [
@@ -203,7 +203,7 @@
 		"pre_delay": 1602,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/探险对话事件跳过.png"
+			"jp/explore/探险对话事件跳过.png"
 		],
 		"action": "Click",
 		"post_delay": 2505,

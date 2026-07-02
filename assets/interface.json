@@ -431,7 +431,7 @@
                     "pipeline_override": {
                         "骰子次数判断": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/掷骰子.png"
+                            "template": "jp/cruise/掷骰子.png"
                         }
                     }
                 },
@@ -440,7 +440,7 @@
                     "pipeline_override": {
                         "骰子次数判断": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/3个骰子.png"
+                            "template": "jp/cruise/3个骰子.png"
                         }
                     }
                 }
@@ -475,7 +475,7 @@
                     "pipeline_override": {
                         "怪鸟来袭选项": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/探险事件概率100.png"
+                            "template": "jp/explore/探险事件概率100.png"
                         }
                     }
                 },
@@ -484,7 +484,7 @@
                     "pipeline_override": {
                         "怪鸟来袭选项": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/探险事件概率70.png"
+                            "template": "jp/explore/探险事件概率70.png"
                         }
                     }
                 }
@@ -498,7 +498,7 @@
                     "pipeline_override": {
                         "确定游戏状态": {
                             "recognition": "TemplateMatch",
-                            "template": "jp/主页挂机.png",
+                            "template": "jp/system/主页挂机.png",
                             "action": "Click"
                         },
                         "当前游戏状态": {
@@ -1167,11 +1167,11 @@
                         "碎片刷新次数": {
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用10立即更新.png",
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用10立即更新.png",
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ],
                             "threshold": 0.9
                         },
@@ -1185,10 +1185,10 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1200,9 +1200,9 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1214,8 +1214,8 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1227,7 +1227,7 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用500立即更新.png"
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1238,7 +1238,7 @@
                         "碎片刷新次数": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
-                            "template": "jp/商店.png"
+                            "template": "jp/shop/商店.png"
                         }
                     }
                 }
@@ -1253,11 +1253,11 @@
                         "竞技场碎片刷新次数": {
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用10立即更新.png",
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用10立即更新.png",
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ],
                             "threshold": 0.9
                         },
@@ -1271,10 +1271,10 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1286,9 +1286,9 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1300,8 +1300,8 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1313,7 +1313,7 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用500立即更新.png"
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1324,7 +1324,7 @@
                         "竞技场碎片刷新次数": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
-                            "template": "jp/商店.png"
+                            "template": "jp/shop/商店.png"
                         }
                     }
                 }
@@ -1339,11 +1339,11 @@
                         "公主竞技场碎片刷新次数": {
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用10立即更新.png",
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用10立即更新.png",
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ],
                             "threshold": 0.9
                         },
@@ -1357,10 +1357,10 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用50立即更新.png",
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用50立即更新.png",
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1372,9 +1372,9 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用100立即更新.png",
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用100立即更新.png",
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1386,8 +1386,8 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用200立即更新.png",
-                                "jp/用500立即更新.png"
+                                "jp/shop/用200立即更新.png",
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1399,7 +1399,7 @@
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
                             "template": [
-                                "jp/用500立即更新.png"
+                                "jp/shop/用500立即更新.png"
                             ]
                         }
                     }
@@ -1410,7 +1410,7 @@
                         "公主竞技场碎片刷新次数": {
                             "threshold": 0.9,
                             "recognition": "TemplateMatch",
-                            "template": "jp/商店.png"
+                            "template": "jp/shop/商店.png"
                         }
                     }
                 }
@@ -1780,8 +1780,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成魔法防御贯通.png",
-                                "value": "jp/炼成紫色_3.png"
+                                "type": "jp/ex_alchemy/炼成魔法防御贯通.png",
+                                "value": "jp/ex_alchemy/炼成紫色_3.png"
                             }
                         }
                     }
@@ -1793,8 +1793,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成魔法防御贯通.png",
-                                "value": "jp/炼成紫色_5.png"
+                                "type": "jp/ex_alchemy/炼成魔法防御贯通.png",
+                                "value": "jp/ex_alchemy/炼成紫色_5.png"
                             }
                         }
                     }
@@ -1806,8 +1806,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成物理防御贯通.png",
-                                "value": "jp/炼成紫色_3.png"
+                                "type": "jp/ex_alchemy/炼成物理防御贯通.png",
+                                "value": "jp/ex_alchemy/炼成紫色_3.png"
                             }
                         }
                     }
@@ -1819,8 +1819,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成物理防御贯通.png",
-                                "value": "jp/炼成紫色_5.png"
+                                "type": "jp/ex_alchemy/炼成物理防御贯通.png",
+                                "value": "jp/ex_alchemy/炼成紫色_5.png"
                             }
                         }
                     }
@@ -1832,8 +1832,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成HP.png",
-                                "value": "jp/炼成紫色_5pc.png"
+                                "type": "jp/ex_alchemy/炼成HP.png",
+                                "value": "jp/ex_alchemy/炼成紫色_5pc.png"
                             }
                         }
                     }
@@ -1845,8 +1845,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成HP.png",
-                                "value": "jp/炼成紫色_1-25pc.png"
+                                "type": "jp/ex_alchemy/炼成HP.png",
+                                "value": "jp/ex_alchemy/炼成紫色_1-25pc.png"
                             }
                         }
                     }
@@ -1858,8 +1858,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成TP上升.png",
-                                "value": "jp/炼成紫色_3.png"
+                                "type": "jp/ex_alchemy/炼成TP上升.png",
+                                "value": "jp/ex_alchemy/炼成紫色_3.png"
                             }
                         }
                     }
@@ -1871,8 +1871,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成物理攻击力.png",
-                                "value": "jp/炼成紫色_2pc.png"
+                                "type": "jp/ex_alchemy/炼成物理攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_2pc.png"
                             }
                         }
                     }
@@ -1884,8 +1884,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成物理攻击力.png",
-                                "value": "jp/炼成紫色_2-5pc.png"
+                                "type": "jp/ex_alchemy/炼成物理攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_2-5pc.png"
                             }
                         }
                     }
@@ -1897,8 +1897,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成物理攻击力.png",
-                                "value": "jp/炼成紫色_4pc.png"
+                                "type": "jp/ex_alchemy/炼成物理攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_4pc.png"
                             }
                         }
                     }
@@ -1910,8 +1910,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成魔法攻击力.png",
-                                "value": "jp/炼成紫色_2pc.png"
+                                "type": "jp/ex_alchemy/炼成魔法攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_2pc.png"
                             }
                         }
                     }
@@ -1923,8 +1923,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成魔法攻击力.png",
-                                "value": "jp/炼成紫色_2-5pc.png"
+                                "type": "jp/ex_alchemy/炼成魔法攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_2-5pc.png"
                             }
                         }
                     }
@@ -1936,8 +1936,8 @@
                             "action": "Custom",
                             "custom_action": "SetTermTemplates",
                             "custom_action_param": {
-                                "type": "jp/炼成魔法攻击力.png",
-                                "value": "jp/炼成紫色_4pc.png"
+                                "type": "jp/ex_alchemy/炼成魔法攻击力.png",
+                                "value": "jp/ex_alchemy/炼成紫色_4pc.png"
                             }
                         }
                     }

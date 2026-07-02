@@ -9,13 +9,13 @@
 	"公会点赞确认":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/公会点赞确定.png",
+		"template":"jp/guild/公会点赞确定.png",
 		"action":"Click",
 		"target":[632,500,0,0]
 	},
 	"进入公会乞讨":{
 		"recognition":"TemplateMatch",
-		"template":"jp/公会.png",
+		"template":"jp/guild/公会.png",
 		"action":"Click",
 		"post_delay":4000,
 		"next":[
@@ -26,7 +26,7 @@
 	"开始乞讨":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/装备请求.png",
+		"template":"jp/guild/装备请求.png",
 		"action":"Click",
 		"next":[
 			"开始乞讨2"

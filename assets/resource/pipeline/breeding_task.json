@@ -135,7 +135,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/喜爱角色.png"
+            "jp/character/喜爱角色.png"
         ],
         "next": [
             "没有可强化的部分",
@@ -146,7 +146,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/没有可强化的部分.png"
+            "jp/character/没有可强化的部分.png"
         ],
         "action": "Click",
         "target": [
@@ -180,7 +180,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/养成强化确认.png"
+            "jp/character/养成强化确认.png"
         ],
         "action": "Click",
         "target": [
@@ -201,7 +201,7 @@
     "原矿消耗确认": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/原矿消耗.png"
+            "jp/character/原矿消耗.png"
         ],
         "action": "Click",
         "target": [
@@ -215,7 +215,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/建议强化清单.png"
+            "jp/character/建议强化清单.png"
         ],
         "pre_delay": 400,
         "action": "Click",
@@ -234,7 +234,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/养成关卡界面.png"
+            "jp/character/养成关卡界面.png"
         ],
         "next": [
             "判断关卡是否已攻略"
@@ -248,7 +248,7 @@
     "使用1张扫荡券": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/使用1张扫荡券.png"
+            "jp/main_quest/使用1张扫荡券.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -290,7 +290,7 @@
     "剧情解放": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/剧情解放.png"
+            "jp/story/剧情解放.png"
         ],
         "next": [
             "剧情解放2"
@@ -320,7 +320,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/强化装备.png"
+            "jp/character/强化装备.png"
         ],
         "pre_delay": 400,
         "action": "Click",

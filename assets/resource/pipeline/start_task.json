@@ -56,8 +56,8 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/资料下载.png",
-            "jp/下载资源.png"
+            "jp/common/资料下载.png",
+            "jp/common/下载资源.png"
         ],
         "action": "Click",
         "target": [
@@ -101,7 +101,7 @@
         "post_delay": 1000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/跳过.png"
+            "jp/common/跳过.png"
         ],
         "action": "Click",
         "next": [
@@ -112,7 +112,7 @@
         "timeout": 240000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/游戏公告.png"
+            "jp/common/游戏公告.png"
         ],
         "action": "Click",
         "target": [
@@ -135,7 +135,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店.png"
+            "jp/shop/商店.png"
         ],
         "post_delay": 6000,
         "next": [
@@ -147,7 +147,7 @@
     "再次确认是否到达主页": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/商店.png"
+            "jp/shop/商店.png"
         ]
     },
     "新手冲刺": {
@@ -171,7 +171,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/结束游戏确认.png"
+            "jp/system/结束游戏确认.png"
         ],
         "action": "Click",
         "target": [
@@ -190,7 +190,7 @@
         "post_delay": 2000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/公告.png"
+            "jp/common/公告.png"
         ],
         "next": [
             "公告"
@@ -217,7 +217,7 @@
     "主界面": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/确认主界面.png",
+        "template": "jp/common/确认主界面.png",
         "pre_delay": 1000,
         "action": "DoNothing",
         "pre_wait_freezes": 3293
@@ -226,7 +226,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/战队竞赛最终日.png"
+            "jp/clan_battle/战队竞赛最终日.png"
         ],
         "next": [
             "战队竞赛最终日离开"
@@ -236,7 +236,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/战队竞赛最终日离开.png"
+            "jp/clan_battle/战队竞赛最终日离开.png"
         ],
         "action": "Click",
         "next": [

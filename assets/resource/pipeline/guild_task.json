@@ -10,7 +10,7 @@
     "进入公会":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/公会.png",
+		"template":"jp/guild/公会.png",
 		"action":"Click",
         "next":[
            "已处于公会页面"
@@ -19,7 +19,7 @@
     "已处于公会页面":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/公会.png",
+		"template":"jp/guild/公会.png",
         "next":[
             "会战点赞确认",
             "前往战队竞赛"
@@ -28,7 +28,7 @@
     "会战点赞确认":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/公会点赞确定.png",
+		"template":"jp/guild/公会点赞确定.png",
 		"action":"Click",
 		"target":[632,500,0,0],
         "next":[
@@ -38,7 +38,7 @@
     "前往战队竞赛":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/前往战队竞赛.png",
+		"template":"jp/clan_battle/前往战队竞赛.png",
         "action":"Click",
         "next":[
             "战队竞赛开始",
@@ -49,7 +49,7 @@
     "战队竞赛开始":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/战队竞赛开始.png",
+		"template":"jp/clan_battle/战队竞赛开始.png",
         "action":"Click",
         "target":[650,644,0,0],
         "post_delay":3000,
@@ -61,7 +61,7 @@
     "会战确认奖励":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/会战确认奖励.png",
+		"template":"jp/clan_battle/会战确认奖励.png",
         "action":"Click",
         "target":[632,640,0,0],
         "next":[
@@ -71,7 +71,7 @@
     "确定处于会战BOSS页面":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/战队竞赛.png",
+		"template":"jp/clan_battle/战队竞赛.png",
         "post_delay":3000,
         "next":[
             "挑战的第一只BOSS"
@@ -85,7 +85,7 @@
     "开始挑战会战BOSS":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/支线活动进行挑战.png",
+		"template":"jp/event/支线活动进行挑战.png",
 		"action":"Click",
         "next":[
             "第一只队伍编组"
@@ -94,7 +94,7 @@
     "第一只队伍编组":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/队伍编组.png",
+		"template":"jp/clan_battle/队伍编组.png",
 		"action":"Click",
         "next":[
             "选择第一只队伍编组"
@@ -103,7 +103,7 @@
      "选择第一只队伍编组":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/我的队伍.png",
+		"template":"jp/clan_battle/我的队伍.png",
         "post_delay":2000,
         "next":[
             "选择第一只队伍编组2"
@@ -124,7 +124,7 @@
     "工会战战斗开始1":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/工会战战斗开始.png",
+		"template":"jp/clan_battle/工会战战斗开始.png",
 		"action":"Click",
         "next":[
 
@@ -133,7 +133,7 @@
     "会战挑战奖励":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/会战挑战奖励.png",
+		"template":"jp/clan_battle/会战挑战奖励.png",
 		"action":"Click",
         "next":[
             "会战下一步"
@@ -142,7 +142,7 @@
     "会战下一步":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/会战下一步.png",
+		"template":"jp/clan_battle/会战下一步.png",
 		"action":"Click",
         "next":[
             "会战下一步确认奖励"
@@ -151,7 +151,7 @@
     "会战下一步确认奖励":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/会战确认奖励.png",
+		"template":"jp/clan_battle/会战确认奖励.png",
         "action":"Click",
         "target":[632,640,0,0],
         "post_delay":4000,
@@ -162,7 +162,7 @@
     "会战是否有时间保留":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"jp/会战时间保留.png",
+		"template":"jp/clan_battle/会战时间保留.png",
         "action":"Click",
         "target":[661,493,0,0]
     }

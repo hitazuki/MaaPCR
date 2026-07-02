@@ -22,7 +22,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险文字.png"
+            "jp/explore/探险文字.png"
         ],
         "action": "Click",
         "post_delay": 3000,
@@ -41,7 +41,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险已有返回的队伍.png"
+            "jp/explore/探险已有返回的队伍.png"
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -76,7 +76,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/跳过完了.png"
+            "jp/common/跳过完了.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -88,7 +88,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险所持上限.png"
+            "jp/explore/探险所持上限.png"
         ],
         "action": "Click",
         "target": [
@@ -104,7 +104,7 @@
         "timeout": 180000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险再次出发.png"
+            "jp/explore/探险再次出发.png"
         ],
         "action": "Click",
         "post_delay": 2500,
@@ -116,7 +116,7 @@
     "探险再次出发2": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险出发.png"
+            "jp/explore/探险出发.png"
         ],
         "action": "Click",
         "post_delay": 3000,
@@ -128,7 +128,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/周回追加完了.png"
+            "jp/main_quest/周回追加完了.png"
         ],
         "action": "Click",
         "target": [
@@ -145,7 +145,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险回忆事件.png"
+            "jp/explore/探险回忆事件.png"
         ],
         "action": "Click",
         "post_delay": 6000,
@@ -189,7 +189,7 @@
     "探险离开": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/关闭.png"
+            "jp/common/关闭.png"
         ],
         "action": "Click",
         "post_delay": 1000,
@@ -201,7 +201,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险全部返回.png"
+            "jp/explore/探险全部返回.png"
         ],
         "action": "Click",
         "target": [
@@ -218,7 +218,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/探险没有已返回的队伍.png"
+            "jp/explore/探险没有已返回的队伍.png"
         ],
         "next": [
             "识别返回主页并结束任务"
@@ -227,7 +227,7 @@
     "识别返回主页并结束任务": {
         "recognition": "TemplateMatch",
         "template": [
-            "jp/主页.png"
+            "jp/system/主页.png"
         ],
         "action": "Click",
         "post_delay": 1000,

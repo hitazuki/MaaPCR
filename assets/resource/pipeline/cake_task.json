@@ -114,7 +114,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/羁绊剧情.png"
+                    "jp/character/羁绊剧情.png"
                 ]
             }
         },
@@ -182,7 +182,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/羁绊等级max.png"
+                    "jp/character/羁绊等级max.png"
                 ]
             }
         },
@@ -246,7 +246,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/羁绊剧情跳过.png"
+                    "jp/character/羁绊剧情跳过.png"
                 ]
             }
         },
@@ -266,7 +266,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/羁绊剧情离开.png"
+                    "jp/character/羁绊剧情离开.png"
                 ]
             }
         },
@@ -350,7 +350,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/OK.png"
+                    "jp/common/OK.png"
                 ]
             }
         },
@@ -377,7 +377,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/演出确认.png"
+                    "jp/character/演出确认.png"
                 ],
                 "threshold": 0.8
             }
@@ -407,8 +407,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/角色未收藏.png",
-                    "jp/角色已收藏.png"
+                    "jp/character/角色未收藏.png",
+                    "jp/character/角色已收藏.png"
                 ],
                 "roi": [
                     300,
@@ -440,8 +440,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/角色未收藏.png",
-                    "jp/角色已收藏.png"
+                    "jp/character/角色未收藏.png",
+                    "jp/character/角色已收藏.png"
                 ],
                 "roi": [
                     700,
@@ -473,8 +473,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/角色未收藏.png",
-                    "jp/角色已收藏.png"
+                    "jp/character/角色未收藏.png",
+                    "jp/character/角色已收藏.png"
                 ],
                 "roi": [
                     1100,
@@ -527,7 +527,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/OK.png"
+                    "jp/common/OK.png"
                 ]
             }
         },

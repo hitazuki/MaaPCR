@@ -21,8 +21,8 @@
 		"timeout": 300000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/跳过动画.png",
-			"jp/跳过动画2.png"
+			"jp/common/跳过动画.png",
+			"jp/common/跳过动画2.png"
 		],
 		"action": "Click",
 		"target": [
@@ -34,7 +34,7 @@
 		"timeout": 300000,
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/主线剧情.png"
+			"jp/main_quest/主线剧情.png"
 		],
 		"action": "Click",
 		"post_delay": 1500,
@@ -53,7 +53,7 @@
 		],
 		"recognition": "TemplateMatch",
 		"template": [
-			"jp/角色剧情new.png"
+			"jp/character/角色剧情new.png"
 		],
 		"post_delay": 1000,
 		"action": "Click",

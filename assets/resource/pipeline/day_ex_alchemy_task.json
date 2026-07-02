@@ -9,7 +9,7 @@
 	"进入究极炼成":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/究极炼成.png",
+		"template":"jp/ex_alchemy/究极炼成.png",
 		"action":"Click",
 		"post_delay":6000,
 		"next":[
@@ -20,7 +20,7 @@
 	"识别究极炼成叹号":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["jp/究极炼成叹号.png","jp/究极炼成叹号2.png"],
+		"template":["jp/ex_alchemy/究极炼成叹号.png","jp/ex_alchemy/究极炼成叹号2.png"],
 		"action":"Click",
 		"next":[
 			"点击究极炼成叹号"
@@ -29,7 +29,7 @@
 	"点击究极炼成叹号":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/跳过.png",
+		"template":"jp/common/跳过.png",
 		"action":"Click",
 		"post_delay":1500,
 		"next":[
@@ -46,7 +46,7 @@
 	"究极炼成获得":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"jp/探险门获得了.png",
+		"template":"jp/explore/探险门获得了.png",
 		"action":"Click",
 		"post_delay":2000,
 		"next":[

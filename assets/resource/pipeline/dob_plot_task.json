@@ -22,7 +22,7 @@
     "开始生日剧情": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/额外活动剧情.png",
+        "template": "jp/story/额外活动剧情.png",
         "action": "Click",
         "post_delay": 1500,
         "next": [
@@ -48,7 +48,7 @@
     },
     "进入生日剧情": {
         "recognition": "TemplateMatch",
-        "template": "jp/生日剧情.png",
+        "template": "jp/character/生日剧情.png",
         "threshold": 0.9,
         "action": "Click",
         "post_delay": 1500,
@@ -79,7 +79,7 @@
         ],
         "recognition": "TemplateMatch",
         "template": [
-            "jp/角色剧情new.png"
+            "jp/character/角色剧情new.png"
         ],
         "action": "Click",
         "target_offset": [
@@ -103,7 +103,7 @@
             100
         ],
         "template": [
-            "jp/生日剧情列表.png"
+            "jp/character/生日剧情列表.png"
         ],
         "next": [
             "选择new生日剧情",
@@ -128,7 +128,7 @@
         ],
         "recognition": "TemplateMatch",
         "template": [
-            "jp/角色剧情new.png"
+            "jp/character/角色剧情new.png"
         ],
         "action": "Click",
         "target_offset": [
@@ -146,7 +146,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/追加资料下载_无配音.png"
+            "jp/common/追加资料下载_无配音.png"
         ],
         "action": "Click",
         "target": [
@@ -159,7 +159,7 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
-            "jp/生日剧情跳过.png"
+            "jp/character/生日剧情跳过.png"
         ],
         "action": "Click",
         "next": [
@@ -177,25 +177,4 @@
         "action": "Click",
         "post_delay": 2110
     }
-    /*
-    //暂时没用到，先注释掉
-    "生日获得道具": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/获得道具.png",
-        "next": [
-            "生日获得道具2"
-        ]
-    },
-    "生日获得道具2": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/关闭.png"
-        ],
-        "action": "Click",
-        "next": [
-            "判断生日剧情列表"
-        ]
-    }
-    */
 }
