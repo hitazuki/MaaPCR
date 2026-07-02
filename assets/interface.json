@@ -126,6 +126,7 @@
             "name": "黎明界(基础框架)",
             "entry": "黎明界",
             "option": [
+                "黎明界目标公会",
                 "黎明界失败策略",
                 "黎明界商店策略"
             ]
@@ -234,6 +235,123 @@
         */
     ],
     "option": {
+        "黎明界目标公会": {
+            "cases": [
+                {
+                    "name": "美食殿",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_gourmet.png"
+                        }
+                    }
+                },
+                {
+                    "name": "トゥインクルウィッシュ",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_twinkle_wish.png"
+                        }
+                    }
+                },
+                {
+                    "name": "サレンディア救護院",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_salendia.png"
+                        }
+                    }
+                },
+                {
+                    "name": "王宮騎士団",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_nightmare.png"
+                        }
+                    }
+                },
+                {
+                    "name": "ラビリンス",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_labyrinth.png"
+                        }
+                    }
+                },
+                {
+                    "name": "カルミナ",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_carmina.png"
+                        }
+                    }
+                },
+                {
+                    "name": "悪魔偽王国軍",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_diabolos.png"
+                        }
+                    }
+                },
+                {
+                    "name": "牧場",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_elizabeth_park.png"
+                        }
+                    }
+                },
+                {
+                    "name": "メルクリウス財団",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_mercurius.png"
+                        }
+                    }
+                },
+                {
+                    "name": "トワイライトキャラバン",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_twilight_caravan.png"
+                        }
+                    }
+                },
+                {
+                    "name": "リトルリリカル",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_little_lyrical.png"
+                        }
+                    }
+                },
+                {
+                    "name": "自警団",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_caon.png"
+                        }
+                    }
+                },
+                {
+                    "name": "フォレスティエ",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_forestier.png"
+                        }
+                    }
+                },
+                {
+                    "name": "ルーセント学院",
+                    "pipeline_override": {
+                        "黎明界_选择目标公会": {
+                            "template": "jp/limingjie/guild/guild_lucent.png"
+                        }
+                    }
+                }
+            ],
+            "type": "select"
+        },
         "黎明界失败策略": {
             "cases": [
                 {

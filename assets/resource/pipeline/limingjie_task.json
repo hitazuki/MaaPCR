@@ -39,7 +39,9 @@
         "rate_limit": 500,
         "next": [
             "黎明界_标题页恢复",
+            "黎明界_出发Bonus关闭",
             "黎明界_通用确认",
+            "黎明界_角色加入关闭",
             "黎明界_角色奖励选择",
             "黎明界_道具奖励选择",
             "黎明界_商店处理",
@@ -57,6 +59,7 @@
             "黎明界_RESULT继续",
             "黎明界_结算奖励关闭",
             "黎明界_入口待补充",
+            "黎明界_角色特写兜底继续",
             "黎明界_全局状态分流"
         ]
     },
@@ -74,16 +77,87 @@
             "黎明界_全局状态分流"
         ]
     },
+    "黎明界_角色特写继续": {
+        "pre_delay": 2500,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            360
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写兜底继续": {
+        "timeout": 1500,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/character_cutin_nameplate_edge.png",
+        "roi": [
+            960,
+            480,
+            320,
+            220
+        ],
+        "threshold": 0.55,
+        "action": "Click",
+        "target": [
+            640,
+            360
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_全局状态分流"
+        ],
+        "on_error": [
+            "黎明界_角色特写兜底点击"
+        ]
+    },
+    "黎明界_角色特写兜底点击": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            360
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_出发Bonus关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/departure_bonus_close_button.png",
+        "roi": [
+            480,
+            585,
+            320,
+            105
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
     "黎明界_通用确认": {
         "timeout": 10000,
-        "recognition": "OCR",
-        "expected": [
-            "OK",
-            "閉じる",
-            "关闭",
-            "確定",
-            "确定"
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/OK.png",
+            "jp/common/OK2.png",
+            "jp/common/OK3.png"
         ],
+        "roi": [
+            450,
+            420,
+            420,
+            260
+        ],
+        "threshold": 0.8,
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -117,12 +191,180 @@
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/guild_select_title.png",
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向右扫描1"
+        ]
+    },
+    "黎明界_选择目标公会": {
+        "timeout": 3000,
+        "threshold": 0.85,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/guild/guild_gourmet.png",
+        "roi": [
+            0,
+            170,
+            1280,
+            430
+        ],
+        "action": "Click",
+        "target_offset": [
+            0,
+            96
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_同行公会确认出发",
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_同行公会向右扫描1": {
+        "action": "Swipe",
+        "begin": [
+            940,
+            620
+        ],
+        "end": [
+            230,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向右扫描2"
+        ]
+    },
+    "黎明界_同行公会向右扫描2": {
+        "action": "Swipe",
+        "begin": [
+            940,
+            620
+        ],
+        "end": [
+            230,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向右扫描3"
+        ]
+    },
+    "黎明界_同行公会向右扫描3": {
+        "action": "Swipe",
+        "begin": [
+            940,
+            620
+        ],
+        "end": [
+            230,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向右扫描4"
+        ]
+    },
+    "黎明界_同行公会向右扫描4": {
+        "action": "Swipe",
+        "begin": [
+            940,
+            620
+        ],
+        "end": [
+            230,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向左扫描1"
+        ]
+    },
+    "黎明界_同行公会向左扫描1": {
+        "action": "Swipe",
+        "begin": [
+            230,
+            620
+        ],
+        "end": [
+            940,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向左扫描2"
+        ]
+    },
+    "黎明界_同行公会向左扫描2": {
+        "action": "Swipe",
+        "begin": [
+            230,
+            620
+        ],
+        "end": [
+            940,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向左扫描3"
+        ]
+    },
+    "黎明界_同行公会向左扫描3": {
+        "action": "Swipe",
+        "begin": [
+            230,
+            620
+        ],
+        "end": [
+            940,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_同行公会向左扫描4"
+        ]
+    },
+    "黎明界_同行公会向左扫描4": {
+        "action": "Swipe",
+        "begin": [
+            230,
+            620
+        ],
+        "end": [
+            940,
+            620
+        ],
+        "duration": 500,
+        "post_delay": 1000,
+        "next": [
+            "黎明界_选择目标公会",
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_同行公会确认出发": {
+        "timeout": 30000,
+        "threshold": 0.85,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/guild_confirm_depart_button.png",
         "action": "Click",
         "target": [
-            360,
-            580
+            940,
+            632
         ],
-        "post_delay": 2000,
+        "post_delay": 3000,
         "next": [
             "黎明界_全局状态分流"
         ]
@@ -130,7 +372,14 @@
     "黎明界_初始角色选择": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_select_title.png",
+        "template": "jp/limingjie/character_select_progress.png",
+        "roi": [
+            990,
+            70,
+            270,
+            70
+        ],
+        "threshold": 0.9,
         "action": "DoNothing",
         "next": [
             "黎明界_初始角色默认选择1"
@@ -179,6 +428,7 @@
         ],
         "post_delay": 2000,
         "next": [
+            "黎明界_角色特写继续",
             "黎明界_全局状态分流"
         ]
     },
@@ -187,11 +437,29 @@
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_area_badge.png",
         "next": [
+            "黎明界_地图移动确认OK",
             "黎明界_地图选择BOSS",
             "黎明界_地图选择NORMAL",
             "黎明界_地图选择EVENT",
             "黎明界_地图选择SHOP",
             "黎明界_地图节点待补充模板"
+        ]
+    },
+    "黎明界_地图移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "黎明界_全局状态分流"
         ]
     },
     "黎明界_地图选择BOSS": {
@@ -316,6 +584,23 @@
     },
     "黎明界_失败后停止": {
         "action": "StopTask"
+    },
+    "黎明界_角色加入关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/character_join_close_button.png",
+        "roi": [
+            480,
+            525,
+            320,
+            105
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
     },
     "黎明界_角色奖励选择": {
         "timeout": 60000,
