@@ -27,9 +27,7 @@
         "action": "Click",
         "target": [
             1155,
-            540,
-            0,
-            0
+            540
         ],
         "post_delay": 3000,
         "next": [
@@ -108,9 +106,7 @@
         "action": "Click",
         "target": [
             784,
-            400,
-            0,
-            0
+            400
         ],
         "post_delay": 3000,
         "next": [
@@ -124,9 +120,7 @@
         "action": "Click",
         "target": [
             360,
-            580,
-            0,
-            0
+            580
         ],
         "post_delay": 2000,
         "next": [
@@ -146,9 +140,7 @@
         "action": "Click",
         "target": [
             130,
-            245,
-            0,
-            0
+            245
         ],
         "post_delay": 300,
         "next": [
@@ -159,9 +151,7 @@
         "action": "Click",
         "target": [
             288,
-            245,
-            0,
-            0
+            245
         ],
         "post_delay": 300,
         "next": [
@@ -172,9 +162,7 @@
         "action": "Click",
         "target": [
             445,
-            245,
-            0,
-            0
+            245
         ],
         "post_delay": 300,
         "next": [
@@ -187,9 +175,7 @@
         "action": "Click",
         "target": [
             1090,
-            632,
-            0,
-            0
+            632
         ],
         "post_delay": 2000,
         "next": [
@@ -272,9 +258,7 @@
         "action": "Click",
         "target": [
             1080,
-            610,
-            0,
-            0
+            610
         ],
         "post_delay": 2000,
         "next": [
@@ -288,9 +272,7 @@
         "action": "Click",
         "target": [
             1090,
-            632,
-            0,
-            0
+            632
         ],
         "post_delay": 3000,
         "next": [
@@ -317,9 +299,7 @@
         "action": "Click",
         "target": [
             1130,
-            680,
-            0,
-            0
+            680
         ],
         "post_delay": 1500,
         "next": [
@@ -347,9 +327,7 @@
         "action": "Click",
         "target": [
             225,
-            590,
-            0,
-            0
+            590
         ],
         "post_delay": 1500,
         "next": [
@@ -363,9 +341,7 @@
         "action": "Click",
         "target": [
             270,
-            590,
-            0,
-            0
+            590
         ],
         "post_delay": 1500,
         "next": [
@@ -379,9 +355,7 @@
         "action": "Click",
         "target": [
             1130,
-            642,
-            0,
-            0
+            642
         ],
         "post_delay": 1000,
         "next": [
@@ -399,9 +373,7 @@
         "action": "Click",
         "target": [
             785,
-            495,
-            0,
-            0
+            495
         ],
         "post_delay": 2000,
         "next": [
@@ -415,9 +387,7 @@
         "action": "Click",
         "target": [
             430,
-            590,
-            0,
-            0
+            590
         ],
         "post_delay": 2000,
         "next": [
@@ -431,9 +401,7 @@
         "action": "Click",
         "target": [
             1120,
-            686,
-            0,
-            0
+            686
         ],
         "post_delay": 1500,
         "next": [
@@ -447,9 +415,7 @@
         "action": "Click",
         "target": [
             1120,
-            642,
-            0,
-            0
+            642
         ],
         "post_delay": 1500,
         "next": [
@@ -463,9 +429,7 @@
         "action": "Click",
         "target": [
             640,
-            642,
-            0,
-            0
+            642
         ],
         "post_delay": 1500,
         "next": [
