@@ -44,6 +44,7 @@
             "黎明界_角色加入关闭",
             "黎明界_角色奖励选择",
             "黎明界_道具奖励选择",
+            "黎明界_商店离开确认",
             "黎明界_商店处理",
             "黎明界_事件处理",
             "黎明界_失败处理",
@@ -99,7 +100,7 @@
         ],
         "post_delay": 2000,
         "next": [
-            "黎明界_全局状态分流"
+            "黎明界_过渡目标等待"
         ]
     },
     "黎明界_角色特写确认兜底继续": {
@@ -459,6 +460,7 @@
             "黎明界_地图选择BOSS",
             "黎明界_地图选择NORMAL",
             "黎明界_地图选择EVENT",
+            "黎明界_地图选择角色",
             "黎明界_地图选择遗物",
             "黎明界_地图选择SHOP"
         ]
@@ -514,6 +516,18 @@
         "timeout": 5000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_node_event_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_地图移动确认OK",
+            "黎明界_地图移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择角色": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_character_reachable.png",
         "threshold": 0.9,
         "action": "Click",
         "post_delay": 2000,
@@ -747,10 +761,10 @@
             "jp/limingjie/party_selected_check_3.png"
         ],
         "roi": [
-            670,
-            160,
-            100,
-            90
+            700,
+            150,
+            130,
+            110
         ],
         "threshold": 0.5,
         "action": "DoNothing",
@@ -825,7 +839,7 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_过渡目标等待"
+            "黎明界_角色奖励特写继续"
         ]
     },
     "黎明界_失败处理": {
@@ -888,13 +902,13 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_过渡目标等待"
+            "黎明界_角色奖励特写继续"
         ]
     },
     "黎明界_商店处理": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/shop_title.png",
+        "template": "jp/limingjie/shop_close_button.png",
         "action": "Click",
         "target": [
             1130,
@@ -903,16 +917,19 @@
         "post_delay": 1000,
         "next": [
             "黎明界_商店离开确认",
-            "黎明界_全局状态分流"
-        ]
+            "黎明界_过渡目标等待"
+        ],
+        "roi": [
+            940,
+            580,
+            310,
+            110
+        ],
+        "threshold": 0.88
     },
     "黎明界_商店离开确认": {
         "timeout": 10000,
-        "recognition": "OCR",
-        "expected": [
-            "ショップから退出",
-            "よろしいですか"
-        ],
+        "recognition": "TemplateMatch",
         "action": "Click",
         "target": [
             785,
@@ -921,7 +938,19 @@
         "post_delay": 2000,
         "next": [
             "黎明界_过渡目标等待"
-        ]
+        ],
+        "template": [
+            "jp/common/OK.png",
+            "jp/common/OK2.png",
+            "jp/common/OK3.png"
+        ],
+        "roi": [
+            650,
+            450,
+            330,
+            100
+        ],
+        "threshold": 0.8
     },
     "黎明界_事件处理": {
         "timeout": 60000,
@@ -934,7 +963,7 @@
         ],
         "post_delay": 2000,
         "next": [
-            "黎明界_过渡目标等待"
+            "黎明界_角色奖励特写继续"
         ]
     },
     "黎明界_最终胜利继续": {
@@ -948,7 +977,7 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_过渡目标等待"
+            "黎明界_角色奖励特写继续"
         ]
     },
     "黎明界_RESULT继续": {
@@ -962,7 +991,7 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_过渡目标等待"
+            "黎明界_角色奖励特写继续"
         ]
     },
     "黎明界_结算奖励关闭": {
@@ -983,9 +1012,10 @@
         "action": "StopTask"
     },
     "黎明界_过渡目标等待": {
-        "timeout": 20000,
+        "timeout": 10000,
         "rate_limit": 500,
         "next": [
+            "黎明界_地图移动确认OK",
             "黎明界_标题页恢复",
             "黎明界_出发Bonus关闭",
             "黎明界_通用确认",
@@ -994,6 +1024,7 @@
             "黎明界_角色加入关闭",
             "黎明界_角色奖励选择",
             "黎明界_道具奖励选择",
+            "黎明界_商店离开确认",
             "黎明界_商店处理",
             "黎明界_事件处理",
             "黎明界_失败处理",
