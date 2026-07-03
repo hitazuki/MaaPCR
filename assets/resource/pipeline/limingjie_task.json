@@ -48,13 +48,13 @@
             "黎明界_事件处理",
             "黎明界_失败处理",
             "黎明界_胜利处理",
+            "黎明界_初始角色选择",
             "黎明界_编队开始",
             "黎明界_战斗节点预览",
             "黎明界_战斗中等待",
             "黎明界_地图循环",
             "黎明界_第二层出发",
             "黎明界_选择同行公会",
-            "黎明界_初始角色选择",
             "黎明界_最终胜利继续",
             "黎明界_RESULT继续",
             "黎明界_结算奖励关闭",
@@ -85,7 +85,7 @@
             640,
             360
         ],
-        "post_delay": 1000,
+        "post_delay": 2000,
         "next": [
             "黎明界_全局状态分流"
         ]
@@ -97,7 +97,7 @@
             640,
             360
         ],
-        "post_delay": 1000,
+        "post_delay": 2000,
         "next": [
             "黎明界_全局状态分流"
         ]
@@ -348,11 +348,11 @@
     "黎明界_初始角色选择": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_select_progress.png",
+        "template": "jp/limingjie/character_select_title.png",
         "roi": [
-            990,
-            70,
-            270,
+            480,
+            20,
+            320,
             70
         ],
         "threshold": 0.9,
@@ -395,8 +395,16 @@
         ]
     },
     "黎明界_初始角色确认": {
+        "timeout": 3000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/character_select_confirm.png",
+        "roi": [
+            930,
+            580,
+            330,
+            100
+        ],
+        "threshold": 0.9,
         "action": "Click",
         "target": [
             1090,
@@ -406,6 +414,9 @@
         "next": [
             "黎明界_角色特写继续",
             "黎明界_全局状态分流"
+        ],
+        "on_error": [
+            "黎明界_角色特写继续"
         ]
     },
     "黎明界_地图循环": {
@@ -417,8 +428,8 @@
             "黎明界_地图选择BOSS",
             "黎明界_地图选择NORMAL",
             "黎明界_地图选择EVENT",
-            "黎明界_地图选择SHOP",
-            "黎明界_地图节点待补充模板"
+            "黎明界_地图选择遗物",
+            "黎明界_地图选择SHOP"
         ]
     },
     "黎明界_地图移动确认OK": {
@@ -453,8 +464,8 @@
     "黎明界_地图选择NORMAL": {
         "timeout": 5000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_node_normal_current.png",
-        "threshold": 0.85,
+        "template": "jp/limingjie/map_node_normal_reachable.png",
+        "threshold": 0.9,
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -464,10 +475,19 @@
     "黎明界_地图选择EVENT": {
         "timeout": 5000,
         "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/map_node_event_top.png",
-            "jp/limingjie/map_node_event_mid.png"
-        ],
+        "template": "jp/limingjie/map_node_event_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_地图选择遗物": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_relic_reachable.png",
+        "threshold": 0.9,
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -476,10 +496,9 @@
     },
     "黎明界_地图选择SHOP": {
         "timeout": 5000,
-        "recognition": "OCR",
-        "expected": [
-            "SHOP"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_shop_reachable.png",
+        "threshold": 0.9,
         "action": "Click",
         "post_delay": 2000,
         "next": [
@@ -496,7 +515,14 @@
     "黎明界_战斗节点预览": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_preview_challenge_button.png",
+        "template": "jp/limingjie/battle_preview_title_normal.png",
+        "roi": [
+            30,
+            40,
+            380,
+            90
+        ],
+        "threshold": 0.85,
         "action": "Click",
         "target": [
             1080,
