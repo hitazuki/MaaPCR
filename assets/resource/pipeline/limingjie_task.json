@@ -68,6 +68,9 @@
             "黎明界_EVENT事件选择",
             "黎明界_RELIC物品获得关闭",
             "黎明界_RELIC物品获得选择",
+            "黎明界_SHOP购买不足停止购买",
+            "黎明界_SHOP购买完成OK",
+            "黎明界_SHOP购买确认OK",
             "黎明界_SHOP商店离开确认",
             "黎明界_SHOP商店关闭",
             "黎明界_角色加入关闭",
@@ -764,7 +767,7 @@
         "rate_limit": 250,
         "next": [
             "黎明界_SHOP节点移动确认OK",
-            "黎明界_SHOP商店关闭"
+            "黎明界_SHOP购买点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -2298,6 +2301,173 @@
         "post_delay": 1000,
         "next": [
             "黎明界_SHOP商店离开确认"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_title.png",
+        "roi": [
+            520,
+            20,
+            240,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            330,
+            350
+        ],
+        "post_delay": 800,
+        "next": [
+            "黎明界_SHOP购买反馈等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买反馈等待": {
+        "timeout": 5000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买确认OK",
+            "黎明界_SHOP购买不足停止购买"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买确认OK": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_purchase_confirm_title.png",
+        "roi": [
+            520,
+            85,
+            240,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            785,
+            580
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买完成OK"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买完成OK": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_purchase_complete_title.png",
+        "roi": [
+            520,
+            160,
+            240,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            495
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买后结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买后结果等待": {
+        "timeout": 3500,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买角色加入关闭",
+            "黎明界_SHOP购买回商店继续"
+        ],
+        "on_error": [
+            "黎明界_SHOP购买角色特写点击"
+        ]
+    },
+    "黎明界_SHOP购买回商店继续": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_title.png",
+        "roi": [
+            520,
+            20,
+            240,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing",
+        "next": [
+            "黎明界_SHOP购买点击"
+        ]
+    },
+    "黎明界_SHOP购买角色特写点击": {
+        "pre_delay": 1500,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            360
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买角色加入关闭"
+        ]
+    },
+    "黎明界_SHOP购买角色加入关闭": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/character_join_title.png",
+        "roi": [
+            520,
+            85,
+            260,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            580
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买点击"
+        ],
+        "on_error": [
+            "黎明界_SHOP购买角色特写点击"
+        ]
+    },
+    "黎明界_SHOP购买不足停止购买": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_insufficient_toast_text.png",
+        "roi": [
+            420,
+            320,
+            440,
+            80
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "post_delay": 1000,
+        "next": [
+            "黎明界_SHOP商店关闭"
         ],
         "on_error": [
             "黎明界_全局状态分流"
