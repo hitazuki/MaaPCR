@@ -279,6 +279,7 @@
         "action": "DoNothing",
         "post_delay": 3000,
         "next": [
+            "黎明界_战斗核心胜利获得物品继续",
             "黎明界_战斗核心战斗胜利继续",
             "黎明界_失败处理",
             "黎明界_战斗核心战斗结果等待"
@@ -289,7 +290,7 @@
         "recognition": "And",
         "all_of": [
             "黎明界_战斗核心战斗胜利标题判定",
-            "黎明界_战斗核心未获得物品标题判定"
+            "黎明界_战斗核心战斗胜利伤害报告判定"
         ],
         "action": "DoNothing",
         "post_delay": 500,
@@ -309,20 +310,16 @@
         "threshold": 0.82,
         "action": "DoNothing"
     },
-    "黎明界_战斗核心未获得物品标题判定": {
+    "黎明界_战斗核心战斗胜利伤害报告判定": {
         "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/ex_win_drop_title.png",
-            "jp/limingjie/win_drop_title.png"
-        ],
+        "template": "jp/limingjie/battle_damage_report_button.png",
         "roi": [
-            0,
-            0,
-            1280,
-            720
+            980,
+            20,
+            290,
+            80
         ],
-        "threshold": 0.82,
-        "inverse": true,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界_战斗核心战斗胜利继续点击": {
@@ -350,10 +347,10 @@
             "jp/limingjie/win_drop_title.png"
         ],
         "roi": [
-            0,
-            0,
-            1280,
-            720
+            380,
+            40,
+            560,
+            200
         ],
         "threshold": 0.82,
         "action": "DoNothing",
