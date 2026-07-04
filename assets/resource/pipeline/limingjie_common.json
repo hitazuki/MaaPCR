@@ -1,4 +1,32 @@
 {
+    "黎明界_通用Connecting等待": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/connecting_text.png",
+        "roi": [
+            960,
+            20,
+            310,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing",
+        "post_delay": 1000
+    },
+    "黎明界_通用过场跳过点击": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/跳过.png",
+        "roi": [
+            1100,
+            10,
+            150,
+            100
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "post_delay": 1000
+    },
     "黎明界_通用白色关闭点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
@@ -17,6 +45,8 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_角色特写后角色加入关闭",
             "黎明界_角色特写点击一次"
         ],

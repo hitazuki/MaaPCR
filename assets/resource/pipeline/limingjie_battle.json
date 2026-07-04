@@ -325,6 +325,8 @@
         "timeout": 10000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "[JumpBack]黎明界_战斗核心EX物品获得选择",
             "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_战斗核心角色加入选择",
@@ -381,6 +383,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_战斗核心角色加入选择快速",
             "黎明界_地图选择BOSS",
             "黎明界_地图选择EX",
@@ -418,6 +422,8 @@
         "timeout": 30000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_战斗核心角色加入关闭",
             "[JumpBack]黎明界_战斗核心角色特写点击一次"
         ],

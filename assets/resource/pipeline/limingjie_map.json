@@ -126,6 +126,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_角色节点移动确认OK",
             "黎明界_角色节点奖励选择",
             "黎明界_角色节点物品获得关闭"
@@ -155,6 +157,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_EX节点移动确认OK",
             "黎明界_EX战斗节点预览"
         ],
@@ -183,6 +187,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_NORMAL节点移动确认OK",
             "黎明界_NORMAL战斗节点预览"
         ],
@@ -211,6 +217,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_EVENT节点移动确认OK",
             "黎明界_EVENT事件选择"
         ],
@@ -239,6 +247,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_RELIC节点移动确认OK",
             "黎明界_RELIC物品获得选择"
         ],
@@ -267,6 +277,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_SHOP节点移动确认OK",
             "黎明界_SHOP购买点击"
         ],
@@ -295,6 +307,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_BOSS节点移动确认OK",
             "黎明界_BOSS战斗节点预览"
         ],
@@ -306,6 +320,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_地图移动确认OK",
             "黎明界_通用确认",
             "黎明界_通用角色加入关闭",

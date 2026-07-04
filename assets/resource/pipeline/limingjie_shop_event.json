@@ -290,20 +290,6 @@
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_EVENT事件结果等待": {
-        "timeout": 5000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_EVENT_NORMAL战斗节点预览",
-            "黎明界_EVENT_EX战斗节点预览",
-            "[JumpBack]黎明界_通用白色关闭点击",
-            "黎明界_角色特写后角色加入关闭",
-            "黎明界_地图页快速判定"
-        ],
-        "on_error": [
-            "黎明界_角色特写继续"
-        ]
-    },
     "黎明界_EVENT事件选择按钮点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
@@ -322,6 +308,22 @@
         ],
         "on_error": [
             "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT事件结果等待": {
+        "timeout": 10000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "黎明界_EVENT_NORMAL战斗节点预览",
+            "黎明界_EVENT_EX战斗节点预览",
+            "[JumpBack]黎明界_通用白色关闭点击",
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_角色特写继续"
         ]
     }
 }

@@ -63,6 +63,8 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
             "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_地图页快速判定"
         ],
