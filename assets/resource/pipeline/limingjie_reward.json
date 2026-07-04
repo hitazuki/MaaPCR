@@ -39,8 +39,8 @@
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_RELIC物品获得选择": {
-        "timeout": 10000,
+    "黎明界_通用物品获得选择": {
+        "timeout": 1000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/ex_reward_item_chance_title.png",
         "roi": [
@@ -51,28 +51,12 @@
         ],
         "threshold": 0.88,
         "action": "DoNothing",
-        "post_delay": 1500,
+        "post_delay": 300,
         "next": [
-            "黎明界_RELIC物品获得选择按钮点击"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
+            "黎明界_通用物品获得选择按钮点击"
         ]
     },
-    "黎明界_RELIC地图转移等待": {
-        "timeout": 8000,
-        "rate_limit": 250,
-        "next": [
-            "[JumpBack]黎明界_通用Connecting等待",
-            "[JumpBack]黎明界_通用过场跳过点击",
-            "[JumpBack]黎明界_通用白色关闭点击",
-            "黎明界_地图页快速判定"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_RELIC物品获得选择按钮点击": {
+    "黎明界_通用物品获得选择按钮点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/select_text_button.png",
@@ -84,12 +68,6 @@
         ],
         "threshold": 0.9,
         "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "黎明界_RELIC地图转移等待"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
+        "post_delay": 1500
     }
 }

@@ -392,7 +392,7 @@
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_战斗核心胜利获得物品继续",
-            "[JumpBack]黎明界_战斗核心EX物品获得选择",
+            "[JumpBack]黎明界_通用物品获得选择",
             "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_战斗核心角色加入选择",
             "[JumpBack]黎明界_角色特写跳过点击",
@@ -400,23 +400,6 @@
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_战斗核心EX物品获得选择": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_reward_item_chance_title.png",
-        "roi": [
-            360,
-            20,
-            560,
-            100
-        ],
-        "threshold": 0.88,
-        "action": "DoNothing",
-        "post_delay": 1500,
-        "next": [
-            "黎明界_战斗核心EX物品获得选择按钮点击"
         ]
     },
     "黎明界_战斗核心角色加入选择": {
@@ -553,23 +536,6 @@
         "next": [
             "黎明界_战斗核心队伍编成"
         ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_战斗核心EX物品获得选择按钮点击": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/select_text_button.png",
-        "roi": [
-            80,
-            520,
-            1120,
-            140
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
         "on_error": [
             "黎明界_全局状态分流"
         ]

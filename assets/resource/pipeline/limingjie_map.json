@@ -252,7 +252,9 @@
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_RELIC节点移动确认OK",
-            "黎明界_RELIC物品获得选择"
+            "[JumpBack]黎明界_通用物品获得选择",
+            "[JumpBack]黎明界_通用白色关闭点击",
+            "黎明界_地图页快速判定"
         ],
         "on_error": [
             "黎明界_全局状态分流"
