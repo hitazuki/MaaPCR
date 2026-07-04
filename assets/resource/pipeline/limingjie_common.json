@@ -32,142 +32,64 @@
         "recognition": "TemplateMatch",
         "template": "jp/common/close_white_button.png",
         "roi": [
-            480,
-            525,
-            320,
-            105
+            420,
+            500,
+            620,
+            170
         ],
         "threshold": 0.9,
         "action": "Click",
         "post_delay": 1500
     },
-    "黎明界_角色特写继续": {
+    "黎明界_角色特写跳过点击": {
         "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_menu.png",
+        "roi": [
+            1150,
+            15,
+            130,
+            120
+        ],
+        "threshold": 0.88,
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500
+    },
+    "黎明界_角色特写全局兜底点击": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_menu.png",
+        "roi": [
+            1150,
+            15,
+            130,
+            120
+        ],
+        "threshold": 0.88,
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写后目标等待": {
+        "timeout": 30000,
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_角色特写后角色加入关闭",
-            "黎明界_角色特写点击一次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写点击一次": {
-        "pre_delay": 2500,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 2000,
-        "next": [
-            "黎明界_角色特写重试2"
-        ]
-    },
-    "黎明界_角色特写重试2": {
-        "timeout": 1000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_角色特写后角色加入关闭",
-            "黎明界_角色特写点击二次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写点击二次": {
-        "pre_delay": 1000,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色特写重试3"
-        ]
-    },
-    "黎明界_角色特写重试3": {
-        "timeout": 1000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_角色特写后角色加入关闭",
-            "黎明界_角色特写点击三次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写点击三次": {
-        "pre_delay": 1000,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色特写重试4"
-        ]
-    },
-    "黎明界_角色特写重试4": {
-        "timeout": 1000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_角色特写后角色加入关闭",
-            "黎明界_角色特写点击四次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写点击四次": {
-        "pre_delay": 1000,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色特写重试5"
-        ]
-    },
-    "黎明界_角色特写重试5": {
-        "timeout": 1000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_角色特写后角色加入关闭",
-            "黎明界_角色特写点击五次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写点击五次": {
-        "pre_delay": 1000,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色特写最终等待"
-        ]
-    },
-    "黎明界_角色特写最终等待": {
-        "timeout": 3000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_角色特写后角色加入关闭"
+            "[JumpBack]黎明界_角色特写跳过点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -527,7 +449,7 @@
         ],
         "post_delay": 2000,
         "next": [
-            "黎明界_角色特写继续"
+            "黎明界_角色特写后目标等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -592,7 +514,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写继续"
+            "黎明界_角色特写后目标等待"
         ]
     },
     "黎明界_道具奖励选择": {
@@ -612,7 +534,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写继续"
+            "黎明界_角色特写后目标等待"
         ],
         "roi": [
             480,
@@ -629,7 +551,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写继续"
+            "黎明界_角色特写后目标等待"
         ],
         "roi": [
             480,
@@ -673,7 +595,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写继续"
+            "黎明界_角色特写后目标等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
