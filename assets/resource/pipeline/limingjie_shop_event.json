@@ -281,14 +281,10 @@
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/event_title.png",
-        "action": "Click",
-        "target": [
-            430,
-            590
-        ],
+        "action": "DoNothing",
         "post_delay": 2000,
         "next": [
-            "黎明界_EVENT事件结果等待"
+            "黎明界_EVENT事件选择按钮点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -306,6 +302,26 @@
         ],
         "on_error": [
             "黎明界_角色特写继续"
+        ]
+    },
+    "黎明界_EVENT事件选择按钮点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/select_text_button.png",
+        "roi": [
+            80,
+            520,
+            1120,
+            140
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EVENT事件结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
         ]
     }
 }
