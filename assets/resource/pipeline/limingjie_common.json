@@ -250,7 +250,9 @@
         "action": "Click",
         "target_offset": [
             0,
-            96
+            96,
+            0,
+            0
         ],
         "post_delay": 1500,
         "next": [
@@ -700,7 +702,36 @@
         ],
         "post_delay": 8000,
         "next": [
+            "黎明界_通用战斗SET检查"
+        ]
+    },
+    "黎明界_通用战斗SET检查": {
+        "timeout": 5000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_通用战斗SET白色点击",
             "黎明界_通用战斗结果等待"
+        ]
+    },
+    "黎明界_通用战斗SET白色点击": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_set_white_button.png",
+        "roi": [
+            1180,
+            400,
+            90,
+            90
+        ],
+        "threshold": 0.82,
+        "action": "Click",
+        "target": [
+            1220,
+            455
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_EX战斗结果等待"
         ]
     },
     "黎明界_通用战斗结果等待": {
@@ -710,20 +741,6 @@
         "next": [
             "黎明界_通用战斗胜利继续",
             "黎明界_失败处理",
-            "黎明界_通用战斗中等待",
-            "黎明界_通用战斗结果等待"
-        ]
-    },
-    "黎明界_通用战斗中等待": {
-        "timeout": 90000,
-        "rate_limit": 5000,
-        "recognition": "OCR",
-        "expected": [
-            "AUTO",
-            "SET"
-        ],
-        "action": "DoNothing",
-        "next": [
             "黎明界_通用战斗结果等待"
         ]
     },
