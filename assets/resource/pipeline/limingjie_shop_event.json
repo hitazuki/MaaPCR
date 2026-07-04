@@ -1,0 +1,355 @@
+{
+    "黎明界_商店处理": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_close_button.png",
+        "action": "Click",
+        "target": [
+            1130,
+            642
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_商店离开确认",
+            "黎明界_地图页快速判定"
+        ],
+        "roi": [
+            940,
+            580,
+            310,
+            110
+        ],
+        "threshold": 0.88
+    },
+    "黎明界_商店离开确认": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "target": [
+            785,
+            495
+        ],
+        "post_delay": 2000,
+        "next": [
+            "黎明界_地图页快速判定"
+        ],
+        "template": [
+            "jp/common/OK.png",
+            "jp/common/OK2.png",
+            "jp/common/OK3.png"
+        ],
+        "roi": [
+            650,
+            450,
+            330,
+            100
+        ],
+        "threshold": 0.8
+    },
+    "黎明界_SHOP商店关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_close_button.png",
+        "roi": [
+            940,
+            580,
+            310,
+            110
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            1130,
+            642
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_SHOP商店离开确认"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_title.png",
+        "roi": [
+            520,
+            20,
+            240,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            330,
+            350
+        ],
+        "post_delay": 800,
+        "next": [
+            "黎明界_SHOP购买反馈等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买反馈等待": {
+        "timeout": 5000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买确认OK",
+            "黎明界_SHOP购买不足停止购买"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买确认OK": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_purchase_confirm_title.png",
+        "roi": [
+            520,
+            85,
+            240,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            785,
+            580
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买完成OK"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买完成OK": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_purchase_complete_title.png",
+        "roi": [
+            520,
+            160,
+            240,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            495
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买后结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买后结果等待": {
+        "timeout": 3500,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买角色加入关闭",
+            "黎明界_SHOP购买回商店继续"
+        ],
+        "on_error": [
+            "黎明界_SHOP购买角色特写点击"
+        ]
+    },
+    "黎明界_SHOP购买回商店继续": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_title.png",
+        "roi": [
+            520,
+            20,
+            240,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing",
+        "next": [
+            "黎明界_SHOP购买点击"
+        ]
+    },
+    "黎明界_SHOP购买角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买角色加入关闭",
+            "[JumpBack]黎明界_SHOP购买角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买角色特写点击一次": {
+        "pre_delay": 1500,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500
+    },
+    "黎明界_SHOP购买角色加入关闭": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/character_join_title.png",
+        "roi": [
+            520,
+            85,
+            260,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            580
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买点击"
+        ],
+        "on_error": [
+            "黎明界_SHOP购买角色特写点击"
+        ]
+    },
+    "黎明界_SHOP购买不足停止购买": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_insufficient_toast_text.png",
+        "roi": [
+            420,
+            320,
+            440,
+            80
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "post_delay": 1000,
+        "next": [
+            "黎明界_SHOP商店关闭"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP商店离开确认": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/OK.png",
+            "jp/common/OK2.png",
+            "jp/common/OK3.png"
+        ],
+        "roi": [
+            650,
+            450,
+            330,
+            100
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "target": [
+            785,
+            495
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP地图转移等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP地图转移等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_事件处理": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/event_title.png",
+        "action": "Click",
+        "target": [
+            430,
+            590
+        ],
+        "post_delay": 2000,
+        "next": [
+            "黎明界_角色特写继续"
+        ]
+    },
+    "黎明界_EVENT事件选择": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/event_title.png",
+        "action": "Click",
+        "target": [
+            430,
+            590
+        ],
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EVENT事件结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT事件结果等待": {
+        "timeout": 5000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EVENT_NORMAL战斗节点预览",
+            "黎明界_EVENT_EX战斗节点预览",
+            "黎明界_EVENT物品获得关闭",
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_角色特写继续"
+        ]
+    },
+    "黎明界_EVENT物品获得关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/item_get_title.png",
+        "roi": [
+            510,
+            20,
+            260,
+            75
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_EVENT事件结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    }
+}

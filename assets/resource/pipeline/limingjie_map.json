@@ -1,0 +1,410 @@
+{
+    "黎明界_地图页快速判定": {
+        "timeout": 3000,
+        "rate_limit": 200,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_地图菜单判定",
+            "黎明界_地图可达节点判定"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界_地图循环"
+        ]
+    },
+    "黎明界_地图循环": {
+        "timeout": 60000,
+        "rate_limit": 250,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_地图菜单判定",
+            "黎明界_地图可达节点判定"
+        ],
+        "next": [
+            "黎明界_地图选择BOSS",
+            "黎明界_地图选择EX",
+            "黎明界_地图选择NORMAL",
+            "黎明界_地图选择EVENT",
+            "黎明界_地图选择角色",
+            "黎明界_地图选择遗物",
+            "黎明界_地图选择SHOP"
+        ]
+    },
+    "黎明界_地图菜单判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_menu.png",
+        "roi": [
+            1150,
+            15,
+            130,
+            120
+        ],
+        "threshold": 0.88
+    },
+    "黎明界_地图可达节点判定": {
+        "recognition": "Or",
+        "any_of": [
+            "黎明界_地图可达BOSS判定",
+            "黎明界_地图可达EX判定",
+            "黎明界_地图可达NORMAL判定",
+            "黎明界_地图可达EVENT判定",
+            "黎明界_地图可达角色判定",
+            "黎明界_地图可达遗物判定",
+            "黎明界_地图可达SHOP判定"
+        ]
+    },
+    "黎明界_地图可达BOSS判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_boss_reachable.png",
+        "threshold": 0.85
+    },
+    "黎明界_地图可达EX判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_extreme_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达NORMAL判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_normal_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达EVENT判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_event_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达角色判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_character_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达遗物判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_relic_reachable.png",
+        "threshold": 0.82
+    },
+    "黎明界_地图可达SHOP判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_shop_reachable.png",
+        "threshold": 0.82
+    },
+    "黎明界_地图移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_地图移动后目标等待"
+        ]
+    },
+    "黎明界_角色节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_角色节点移动后目标等待"
+        ]
+    },
+    "黎明界_角色节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色节点移动确认OK",
+            "黎明界_角色节点奖励选择",
+            "黎明界_角色节点物品获得关闭"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EX节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_EX节点移动后目标等待"
+        ]
+    },
+    "黎明界_EX节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EX节点移动确认OK",
+            "黎明界_EX战斗节点预览"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_NORMAL节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_NORMAL节点移动后目标等待"
+        ]
+    },
+    "黎明界_NORMAL节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_NORMAL节点移动确认OK",
+            "黎明界_NORMAL战斗节点预览"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_EVENT节点移动后目标等待"
+        ]
+    },
+    "黎明界_EVENT节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EVENT节点移动确认OK",
+            "黎明界_EVENT事件选择"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_RELIC节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_RELIC节点移动后目标等待"
+        ]
+    },
+    "黎明界_RELIC节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_RELIC节点移动确认OK",
+            "黎明界_RELIC物品获得选择"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_SHOP节点移动后目标等待"
+        ]
+    },
+    "黎明界_SHOP节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP节点移动确认OK",
+            "黎明界_SHOP购买点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_BOSS节点移动确认OK": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_move_confirm_ok_button.png",
+        "roi": [
+            620,
+            430,
+            340,
+            130
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "黎明界_BOSS节点移动后目标等待"
+        ]
+    },
+    "黎明界_BOSS节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_BOSS节点移动确认OK",
+            "黎明界_BOSS战斗节点预览"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_地图移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_地图移动确认OK",
+            "黎明界_通用确认",
+            "黎明界_通用角色加入关闭",
+            "黎明界_角色奖励选择",
+            "黎明界_道具奖励选择",
+            "黎明界_商店离开确认",
+            "黎明界_商店处理",
+            "黎明界_事件处理",
+            "黎明界_通用战斗节点预览",
+            "黎明界_通用编队开始",
+            "黎明界_第二层出发",
+            "黎明界_选择同行公会"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_地图选择BOSS": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_boss_reachable.png",
+        "threshold": 0.85,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_BOSS节点移动确认OK",
+            "黎明界_BOSS节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择EX": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_extreme_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EX节点移动确认OK",
+            "黎明界_EX节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择NORMAL": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_normal_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_NORMAL节点移动确认OK",
+            "黎明界_NORMAL节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择EVENT": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_event_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EVENT节点移动确认OK",
+            "黎明界_EVENT节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择角色": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_character_reachable.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_角色节点移动确认OK",
+            "黎明界_角色节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择遗物": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_relic_reachable.png",
+        "threshold": 0.82,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_RELIC节点移动确认OK",
+            "黎明界_RELIC节点移动后目标等待"
+        ]
+    },
+    "黎明界_地图选择SHOP": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_shop_reachable.png",
+        "threshold": 0.82,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_SHOP节点移动确认OK",
+            "黎明界_SHOP节点移动后目标等待"
+        ]
+    }
+}
