@@ -31,12 +31,22 @@
         ],
         "post_delay": 3000,
         "next": [
+            "黎明界_开始链路候选"
+        ]
+    },
+    "黎明界_开始链路候选": {
+        "timeout": 15000,
+        "rate_limit": 500,
+        "next": [
             "黎明界_出发Bonus关闭",
             "黎明界_通用确认",
             "黎明界_第二层出发",
             "黎明界_选择同行公会",
             "黎明界_初始角色选择",
             "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
         ]
     },
     "黎明界_全局状态分流": {
@@ -58,20 +68,16 @@
             "黎明界_BOSS结算加入角色继续",
             "黎明界_EX胜利获得物品继续",
             "黎明界_EX战斗胜利继续",
-            "黎明界_EX队伍编成",
-            "黎明界_EX战斗节点预览",
             "黎明界_NORMAL角色加入关闭",
             "黎明界_NORMAL角色加入选择",
             "黎明界_NORMAL胜利获得物品继续",
             "黎明界_NORMAL战斗胜利继续",
-            "黎明界_NORMAL队伍编成",
             "黎明界_NORMAL战斗节点预览",
+            "黎明界_EX战斗节点预览",
             "黎明界_EVENT物品获得关闭",
             "黎明界_EVENT角色加入关闭",
             "黎明界_EVENT_NORMAL战斗胜利继续",
             "黎明界_EVENT_EX战斗胜利继续",
-            "黎明界_EVENT_NORMAL队伍编成",
-            "黎明界_EVENT_EX队伍编成",
             "黎明界_EVENT_NORMAL战斗节点预览",
             "黎明界_EVENT_EX战斗节点预览",
             "黎明界_EVENT事件选择",
@@ -101,7 +107,7 @@
             "黎明界_RESULT继续",
             "黎明界_结算奖励关闭",
             "黎明界_入口待补充",
-            "黎明界_角色特写兜底继续",
+            "黎明界_角色特写继续",
             "黎明界_全局状态分流"
         ]
     },
@@ -116,20 +122,15 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_第二层出发",
-            "黎明界_选择同行公会",
-            "黎明界_初始角色选择",
-            "黎明界_地图页快速判定"
+            "黎明界_开始链路候选"
         ]
     },
     "黎明界_角色特写继续": {
-        "timeout": 30000,
+        "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_初始角色加入关闭",
-            "[JumpBack]黎明界_角色特写点击一次"
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色特写点击一次"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -143,34 +144,123 @@
             640,
             240
         ],
-        "post_delay": 2000
+        "post_delay": 2000,
+        "next": [
+            "黎明界_角色特写重试2"
+        ]
     },
-    "黎明界_角色特写兜底继续": {
-        "timeout": 30000,
+    "黎明界_角色特写重试2": {
+        "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_初始角色加入关闭",
-            "[JumpBack]黎明界_角色特写兜底点击一次"
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色特写点击二次"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_角色特写兜底点击一次": {
+    "黎明界_角色特写点击二次": {
+        "pre_delay": 1000,
         "recognition": "DirectHit",
         "action": "Click",
         "target": [
             640,
             240
         ],
-        "post_delay": 2000
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色特写重试3"
+        ]
     },
-    "黎明界_角色奖励特写继续": {
-        "timeout": 30000,
+    "黎明界_角色特写重试3": {
+        "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_角色奖励特写后角色加入关闭",
-            "[JumpBack]黎明界_角色奖励特写点击一次"
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色特写点击三次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写点击三次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色特写重试4"
+        ]
+    },
+    "黎明界_角色特写重试4": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色特写点击四次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写点击四次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色特写重试5"
+        ]
+    },
+    "黎明界_角色特写重试5": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色特写点击五次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写点击五次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色特写最终等待"
+        ]
+    },
+    "黎明界_角色特写最终等待": {
+        "timeout": 3000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写继续": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色奖励特写点击一次"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -184,43 +274,118 @@
             640,
             240
         ],
-        "post_delay": 2000
-    },
-    "黎明界_初始角色加入关闭": {
-        "timeout": 1000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_join_title.png",
-        "roi": [
-            520,
-            85,
-            260,
-            70
-        ],
-        "threshold": 0.88,
-        "action": "Click",
-        "target": [
-            640,
-            580
-        ],
-        "post_delay": 1500,
+        "post_delay": 2000,
         "next": [
-            "黎明界_初始角色地图转移等待"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
+            "黎明界_角色奖励特写重试2"
         ]
     },
-    "黎明界_初始角色地图转移等待": {
-        "timeout": 8000,
+    "黎明界_角色奖励特写重试2": {
+        "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_地图页快速判定"
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色奖励特写点击二次"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_角色奖励特写后角色加入关闭": {
+    "黎明界_角色奖励特写点击二次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色奖励特写重试3"
+        ]
+    },
+    "黎明界_角色奖励特写重试3": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色奖励特写点击三次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写点击三次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色奖励特写重试4"
+        ]
+    },
+    "黎明界_角色奖励特写重试4": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色奖励特写点击四次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写点击四次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色奖励特写重试5"
+        ]
+    },
+    "黎明界_角色奖励特写重试5": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭",
+            "黎明界_角色奖励特写点击五次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写点击五次": {
+        "pre_delay": 1000,
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色奖励特写最终等待"
+        ]
+    },
+    "黎明界_角色奖励特写最终等待": {
+        "timeout": 3000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色特写后角色加入关闭"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写后角色加入关闭": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/character_join_title.png",
@@ -237,6 +402,16 @@
             580
         ],
         "post_delay": 1500,
+        "next": [
+            "黎明界_角色加入关闭后目标等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色加入关闭后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
         "next": [
             "黎明界_地图页快速判定",
             "黎明界_出发Bonus关闭",
@@ -265,12 +440,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_第二层出发",
-            "黎明界_选择同行公会",
-            "黎明界_初始角色选择",
-            "黎明界_地图页快速判定"
+            "黎明界_开始链路候选"
         ]
     },
     "黎明界_通用确认": {
@@ -314,12 +484,7 @@
         ],
         "post_delay": 3000,
         "next": [
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_第二层出发",
-            "黎明界_选择同行公会",
-            "黎明界_初始角色选择",
-            "黎明界_地图页快速判定"
+            "黎明界_开始链路候选"
         ]
     },
     "黎明界_选择同行公会": {
@@ -506,12 +671,7 @@
         ],
         "post_delay": 3000,
         "next": [
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_第二层出发",
-            "黎明界_选择同行公会",
-            "黎明界_初始角色选择",
-            "黎明界_地图页快速判定"
+            "黎明界_开始链路候选"
         ]
     },
     "黎明界_初始角色选择": {
@@ -584,7 +744,7 @@
             "黎明界_角色特写继续"
         ],
         "on_error": [
-            "黎明界_角色特写兜底继续"
+            "黎明界_全局状态分流"
         ]
     },
     "黎明界_地图页快速判定": {
@@ -1352,10 +1512,65 @@
         "action": "DoNothing",
         "post_delay": 300,
         "next": [
-            "黎明界_EX队伍战斗开始"
+            "黎明界_EX编队候补1点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EX编队候补1点击": {
+        "action": "Click",
+        "target": [
+            145,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EX编队候补2点击"
+        ]
+    },
+    "黎明界_EX编队候补2点击": {
+        "action": "Click",
+        "target": [
+            285,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EX编队候补3点击"
+        ]
+    },
+    "黎明界_EX编队候补3点击": {
+        "action": "Click",
+        "target": [
+            425,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EX编队候补4点击"
+        ]
+    },
+    "黎明界_EX编队候补4点击": {
+        "action": "Click",
+        "target": [
+            565,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EX编队候补5点击"
+        ]
+    },
+    "黎明界_EX编队候补5点击": {
+        "action": "Click",
+        "target": [
+            705,
+            225
+        ],
+        "post_delay": 500,
+        "next": [
+            "黎明界_EX队伍战斗开始"
         ]
     },
     "黎明界_EX队伍战斗开始": {
@@ -1497,10 +1712,65 @@
         "action": "DoNothing",
         "post_delay": 300,
         "next": [
-            "黎明界_NORMAL队伍战斗开始"
+            "黎明界_NORMAL编队候补1点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_NORMAL编队候补1点击": {
+        "action": "Click",
+        "target": [
+            145,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_NORMAL编队候补2点击"
+        ]
+    },
+    "黎明界_NORMAL编队候补2点击": {
+        "action": "Click",
+        "target": [
+            285,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_NORMAL编队候补3点击"
+        ]
+    },
+    "黎明界_NORMAL编队候补3点击": {
+        "action": "Click",
+        "target": [
+            425,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_NORMAL编队候补4点击"
+        ]
+    },
+    "黎明界_NORMAL编队候补4点击": {
+        "action": "Click",
+        "target": [
+            565,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_NORMAL编队候补5点击"
+        ]
+    },
+    "黎明界_NORMAL编队候补5点击": {
+        "action": "Click",
+        "target": [
+            705,
+            225
+        ],
+        "post_delay": 500,
+        "next": [
+            "黎明界_NORMAL队伍战斗开始"
         ]
     },
     "黎明界_NORMAL队伍战斗开始": {
@@ -1666,10 +1936,65 @@
         "action": "DoNothing",
         "post_delay": 300,
         "next": [
-            "黎明界_EVENT_NORMAL队伍战斗开始"
+            "黎明界_EVENT_NORMAL编队候补1点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT_NORMAL编队候补1点击": {
+        "action": "Click",
+        "target": [
+            145,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_NORMAL编队候补2点击"
+        ]
+    },
+    "黎明界_EVENT_NORMAL编队候补2点击": {
+        "action": "Click",
+        "target": [
+            285,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_NORMAL编队候补3点击"
+        ]
+    },
+    "黎明界_EVENT_NORMAL编队候补3点击": {
+        "action": "Click",
+        "target": [
+            425,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_NORMAL编队候补4点击"
+        ]
+    },
+    "黎明界_EVENT_NORMAL编队候补4点击": {
+        "action": "Click",
+        "target": [
+            565,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_NORMAL编队候补5点击"
+        ]
+    },
+    "黎明界_EVENT_NORMAL编队候补5点击": {
+        "action": "Click",
+        "target": [
+            705,
+            225
+        ],
+        "post_delay": 500,
+        "next": [
+            "黎明界_EVENT_NORMAL队伍战斗开始"
         ]
     },
     "黎明界_EVENT_EX队伍编成": {
@@ -1679,10 +2004,65 @@
         "action": "DoNothing",
         "post_delay": 300,
         "next": [
-            "黎明界_EVENT_EX队伍战斗开始"
+            "黎明界_EVENT_EX编队候补1点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT_EX编队候补1点击": {
+        "action": "Click",
+        "target": [
+            145,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_EX编队候补2点击"
+        ]
+    },
+    "黎明界_EVENT_EX编队候补2点击": {
+        "action": "Click",
+        "target": [
+            285,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_EX编队候补3点击"
+        ]
+    },
+    "黎明界_EVENT_EX编队候补3点击": {
+        "action": "Click",
+        "target": [
+            425,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_EX编队候补4点击"
+        ]
+    },
+    "黎明界_EVENT_EX编队候补4点击": {
+        "action": "Click",
+        "target": [
+            565,
+            225
+        ],
+        "post_delay": 250,
+        "next": [
+            "黎明界_EVENT_EX编队候补5点击"
+        ]
+    },
+    "黎明界_EVENT_EX编队候补5点击": {
+        "action": "Click",
+        "target": [
+            705,
+            225
+        ],
+        "post_delay": 500,
+        "next": [
+            "黎明界_EVENT_EX队伍战斗开始"
         ]
     },
     "黎明界_EVENT_NORMAL队伍战斗开始": {
@@ -2209,7 +2589,39 @@
         ],
         "post_delay": 1500,
         "next": [
+            "黎明界_通用战斗后结果等待"
+        ]
+    },
+    "黎明界_通用战斗后结果等待": {
+        "timeout": 10000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_通用战斗获得物品继续",
             "黎明界_角色奖励特写继续"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_通用战斗获得物品继续": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/ex_win_drop_title.png",
+        "roi": [
+            420,
+            120,
+            420,
+            120
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            1110,
+            655
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_通用战斗后结果等待"
         ]
     },
     "黎明界_失败处理": {
