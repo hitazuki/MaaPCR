@@ -96,19 +96,19 @@
     "黎明界_SHOP购买确认OK": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": [
-            "jp/common/OK.png",
-            "jp/common/OK2.png",
-            "jp/common/OK3.png"
-        ],
+        "template": "jp/limingjie/shop_purchase_confirm_title.png",
         "roi": [
-            620,
-            530,
-            330,
-            100
+            0,
+            0,
+            1280,
+            720
         ],
-        "threshold": 0.9,
+        "threshold": 0.88,
         "action": "Click",
+        "target": [
+            785,
+            580
+        ],
         "post_delay": 1500,
         "next": [
             "黎明界_SHOP购买完成OK"
@@ -120,19 +120,19 @@
     "黎明界_SHOP购买完成OK": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": [
-            "jp/common/OK.png",
-            "jp/common/OK2.png",
-            "jp/common/OK3.png"
-        ],
+        "template": "jp/limingjie/shop_purchase_complete_title.png",
         "roi": [
-            480,
-            450,
-            330,
-            100
+            0,
+            0,
+            1280,
+            720
         ],
-        "threshold": 0.9,
+        "threshold": 0.88,
         "action": "Click",
+        "target": [
+            645,
+            500
+        ],
         "post_delay": 1500,
         "next": [
             "黎明界_SHOP购买后结果等待"

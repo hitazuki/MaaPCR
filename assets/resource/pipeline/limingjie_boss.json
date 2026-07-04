@@ -291,13 +291,10 @@
             720
         ],
         "threshold": 0.88,
-        "action": "Click",
-        "target": [
-            640,
-            580
-        ],
-        "post_delay": 1500,
+        "action": "DoNothing",
+        "post_delay": 300,
         "next": [
+            "[JumpBack]黎明界_通用物品获得关闭",
             "黎明界_完成"
         ],
         "on_error": [
