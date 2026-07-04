@@ -326,7 +326,7 @@
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_战斗核心EX物品获得选择",
-            "[JumpBack]黎明界_战斗核心物品获得关闭",
+            "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_战斗核心角色加入选择",
             "黎明界_地图页快速判定"
         ],
@@ -350,20 +350,6 @@
             270,
             620
         ],
-        "post_delay": 1500
-    },
-    "黎明界_战斗核心物品获得关闭": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
-        "roi": [
-            480,
-            525,
-            320,
-            105
-        ],
-        "threshold": 0.9,
-        "action": "Click",
         "post_delay": 1500
     },
     "黎明界_战斗核心角色加入选择": {

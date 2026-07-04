@@ -1,4 +1,18 @@
 {
+    "黎明界_通用白色关闭点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            480,
+            525,
+            320,
+            105
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 1500
+    },
     "黎明界_角色特写继续": {
         "timeout": 1000,
         "rate_limit": 250,

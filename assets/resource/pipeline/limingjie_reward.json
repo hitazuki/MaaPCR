@@ -61,26 +61,6 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_RELIC物品获得关闭"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_RELIC物品获得关闭": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
-        "roi": [
-            480,
-            525,
-            320,
-            105
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
             "黎明界_RELIC地图转移等待"
         ],
         "on_error": [
@@ -91,6 +71,7 @@
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
+            "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_地图页快速判定"
         ],
         "on_error": [
