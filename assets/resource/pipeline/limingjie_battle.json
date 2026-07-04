@@ -17,32 +17,32 @@
         ],
         "post_delay": 3000,
         "next": [
-            "黎明界_EX队伍编成"
+            "黎明界_战斗核心队伍编成"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_EX队伍编成": {
+    "黎明界_战斗核心队伍编成": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/party_title.png",
         "action": "DoNothing",
         "post_delay": 300,
         "next": [
-            "黎明界_EX编队选择候补1"
+            "黎明界_战斗核心编队选择候补1"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_EX编队选择候补1": {
+    "黎明界_战斗核心编队选择候补1": {
         "next": [
-            "黎明界_EX编队候补1已选",
-            "黎明界_EX编队候补1点击"
+            "黎明界_战斗核心编队候补1已选",
+            "黎明界_战斗核心编队候补1点击"
         ]
     },
-    "黎明界_EX编队候补1已选": {
+    "黎明界_战斗核心编队候补1已选": {
         "timeout": 500,
         "recognition": "TemplateMatch",
         "template": [
@@ -59,10 +59,10 @@
         "threshold": 0.5,
         "action": "DoNothing",
         "next": [
-            "黎明界_EX编队选择候补2"
+            "黎明界_战斗核心编队选择候补2"
         ]
     },
-    "黎明界_EX编队候补1点击": {
+    "黎明界_战斗核心编队候补1点击": {
         "action": "Click",
         "target": [
             145,
@@ -70,16 +70,16 @@
         ],
         "post_delay": 250,
         "next": [
-            "黎明界_EX编队选择候补2"
+            "黎明界_战斗核心编队选择候补2"
         ]
     },
-    "黎明界_EX编队选择候补2": {
+    "黎明界_战斗核心编队选择候补2": {
         "next": [
-            "黎明界_EX编队候补2已选",
-            "黎明界_EX编队候补2点击"
+            "黎明界_战斗核心编队候补2已选",
+            "黎明界_战斗核心编队候补2点击"
         ]
     },
-    "黎明界_EX编队候补2已选": {
+    "黎明界_战斗核心编队候补2已选": {
         "timeout": 500,
         "recognition": "TemplateMatch",
         "template": [
@@ -96,10 +96,10 @@
         "threshold": 0.5,
         "action": "DoNothing",
         "next": [
-            "黎明界_EX编队选择候补3"
+            "黎明界_战斗核心编队选择候补3"
         ]
     },
-    "黎明界_EX编队候补2点击": {
+    "黎明界_战斗核心编队候补2点击": {
         "action": "Click",
         "target": [
             285,
@@ -107,16 +107,16 @@
         ],
         "post_delay": 250,
         "next": [
-            "黎明界_EX编队选择候补3"
+            "黎明界_战斗核心编队选择候补3"
         ]
     },
-    "黎明界_EX编队选择候补3": {
+    "黎明界_战斗核心编队选择候补3": {
         "next": [
-            "黎明界_EX编队候补3已选",
-            "黎明界_EX编队候补3点击"
+            "黎明界_战斗核心编队候补3已选",
+            "黎明界_战斗核心编队候补3点击"
         ]
     },
-    "黎明界_EX编队候补3已选": {
+    "黎明界_战斗核心编队候补3已选": {
         "timeout": 500,
         "recognition": "TemplateMatch",
         "template": [
@@ -133,10 +133,10 @@
         "threshold": 0.5,
         "action": "DoNothing",
         "next": [
-            "黎明界_EX编队选择候补4"
+            "黎明界_战斗核心编队选择候补4"
         ]
     },
-    "黎明界_EX编队候补3点击": {
+    "黎明界_战斗核心编队候补3点击": {
         "action": "Click",
         "target": [
             425,
@@ -144,16 +144,16 @@
         ],
         "post_delay": 250,
         "next": [
-            "黎明界_EX编队选择候补4"
+            "黎明界_战斗核心编队选择候补4"
         ]
     },
-    "黎明界_EX编队选择候补4": {
+    "黎明界_战斗核心编队选择候补4": {
         "next": [
-            "黎明界_EX编队候补4已选",
-            "黎明界_EX编队候补4点击"
+            "黎明界_战斗核心编队候补4已选",
+            "黎明界_战斗核心编队候补4点击"
         ]
     },
-    "黎明界_EX编队候补4已选": {
+    "黎明界_战斗核心编队候补4已选": {
         "timeout": 500,
         "recognition": "TemplateMatch",
         "template": [
@@ -170,10 +170,10 @@
         "threshold": 0.5,
         "action": "DoNothing",
         "next": [
-            "黎明界_EX编队选择候补5"
+            "黎明界_战斗核心编队选择候补5"
         ]
     },
-    "黎明界_EX编队候补4点击": {
+    "黎明界_战斗核心编队候补4点击": {
         "action": "Click",
         "target": [
             565,
@@ -181,16 +181,16 @@
         ],
         "post_delay": 250,
         "next": [
-            "黎明界_EX编队选择候补5"
+            "黎明界_战斗核心编队选择候补5"
         ]
     },
-    "黎明界_EX编队选择候补5": {
+    "黎明界_战斗核心编队选择候补5": {
         "next": [
-            "黎明界_EX编队候补5已选",
-            "黎明界_EX编队候补5点击"
+            "黎明界_战斗核心编队候补5已选",
+            "黎明界_战斗核心编队候补5点击"
         ]
     },
-    "黎明界_EX编队候补5已选": {
+    "黎明界_战斗核心编队候补5已选": {
         "timeout": 500,
         "recognition": "TemplateMatch",
         "template": [
@@ -207,10 +207,10 @@
         "threshold": 0.5,
         "action": "DoNothing",
         "next": [
-            "黎明界_EX队伍战斗开始"
+            "黎明界_战斗核心队伍战斗开始"
         ]
     },
-    "黎明界_EX编队候补5点击": {
+    "黎明界_战斗核心编队候补5点击": {
         "action": "Click",
         "target": [
             705,
@@ -218,10 +218,10 @@
         ],
         "post_delay": 500,
         "next": [
-            "黎明界_EX队伍战斗开始"
+            "黎明界_战斗核心队伍战斗开始"
         ]
     },
-    "黎明界_EX队伍战斗开始": {
+    "黎明界_战斗核心队伍战斗开始": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/party_battle_start_button.png",
@@ -239,21 +239,21 @@
         ],
         "post_delay": 8000,
         "next": [
-            "黎明界_EX战斗SET检查"
+            "黎明界_战斗核心战斗SET检查"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_EX战斗SET检查": {
+    "黎明界_战斗核心战斗SET检查": {
         "timeout": 5000,
         "rate_limit": 250,
         "next": [
-            "黎明界_EX战斗SET白色点击",
-            "黎明界_EX战斗结果等待"
+            "黎明界_战斗核心战斗SET白色点击",
+            "黎明界_战斗核心战斗结果等待"
         ]
     },
-    "黎明界_EX战斗SET白色点击": {
+    "黎明界_战斗核心战斗SET白色点击": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/battle_set_white_button.png",
@@ -271,20 +271,20 @@
         ],
         "post_delay": 1000,
         "next": [
-            "黎明界_EX战斗结果等待"
+            "黎明界_战斗核心战斗结果等待"
         ]
     },
-    "黎明界_EX战斗结果等待": {
+    "黎明界_战斗核心战斗结果等待": {
         "recognition": "DirectHit",
         "action": "DoNothing",
         "post_delay": 3000,
         "next": [
-            "黎明界_EX战斗胜利继续",
+            "黎明界_战斗核心战斗胜利继续",
             "黎明界_失败处理",
-            "黎明界_EX战斗结果等待"
+            "黎明界_战斗核心战斗结果等待"
         ]
     },
-    "黎明界_EX战斗胜利继续": {
+    "黎明界_战斗核心战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": "jp/common/next_blue_button.png",
@@ -298,10 +298,10 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_EX胜利获得物品继续"
+            "黎明界_战斗核心胜利获得物品继续"
         ]
     },
-    "黎明界_EX胜利获得物品继续": {
+    "黎明界_战斗核心胜利获得物品继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/common/next_blue_button.png",
@@ -315,7 +315,76 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_EX物品获得选择"
+            "黎明界_战斗核心战斗后结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_战斗核心战斗后结果等待": {
+        "timeout": 10000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_战斗核心EX物品获得选择",
+            "[JumpBack]黎明界_战斗核心EX物品获得关闭",
+            "黎明界_战斗核心角色加入选择",
+            "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_战斗核心EX物品获得选择": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/ex_reward_item_chance_title.png",
+        "roi": [
+            360,
+            20,
+            560,
+            100
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            270,
+            620
+        ],
+        "post_delay": 1500
+    },
+    "黎明界_战斗核心EX物品获得关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            480,
+            525,
+            320,
+            105
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "黎明界_战斗核心角色加入选择": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/ex_character_bonus_title.png",
+        "roi": [
+            420,
+            20,
+            460,
+            95
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            270,
+            590
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_角色特写继续"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -339,305 +408,7 @@
         ],
         "post_delay": 3000,
         "next": [
-            "黎明界_NORMAL队伍编成"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_NORMAL队伍编成": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/party_title.png",
-        "action": "DoNothing",
-        "post_delay": 300,
-        "next": [
-            "黎明界_NORMAL编队选择候补1"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_NORMAL编队选择候补1": {
-        "next": [
-            "黎明界_NORMAL编队候补1已选",
-            "黎明界_NORMAL编队候补1点击"
-        ]
-    },
-    "黎明界_NORMAL编队候补1已选": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/party_selected_check_1.png",
-            "jp/limingjie/party_selected_check_2.png",
-            "jp/limingjie/party_selected_check_3.png"
-        ],
-        "roi": [
-            110,
-            160,
-            100,
-            90
-        ],
-        "threshold": 0.5,
-        "action": "DoNothing",
-        "next": [
-            "黎明界_NORMAL编队选择候补2"
-        ]
-    },
-    "黎明界_NORMAL编队候补1点击": {
-        "action": "Click",
-        "target": [
-            145,
-            225
-        ],
-        "post_delay": 250,
-        "next": [
-            "黎明界_NORMAL编队选择候补2"
-        ]
-    },
-    "黎明界_NORMAL编队选择候补2": {
-        "next": [
-            "黎明界_NORMAL编队候补2已选",
-            "黎明界_NORMAL编队候补2点击"
-        ]
-    },
-    "黎明界_NORMAL编队候补2已选": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/party_selected_check_1.png",
-            "jp/limingjie/party_selected_check_2.png",
-            "jp/limingjie/party_selected_check_3.png"
-        ],
-        "roi": [
-            250,
-            160,
-            100,
-            90
-        ],
-        "threshold": 0.5,
-        "action": "DoNothing",
-        "next": [
-            "黎明界_NORMAL编队选择候补3"
-        ]
-    },
-    "黎明界_NORMAL编队候补2点击": {
-        "action": "Click",
-        "target": [
-            285,
-            225
-        ],
-        "post_delay": 250,
-        "next": [
-            "黎明界_NORMAL编队选择候补3"
-        ]
-    },
-    "黎明界_NORMAL编队选择候补3": {
-        "next": [
-            "黎明界_NORMAL编队候补3已选",
-            "黎明界_NORMAL编队候补3点击"
-        ]
-    },
-    "黎明界_NORMAL编队候补3已选": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/party_selected_check_1.png",
-            "jp/limingjie/party_selected_check_2.png",
-            "jp/limingjie/party_selected_check_3.png"
-        ],
-        "roi": [
-            390,
-            160,
-            100,
-            90
-        ],
-        "threshold": 0.5,
-        "action": "DoNothing",
-        "next": [
-            "黎明界_NORMAL编队选择候补4"
-        ]
-    },
-    "黎明界_NORMAL编队候补3点击": {
-        "action": "Click",
-        "target": [
-            425,
-            225
-        ],
-        "post_delay": 250,
-        "next": [
-            "黎明界_NORMAL编队选择候补4"
-        ]
-    },
-    "黎明界_NORMAL编队选择候补4": {
-        "next": [
-            "黎明界_NORMAL编队候补4已选",
-            "黎明界_NORMAL编队候补4点击"
-        ]
-    },
-    "黎明界_NORMAL编队候补4已选": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/party_selected_check_1.png",
-            "jp/limingjie/party_selected_check_2.png",
-            "jp/limingjie/party_selected_check_3.png"
-        ],
-        "roi": [
-            530,
-            160,
-            100,
-            90
-        ],
-        "threshold": 0.5,
-        "action": "DoNothing",
-        "next": [
-            "黎明界_NORMAL编队选择候补5"
-        ]
-    },
-    "黎明界_NORMAL编队候补4点击": {
-        "action": "Click",
-        "target": [
-            565,
-            225
-        ],
-        "post_delay": 250,
-        "next": [
-            "黎明界_NORMAL编队选择候补5"
-        ]
-    },
-    "黎明界_NORMAL编队选择候补5": {
-        "next": [
-            "黎明界_NORMAL编队候补5已选",
-            "黎明界_NORMAL编队候补5点击"
-        ]
-    },
-    "黎明界_NORMAL编队候补5已选": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/limingjie/party_selected_check_1.png",
-            "jp/limingjie/party_selected_check_2.png",
-            "jp/limingjie/party_selected_check_3.png"
-        ],
-        "roi": [
-            700,
-            150,
-            130,
-            110
-        ],
-        "threshold": 0.5,
-        "action": "DoNothing",
-        "next": [
-            "黎明界_NORMAL队伍战斗开始"
-        ]
-    },
-    "黎明界_NORMAL编队候补5点击": {
-        "action": "Click",
-        "target": [
-            705,
-            225
-        ],
-        "post_delay": 500,
-        "next": [
-            "黎明界_NORMAL队伍战斗开始"
-        ]
-    },
-    "黎明界_NORMAL队伍战斗开始": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/party_battle_start_button.png",
-        "roi": [
-            1010,
-            545,
-            240,
-            120
-        ],
-        "threshold": 0.85,
-        "action": "Click",
-        "target": [
-            1135,
-            605
-        ],
-        "post_delay": 8000,
-        "next": [
-            "黎明界_NORMAL战斗SET检查"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_NORMAL战斗SET检查": {
-        "timeout": 5000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_NORMAL战斗SET白色点击",
-            "黎明界_NORMAL战斗结果等待"
-        ]
-    },
-    "黎明界_NORMAL战斗SET白色点击": {
-        "timeout": 1000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_set_white_button.png",
-        "roi": [
-            1180,
-            400,
-            90,
-            90
-        ],
-        "threshold": 0.82,
-        "action": "Click",
-        "target": [
-            1220,
-            455
-        ],
-        "post_delay": 1000,
-        "next": [
-            "黎明界_NORMAL战斗结果等待"
-        ]
-    },
-    "黎明界_NORMAL战斗结果等待": {
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "post_delay": 3000,
-        "next": [
-            "黎明界_NORMAL战斗胜利继续",
-            "黎明界_失败处理",
-            "黎明界_NORMAL战斗结果等待"
-        ]
-    },
-    "黎明界_NORMAL战斗胜利继续": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/next_blue_button.png",
-        "roi": [
-            930,
-            600,
-            340,
-            100
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "黎明界_NORMAL胜利获得物品继续"
-        ]
-    },
-    "黎明界_NORMAL胜利获得物品继续": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/next_blue_button.png",
-        "roi": [
-            930,
-            600,
-            340,
-            100
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "黎明界_NORMAL角色加入选择"
+            "黎明界_战斗核心队伍编成"
         ],
         "on_error": [
             "黎明界_全局状态分流"
