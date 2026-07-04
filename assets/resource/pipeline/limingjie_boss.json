@@ -1,38 +1,4 @@
 {
-    "黎明界_通用战斗节点预览": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_preview_map_button.png",
-        "roi": [
-            620,
-            550,
-            330,
-            115
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "target": [
-            1080,
-            610
-        ],
-        "post_delay": 3000,
-        "next": [
-            "黎明界_战斗预览后目标等待"
-        ]
-    },
-    "黎明界_战斗预览后目标等待": {
-        "timeout": 8000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_通用确认",
-            "黎明界_通用编队开始",
-            "黎明界_战斗核心战斗胜利继续",
-            "黎明界_失败处理"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
     "黎明界_BOSS战斗节点预览": {
         "timeout": 10000,
         "recognition": "TemplateMatch",

@@ -60,29 +60,36 @@
         ],
         "post_delay": 1500
     },
-    "黎明界_角色特写后目标等待": {
-        "timeout": 30000,
-        "rate_limit": 250,
-        "next": [
-            "[JumpBack]黎明界_通用Connecting等待",
-            "[JumpBack]黎明界_通用过场跳过点击",
-            "[JumpBack]黎明界_通用角色加入关闭",
-            "黎明界_地图页快速判定",
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_角色奖励选择",
-            "黎明界_道具奖励选择",
-            "黎明界_最终胜利继续",
-            "黎明界_RESULT继续",
-            "黎明界_结算奖励关闭",
-            "[JumpBack]黎明界_角色特写跳过点击"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
     "黎明界_出发Bonus关闭": {
         "timeout": 10000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_出发Bonus标题判定",
+            "黎明界_出发Bonus关闭按钮判定"
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_开始链路候选"
+        ]
+    },
+    "黎明界_出发Bonus标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/departure_bonus_title.png",
+        "roi": [
+            500,
+            25,
+            280,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing"
+    },
+    "黎明界_出发Bonus关闭按钮判定": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/departure_bonus_close_button.png",
         "roi": [
@@ -92,32 +99,7 @@
             105
         ],
         "threshold": 0.85,
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "黎明界_开始链路候选"
-        ]
-    },
-    "黎明界_通用确认": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/common/OK.png",
-            "jp/common/OK2.png",
-            "jp/common/OK3.png"
-        ],
-        "roi": [
-            450,
-            420,
-            420,
-            260
-        ],
-        "threshold": 0.8,
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "黎明界_全局状态分流"
-        ]
+        "action": "DoNothing"
     },
     "黎明界_入口待补充": {
         "timeout": 10000,
@@ -398,7 +380,7 @@
         ],
         "post_delay": 2000,
         "next": [
-            "黎明界_角色特写后目标等待"
+            "黎明界_开始链路候选"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -457,7 +439,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写后目标等待"
+            "黎明界_奖励选择后目标等待"
         ]
     },
     "黎明界_道具奖励选择": {
@@ -477,7 +459,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写后目标等待"
+            "黎明界_结算后目标等待"
         ],
         "roi": [
             480,
@@ -494,7 +476,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写后目标等待"
+            "黎明界_结算后目标等待"
         ],
         "roi": [
             480,
@@ -503,6 +485,22 @@
             100
         ],
         "threshold": 0.9
+    },
+    "黎明界_结算后目标等待": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用角色加入关闭",
+            "黎明界_最终胜利继续",
+            "黎明界_RESULT继续",
+            "黎明界_结算奖励关闭",
+            "[JumpBack]黎明界_角色特写跳过点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
     },
     "黎明界_结算奖励关闭": {
         "timeout": 60000,
@@ -538,7 +536,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_角色特写后目标等待"
+            "黎明界_奖励选择后目标等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
