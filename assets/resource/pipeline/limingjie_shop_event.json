@@ -83,11 +83,16 @@
         ]
     },
     "黎明界_SHOP购买反馈等待": {
-        "timeout": 5000,
+        "timeout": 10000,
         "rate_limit": 250,
         "next": [
-            "黎明界_SHOP购买确认OK",
-            "黎明界_SHOP购买不足停止购买"
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_SHOP购买确认OK",
+            "[JumpBack]黎明界_SHOP购买完成OK",
+            "黎明界_SHOP购买不足停止购买",
+            "[JumpBack]黎明界_通用角色加入关闭",
+            "黎明界_SHOP购买回商店继续",
+            "[JumpBack]黎明界_角色特写跳过点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -109,13 +114,7 @@
             785,
             580
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_SHOP购买完成OK"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
+        "post_delay": 1500
     },
     "黎明界_SHOP购买完成OK": {
         "timeout": 10000,
@@ -133,24 +132,7 @@
             645,
             500
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_SHOP购买后结果等待"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_SHOP购买后结果等待": {
-        "timeout": 3500,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_SHOP购买角色加入关闭",
-            "黎明界_SHOP购买回商店继续"
-        ],
-        "on_error": [
-            "黎明界_SHOP购买角色特写点击"
-        ]
+        "post_delay": 1500
     },
     "黎明界_SHOP购买回商店继续": {
         "timeout": 1000,
@@ -166,51 +148,6 @@
         "action": "DoNothing",
         "next": [
             "黎明界_SHOP购买点击"
-        ]
-    },
-    "黎明界_SHOP购买角色特写点击": {
-        "timeout": 30000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_SHOP购买角色加入关闭",
-            "[JumpBack]黎明界_SHOP购买角色特写点击一次"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_SHOP购买角色特写点击一次": {
-        "pre_delay": 1500,
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500
-    },
-    "黎明界_SHOP购买角色加入关闭": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_join_title.png",
-        "roi": [
-            0,
-            0,
-            1280,
-            720
-        ],
-        "threshold": 0.88,
-        "action": "Click",
-        "target": [
-            640,
-            580
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_SHOP购买点击"
-        ],
-        "on_error": [
-            "黎明界_SHOP购买角色特写点击"
         ]
     },
     "黎明界_SHOP购买不足停止购买": {
