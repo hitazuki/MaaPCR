@@ -192,15 +192,19 @@
     "黎明界_SHOP购买角色加入关闭": {
         "timeout": 3000,
         "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
+        "template": "jp/limingjie/character_join_title.png",
         "roi": [
-            480,
-            525,
-            320,
-            105
+            0,
+            0,
+            1280,
+            720
         ],
-        "threshold": 0.9,
+        "threshold": 0.88,
         "action": "Click",
+        "target": [
+            640,
+            580
+        ],
         "post_delay": 1500,
         "next": [
             "黎明界_SHOP购买点击"
@@ -319,7 +323,7 @@
             "黎明界_EVENT_NORMAL战斗节点预览",
             "黎明界_EVENT_EX战斗节点预览",
             "[JumpBack]黎明界_通用白色关闭点击",
-            "黎明界_角色特写后角色加入关闭",
+            "黎明界_通用角色加入关闭",
             "[JumpBack]黎明界_角色特写跳过点击",
             "黎明界_地图页快速判定"
         ],

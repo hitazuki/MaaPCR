@@ -283,15 +283,19 @@
     "黎明界_BOSS最终物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
+        "template": "jp/limingjie/item_get_title.png",
         "roi": [
-            480,
-            525,
-            320,
-            105
+            0,
+            0,
+            1280,
+            720
         ],
-        "threshold": 0.9,
+        "threshold": 0.88,
         "action": "Click",
+        "target": [
+            640,
+            580
+        ],
         "post_delay": 1500,
         "next": [
             "黎明界_完成"

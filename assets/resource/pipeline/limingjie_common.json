@@ -66,45 +66,8 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_角色特写后角色加入关闭",
+            "黎明界_通用角色加入关闭",
             "[JumpBack]黎明界_角色特写跳过点击"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色特写后角色加入关闭": {
-        "timeout": 1000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
-        "roi": [
-            480,
-            525,
-            320,
-            105
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色加入关闭后目标等待"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_角色加入关闭后目标等待": {
-        "timeout": 8000,
-        "rate_limit": 250,
-        "next": [
-            "黎明界_地图页快速判定",
-            "黎明界_出发Bonus关闭",
-            "黎明界_通用确认",
-            "黎明界_角色奖励选择",
-            "黎明界_道具奖励选择",
-            "黎明界_最终胜利继续",
-            "黎明界_RESULT继续",
-            "黎明界_结算奖励关闭"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -457,16 +420,20 @@
     "黎明界_通用角色加入关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
+        "template": "jp/limingjie/character_join_title.png",
         "roi": [
-            480,
-            525,
-            320,
-            105
+            0,
+            0,
+            1280,
+            720
         ],
-        "threshold": 0.9,
+        "threshold": 0.88,
         "action": "Click",
-        "post_delay": 1000,
+        "target": [
+            640,
+            580
+        ],
+        "post_delay": 1500,
         "next": [
             "黎明界_地图页快速判定",
             "黎明界_出发Bonus关闭",
