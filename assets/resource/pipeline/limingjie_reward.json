@@ -26,19 +26,15 @@
     "黎明界_角色节点物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            510,
-            20,
-            260,
-            75
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            640
-        ],
         "post_delay": 2000,
         "next": [
             "黎明界_角色特写继续"
@@ -74,19 +70,15 @@
     "黎明界_RELIC物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            510,
-            20,
-            260,
-            75
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            640
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_RELIC地图转移等待"

@@ -132,19 +132,15 @@
     "黎明界_角色特写后角色加入关闭": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_join_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            520,
-            85,
-            260,
-            70
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            580
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_角色加入关闭后目标等待"
@@ -734,16 +730,19 @@
     "黎明界_通用战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_win.png",
+        "template": "jp/common/next_blue_button.png",
         "action": "Click",
-        "target": [
-            1130,
-            680
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_通用战斗后结果等待"
-        ]
+        ],
+        "roi": [
+            930,
+            600,
+            340,
+            100
+        ],
+        "threshold": 0.9
     },
     "黎明界_通用战斗后结果等待": {
         "timeout": 10000,
@@ -759,19 +758,15 @@
     "黎明界_通用战斗获得物品继续": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_drop_title.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            420,
-            120,
-            420,
-            120
+            930,
+            600,
+            340,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_通用战斗后结果等待"
@@ -791,7 +786,7 @@
     "黎明界_通用角色加入关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_join_close_button.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
             480,
             525,
@@ -850,44 +845,53 @@
     "黎明界_最终胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_final_win_list.png",
+        "template": "jp/common/next_white_button.png",
         "action": "Click",
-        "target": [
-            1120,
-            686
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_角色特写继续"
-        ]
+        ],
+        "roi": [
+            480,
+            600,
+            330,
+            100
+        ],
+        "threshold": 0.9
     },
     "黎明界_RESULT继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_title.png",
+        "template": "jp/common/close_white_button.png",
         "action": "Click",
-        "target": [
-            1120,
-            642
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_角色特写继续"
-        ]
+        ],
+        "roi": [
+            480,
+            600,
+            330,
+            100
+        ],
+        "threshold": 0.9
     },
     "黎明界_结算奖励关闭": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_treasure_title.png",
+        "template": "jp/common/ok_white_button.png",
         "action": "Click",
-        "target": [
-            640,
-            642
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_完成"
-        ]
+        ],
+        "roi": [
+            480,
+            590,
+            330,
+            100
+        ],
+        "threshold": 0.9
     },
     "黎明界_完成": {
         "action": "StopTask"

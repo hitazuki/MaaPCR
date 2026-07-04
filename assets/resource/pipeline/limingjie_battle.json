@@ -287,19 +287,15 @@
     "黎明界_EX战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_next_button.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            950,
+            930,
             600,
-            320,
+            340,
             100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EX胜利获得物品继续"
@@ -308,19 +304,15 @@
     "黎明界_EX胜利获得物品继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_drop_title.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            420,
-            120,
-            420,
-            120
+            930,
+            600,
+            340,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EX物品获得选择"
@@ -617,19 +609,15 @@
     "黎明界_NORMAL战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_next_button.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            950,
+            930,
             600,
-            320,
+            340,
             100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_NORMAL胜利获得物品继续"
@@ -638,19 +626,15 @@
     "黎明界_NORMAL胜利获得物品继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_drop_title.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            420,
-            120,
-            420,
-            120
+            930,
+            600,
+            340,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_NORMAL角色加入选择"
@@ -1232,19 +1216,15 @@
     "黎明界_EVENT_NORMAL战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_next_button.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            950,
+            930,
             600,
-            320,
+            340,
             100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EVENT战斗获得物品继续"
@@ -1253,19 +1233,15 @@
     "黎明界_EVENT_EX战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_next_button.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            950,
+            930,
             600,
-            320,
+            340,
             100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EVENT战斗获得物品继续"
@@ -1274,19 +1250,15 @@
     "黎明界_EVENT战斗获得物品继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_drop_title.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            420,
-            120,
-            420,
-            120
+            930,
+            600,
+            340,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EVENT战斗后结果等待"
@@ -1331,19 +1303,15 @@
     "黎明界_EVENT战斗角色加入关闭": {
         "timeout": 3000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/character_join_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            520,
-            85,
-            260,
-            70
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            580
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EVENT战斗物品获得关闭"
@@ -1355,19 +1323,15 @@
     "黎明界_EVENT战斗物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            510,
-            20,
-            260,
-            75
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            640
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EVENT地图转移等待"
@@ -1413,19 +1377,15 @@
     "黎明界_EX物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            510,
-            20,
-            260,
-            75
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            640
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_EX角色加入选择"

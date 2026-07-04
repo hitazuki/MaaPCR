@@ -187,19 +187,15 @@
     "黎明界_BOSS战斗胜利继续": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_next_button.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
             930,
-            620,
-            330,
+            600,
+            340,
             100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1095,
-            675
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_BOSS胜利获得物品继续"
@@ -208,19 +204,15 @@
     "黎明界_BOSS胜利获得物品继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/ex_win_drop_title.png",
+        "template": "jp/common/next_blue_button.png",
         "roi": [
-            420,
-            120,
-            420,
-            120
+            930,
+            600,
+            340,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            1110,
-            655
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_BOSS结算加入角色继续"
@@ -232,19 +224,15 @@
     "黎明界_BOSS结算加入角色继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            430,
-            20,
-            420,
-            120
+            480,
+            600,
+            330,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            665
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_BOSS结算分数关闭"
@@ -256,19 +244,15 @@
     "黎明界_BOSS结算分数关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            430,
-            20,
-            420,
-            120
+            480,
+            600,
+            330,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            665
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_BOSS宝箱开封关闭"
@@ -280,19 +264,15 @@
     "黎明界_BOSS宝箱开封关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/result_treasure_title.png",
+        "template": "jp/common/ok_white_button.png",
         "roi": [
-            450,
-            20,
-            380,
-            80
+            480,
+            590,
+            330,
+            100
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            642
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_BOSS最终物品获得关闭"
@@ -304,19 +284,15 @@
     "黎明界_BOSS最终物品获得关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
-            510,
-            20,
-            260,
-            75
+            480,
+            525,
+            320,
+            105
         ],
-        "threshold": 0.88,
+        "threshold": 0.9,
         "action": "Click",
-        "target": [
-            640,
-            640
-        ],
         "post_delay": 1500,
         "next": [
             "黎明界_完成"
