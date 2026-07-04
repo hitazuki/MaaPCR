@@ -60,28 +60,6 @@
         ],
         "post_delay": 1500
     },
-    "黎明界_角色特写全局兜底点击": {
-        "timeout": 1000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_menu.png",
-        "roi": [
-            1150,
-            15,
-            130,
-            120
-        ],
-        "threshold": 0.88,
-        "inverse": true,
-        "action": "Click",
-        "target": [
-            640,
-            240
-        ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_全局状态分流"
-        ]
-    },
     "黎明界_角色特写后目标等待": {
         "timeout": 30000,
         "rate_limit": 250,
