@@ -125,6 +125,17 @@
         ]
     },
     "黎明界_角色特写继续": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_初始角色加入关闭",
+            "[JumpBack]黎明界_角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写点击一次": {
         "pre_delay": 2500,
         "recognition": "DirectHit",
         "action": "Click",
@@ -132,24 +143,40 @@
             640,
             240
         ],
-        "post_delay": 2000,
-        "next": [
-            "黎明界_角色特写后角色加入关闭"
-        ]
+        "post_delay": 2000
     },
     "黎明界_角色特写兜底继续": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_初始角色加入关闭",
+            "[JumpBack]黎明界_角色特写兜底点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色特写兜底点击一次": {
         "recognition": "DirectHit",
         "action": "Click",
         "target": [
             640,
             240
         ],
-        "post_delay": 2000,
-        "next": [
-            "黎明界_角色特写后角色加入关闭"
-        ]
+        "post_delay": 2000
     },
     "黎明界_角色奖励特写继续": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色奖励特写后角色加入关闭",
+            "[JumpBack]黎明界_角色奖励特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写点击一次": {
         "pre_delay": 3000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -157,12 +184,43 @@
             640,
             240
         ],
-        "post_delay": 2000,
+        "post_delay": 2000
+    },
+    "黎明界_初始角色加入关闭": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/character_join_title.png",
+        "roi": [
+            520,
+            85,
+            260,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            640,
+            580
+        ],
+        "post_delay": 1500,
         "next": [
-            "黎明界_角色特写后角色加入关闭"
+            "黎明界_初始角色地图转移等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
         ]
     },
-    "黎明界_角色特写后角色加入关闭": {
+    "黎明界_初始角色地图转移等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_地图页快速判定"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色奖励特写后角色加入关闭": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/character_join_title.png",
@@ -190,7 +248,7 @@
             "黎明界_结算奖励关闭"
         ],
         "on_error": [
-            "黎明界_角色特写继续"
+            "黎明界_全局状态分流"
         ]
     },
     "黎明界_出发Bonus关闭": {
@@ -530,10 +588,13 @@
         ]
     },
     "黎明界_地图页快速判定": {
-        "timeout": 1000,
+        "timeout": 3000,
         "rate_limit": 200,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_area_badge.png",
+        "recognition": "And",
+        "all_of": [
+            "黎明界_地图菜单判定",
+            "黎明界_地图可达节点判定"
+        ],
         "action": "DoNothing",
         "next": [
             "黎明界_地图循环"
@@ -541,10 +602,13 @@
     },
     "黎明界_地图循环": {
         "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_area_badge.png",
+        "rate_limit": 250,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_地图菜单判定",
+            "黎明界_地图可达节点判定"
+        ],
         "next": [
-            "黎明界_地图移动确认OK",
             "黎明界_地图选择BOSS",
             "黎明界_地图选择EX",
             "黎明界_地图选择NORMAL",
@@ -553,6 +617,64 @@
             "黎明界_地图选择遗物",
             "黎明界_地图选择SHOP"
         ]
+    },
+    "黎明界_地图菜单判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_menu.png",
+        "roi": [
+            1150,
+            15,
+            130,
+            120
+        ],
+        "threshold": 0.88
+    },
+    "黎明界_地图可达节点判定": {
+        "recognition": "Or",
+        "any_of": [
+            "黎明界_地图可达BOSS判定",
+            "黎明界_地图可达EX判定",
+            "黎明界_地图可达NORMAL判定",
+            "黎明界_地图可达EVENT判定",
+            "黎明界_地图可达角色判定",
+            "黎明界_地图可达遗物判定",
+            "黎明界_地图可达SHOP判定"
+        ]
+    },
+    "黎明界_地图可达BOSS判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_boss_reachable.png",
+        "threshold": 0.85
+    },
+    "黎明界_地图可达EX判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_extreme_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达NORMAL判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_normal_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达EVENT判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_event_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达角色判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_character_reachable.png",
+        "threshold": 0.9
+    },
+    "黎明界_地图可达遗物判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_relic_reachable.png",
+        "threshold": 0.82
+    },
+    "黎明界_地图可达SHOP判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_node_shop_reachable.png",
+        "threshold": 0.82
     },
     "黎明界_地图移动确认OK": {
         "timeout": 3000,
@@ -1768,6 +1890,17 @@
         ]
     },
     "黎明界_EVENT战斗角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EVENT战斗角色加入关闭",
+            "[JumpBack]黎明界_EVENT战斗角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT战斗角色特写点击一次": {
         "pre_delay": 2000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -1775,10 +1908,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_EVENT战斗角色加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_EVENT战斗角色加入关闭": {
         "timeout": 3000,
@@ -2166,6 +2296,17 @@
         ]
     },
     "黎明界_EX角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EX角色加入关闭",
+            "[JumpBack]黎明界_EX角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EX角色特写点击一次": {
         "pre_delay": 2000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -2173,10 +2314,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_EX角色加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_EX角色加入关闭": {
         "timeout": 3000,
@@ -2237,6 +2375,17 @@
         ]
     },
     "黎明界_NORMAL角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_NORMAL角色加入关闭",
+            "[JumpBack]黎明界_NORMAL角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_NORMAL角色特写点击一次": {
         "pre_delay": 2000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -2244,10 +2393,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_NORMAL角色加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_NORMAL角色加入关闭": {
         "timeout": 3000,
@@ -2332,6 +2478,17 @@
         ]
     },
     "黎明界_角色节点角色特写1": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_角色节点加入关闭",
+            "[JumpBack]黎明界_角色节点角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_角色节点角色特写点击一次": {
         "pre_delay": 2000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -2339,10 +2496,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_角色节点加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_角色节点加入关闭": {
         "timeout": 10000,
@@ -2677,6 +2831,17 @@
         ]
     },
     "黎明界_SHOP购买角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_SHOP购买角色加入关闭",
+            "[JumpBack]黎明界_SHOP购买角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP购买角色特写点击一次": {
         "pre_delay": 1500,
         "recognition": "DirectHit",
         "action": "Click",
@@ -2684,10 +2849,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_SHOP购买角色加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_SHOP购买角色加入关闭": {
         "timeout": 3000,
@@ -2841,6 +3003,17 @@
         ]
     },
     "黎明界_EVENT角色特写点击": {
+        "timeout": 30000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_EVENT角色加入关闭",
+            "[JumpBack]黎明界_EVENT角色特写点击一次"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT角色特写点击一次": {
         "pre_delay": 2000,
         "recognition": "DirectHit",
         "action": "Click",
@@ -2848,10 +3021,7 @@
             640,
             240
         ],
-        "post_delay": 1500,
-        "next": [
-            "黎明界_EVENT角色加入关闭"
-        ]
+        "post_delay": 1500
     },
     "黎明界_EVENT角色加入关闭": {
         "timeout": 3000,
