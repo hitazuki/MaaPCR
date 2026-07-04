@@ -89,7 +89,7 @@
         "template": "jp/limingjie/map_node_shop_reachable.png",
         "threshold": 0.82
     },
-    "黎明界_地图移动确认OK": {
+    "黎明界_通用地图移动确认OK": {
         "timeout": 3000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_move_confirm_ok_button.png",
@@ -101,27 +101,7 @@
         ],
         "threshold": 0.9,
         "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_地图移动后目标等待"
-        ]
-    },
-    "黎明界_角色节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_角色节点移动后目标等待"
-        ]
+        "post_delay": 4000
     },
     "黎明界_角色节点移动后目标等待": {
         "timeout": 8000,
@@ -129,7 +109,7 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_角色节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_角色节点奖励选择",
             "黎明界_角色节点物品获得关闭",
             "[JumpBack]黎明界_角色特写跳过点击"
@@ -138,51 +118,17 @@
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_EX节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_EX节点移动后目标等待"
-        ]
-    },
     "黎明界_EX节点移动后目标等待": {
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_EX节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_EX战斗节点预览"
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_NORMAL节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_NORMAL节点移动后目标等待"
         ]
     },
     "黎明界_NORMAL节点移动后目标等待": {
@@ -191,28 +137,11 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_NORMAL节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_NORMAL战斗节点预览"
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_EVENT节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_EVENT节点移动后目标等待"
         ]
     },
     "黎明界_EVENT节点移动后目标等待": {
@@ -221,28 +150,11 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_EVENT节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_EVENT事件选择"
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_RELIC节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_RELIC节点移动后目标等待"
         ]
     },
     "黎明界_RELIC节点移动后目标等待": {
@@ -251,7 +163,7 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_RELIC节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "[JumpBack]黎明界_通用物品获得选择",
             "[JumpBack]黎明界_通用白色关闭点击",
             "黎明界_地图页快速判定"
@@ -260,51 +172,17 @@
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_SHOP节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_SHOP节点移动后目标等待"
-        ]
-    },
     "黎明界_SHOP节点移动后目标等待": {
         "timeout": 8000,
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_SHOP节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_SHOP购买点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_BOSS节点移动确认OK": {
-        "timeout": 3000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/map_move_confirm_ok_button.png",
-        "roi": [
-            620,
-            430,
-            340,
-            130
-        ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 4000,
-        "next": [
-            "黎明界_BOSS节点移动后目标等待"
         ]
     },
     "黎明界_BOSS节点移动后目标等待": {
@@ -313,7 +191,7 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_BOSS节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_BOSS战斗节点预览"
         ],
         "on_error": [
@@ -326,7 +204,7 @@
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
-            "黎明界_地图移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_通用确认",
             "黎明界_通用角色加入关闭",
             "黎明界_角色奖励选择",
@@ -351,7 +229,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_BOSS节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_BOSS节点移动后目标等待"
         ]
     },
@@ -363,7 +241,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_EX节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_EX节点移动后目标等待"
         ]
     },
@@ -375,7 +253,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_NORMAL节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_NORMAL节点移动后目标等待"
         ]
     },
@@ -387,7 +265,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_EVENT节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_EVENT节点移动后目标等待"
         ]
     },
@@ -399,7 +277,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_角色节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_角色节点移动后目标等待"
         ]
     },
@@ -411,7 +289,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_RELIC节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_RELIC节点移动后目标等待"
         ]
     },
@@ -423,7 +301,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "黎明界_SHOP节点移动确认OK",
+            "[JumpBack]黎明界_通用地图移动确认OK",
             "黎明界_SHOP节点移动后目标等待"
         ]
     }
