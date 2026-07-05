@@ -1,43 +1,4 @@
 {
-    "黎明界_商店处理": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "黎明界_商店离开确认",
-            "黎明界_地图页快速判定"
-        ],
-        "roi": [
-            940,
-            580,
-            310,
-            110
-        ],
-        "threshold": 0.88
-    },
-    "黎明界_商店离开确认": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "黎明界_地图页快速判定"
-        ],
-        "template": [
-            "jp/common/OK.png",
-            "jp/common/OK2.png",
-            "jp/common/OK3.png"
-        ],
-        "roi": [
-            650,
-            450,
-            330,
-            100
-        ],
-        "threshold": 0.8
-    },
     "黎明界_SHOP商店关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
@@ -53,6 +14,25 @@
         "post_delay": 1000,
         "next": [
             "黎明界_SHOP商店离开确认"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_SHOP商店标题": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_title.png",
+        "roi": [
+            520,
+            20,
+            240,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing",
+        "next": [
+            "黎明界_SHOP购买点击"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -87,8 +67,8 @@
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
-            "[JumpBack]黎明界_SHOP购买确认OK",
-            "[JumpBack]黎明界_SHOP购买完成OK",
+            "黎明界_SHOP购买确认OK",
+            "黎明界_SHOP购买完成OK",
             "黎明界_SHOP购买不足停止购买",
             "[JumpBack]黎明界_通用角色加入关闭",
             "黎明界_SHOP购买回商店继续",
@@ -114,7 +94,10 @@
             785,
             580
         ],
-        "post_delay": 1500
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买反馈等待"
+        ]
     },
     "黎明界_SHOP购买完成OK": {
         "timeout": 10000,
@@ -132,7 +115,10 @@
             645,
             500
         ],
-        "post_delay": 1500
+        "post_delay": 1500,
+        "next": [
+            "黎明界_SHOP购买反馈等待"
+        ]
     },
     "黎明界_SHOP购买回商店继续": {
         "timeout": 1000,
@@ -147,7 +133,7 @@
         "threshold": 0.85,
         "action": "DoNothing",
         "next": [
-            "黎明界_SHOP购买点击"
+            "黎明界_SHOP商店标题"
         ]
     },
     "黎明界_SHOP购买不足停止购买": {
@@ -172,20 +158,16 @@
     },
     "黎明界_SHOP商店离开确认": {
         "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/common/OK.png",
-            "jp/common/OK2.png",
-            "jp/common/OK3.png"
+        "recognition": "And",
+        "all_of": [
+            "黎明界_SHOP商店离开确认标题判定",
+            "黎明界_SHOP商店离开确认OK判定"
         ],
-        "roi": [
-            650,
-            450,
-            330,
-            100
-        ],
-        "threshold": 0.8,
         "action": "Click",
+        "target": [
+            785,
+            495
+        ],
         "post_delay": 1500,
         "next": [
             "黎明界_SHOP地图转移等待"
@@ -193,6 +175,30 @@
         "on_error": [
             "黎明界_全局状态分流"
         ]
+    },
+    "黎明界_SHOP商店离开确认标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/shop_exit_confirm_title.png",
+        "roi": [
+            480,
+            160,
+            320,
+            70
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing"
+    },
+    "黎明界_SHOP商店离开确认OK判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/common/OK.png",
+        "roi": [
+            640,
+            455,
+            300,
+            90
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing"
     },
     "黎明界_SHOP地图转移等待": {
         "timeout": 8000,
@@ -202,20 +208,6 @@
         ],
         "on_error": [
             "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_事件处理": {
-        "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/event_title.png",
-        "action": "Click",
-        "target": [
-            430,
-            590
-        ],
-        "post_delay": 2000,
-        "next": [
-            "黎明界_EVENT事件结果等待"
         ]
     },
     "黎明界_EVENT事件选择": {

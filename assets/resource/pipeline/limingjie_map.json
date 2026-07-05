@@ -177,7 +177,7 @@
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
             "[JumpBack]黎明界_通用地图移动确认OK",
-            "黎明界_SHOP购买点击"
+            "黎明界_SHOP商店标题"
         ],
         "on_error": [
             "黎明界_全局状态分流"
