@@ -257,8 +257,8 @@
             "黎明界_BOSS胜利获得物品继续",
             "黎明界_BOSS结算RESULT继续",
             "黎明界_BOSS宝箱开封关闭",
-            "黎明界_BOSS最终物品获得关闭",
-            "黎明界_失败处理"
+            "黎明界_失败处理",
+            "黎明界_BOSS最终物品获得关闭"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -367,17 +367,6 @@
     },
     "黎明界_BOSS最终物品获得关闭": {
         "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/item_get_title.png",
-        "roi": [
-            0,
-            0,
-            1280,
-            720
-        ],
-        "threshold": 0.88,
-        "action": "DoNothing",
-        "post_delay": 300,
         "next": [
             "[JumpBack]黎明界_通用物品获得关闭",
             "黎明界_完成"

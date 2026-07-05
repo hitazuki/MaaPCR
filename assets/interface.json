@@ -128,7 +128,8 @@
             "option": [
                 "黎明界目标公会",
                 "黎明界失败策略",
-                "黎明界商店策略"
+                "黎明界商店策略",
+                "黎明界完成策略"
             ]
         },
         /*
@@ -406,6 +407,26 @@
                     "pipeline_override": {
                         "黎明界_商店处理": {
                             "action": "StopTask"
+                        }
+                    }
+                }
+            ],
+            "type": "select"
+        },
+        "黎明界完成策略": {
+            "cases": [
+                {
+                    "name": "执行一次后结束"
+                },
+                {
+                    "name": "循环第二层出发",
+                    "pipeline_override": {
+                        "黎明界_完成": {
+                            "action": "DoNothing",
+                            "post_delay": 300,
+                            "next": [
+                                "黎明界_第二层出发"
+                            ]
                         }
                     }
                 }

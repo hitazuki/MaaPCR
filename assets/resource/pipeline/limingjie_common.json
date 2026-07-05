@@ -520,6 +520,9 @@
         "threshold": 0.9
     },
     "黎明界_完成": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/limingjie_departure_button.png",
         "action": "StopTask"
     },
     "黎明界_道具奖励选择按钮点击": {
