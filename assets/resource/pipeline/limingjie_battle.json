@@ -341,7 +341,7 @@
     },
     "黎明界_战斗核心战斗后结果等待": {
         "timeout": 10000,
-        "rate_limit": 250,
+        "rate_limit": 500,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
@@ -378,7 +378,7 @@
     },
     "黎明界_战斗核心地图循环": {
         "timeout": 1000,
-        "rate_limit": 250,
+        "rate_limit": 500,
         "recognition": "And",
         "all_of": [
             "黎明界_地图菜单判定",
