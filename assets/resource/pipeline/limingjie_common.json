@@ -2,14 +2,14 @@
     "黎明界_通用Connecting等待": {
         "timeout": 1000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/connecting_text.png",
+        "template": "jp/limingjie/connecting_text_tight.png",
         "roi": [
             960,
             20,
             310,
             70
         ],
-        "threshold": 0.85,
+        "threshold": 0.8,
         "action": "DoNothing",
         "post_delay": 1000
     },
@@ -85,7 +85,7 @@
             110,
             100
         ],
-        "threshold": 0.85,
+        "threshold": 0.8,
         "action": "Click",
         "target": [
             640,
