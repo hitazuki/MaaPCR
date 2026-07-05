@@ -2,7 +2,7 @@
     "黎明界_商店处理": {
         "timeout": 60000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/shop_close_button.png",
+        "template": "jp/common/close_white_button.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -41,7 +41,7 @@
     "黎明界_SHOP商店关闭": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/shop_close_button.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
             940,
             580,

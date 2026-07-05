@@ -91,7 +91,7 @@
     },
     "黎明界_出发Bonus关闭按钮判定": {
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/departure_bonus_close_button.png",
+        "template": "jp/common/close_white_button.png",
         "roi": [
             480,
             585,
