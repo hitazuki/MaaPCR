@@ -35,7 +35,7 @@
         ]
     },
     "黎明界_开始链路候选": {
-        "timeout": 15000,
+        "timeout": 5000,
         "rate_limit": 500,
         "next": [
             "黎明界_出发Bonus关闭",

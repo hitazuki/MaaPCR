@@ -43,6 +43,19 @@
     },
     "黎明界_角色特写跳过点击": {
         "timeout": 1000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_非地图页判定",
+            "黎明界_非窗口页判定"
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            240
+        ],
+        "post_delay": 1500
+    },
+    "黎明界_非地图页判定": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_menu.png",
         "roi": [
@@ -53,12 +66,20 @@
         ],
         "threshold": 0.88,
         "inverse": true,
-        "action": "Click",
-        "target": [
-            640,
-            240
+        "action": "DoNothing"
+    },
+    "黎明界_非窗口页判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/window_frame_top_left.png",
+        "roi": [
+            20,
+            20,
+            190,
+            80
         ],
-        "post_delay": 1500
+        "threshold": 0.85,
+        "inverse": true,
+        "action": "DoNothing"
     },
     "黎明界_出发Bonus关闭": {
         "timeout": 10000,
