@@ -145,28 +145,49 @@
         "post_delay": 3000,
         "next": [
             "黎明界_BOSS战斗胜利继续",
+            "黎明界_BOSS胜利获得物品继续",
             "黎明界_失败处理",
             "黎明界_BOSS战斗结果等待"
         ]
     },
     "黎明界_BOSS战斗胜利继续": {
         "timeout": 60000,
-        "recognition": "TemplateMatch",
-        "template": "jp/common/next_blue_button.png",
-        "roi": [
-            930,
-            600,
-            340,
-            100
+        "recognition": "And",
+        "all_of": [
+            "黎明界_BOSS战斗胜利标题判定",
+            "黎明界_BOSS战斗胜利伤害报告判定"
         ],
-        "threshold": 0.9,
-        "action": "Click",
-        "post_delay": 1500,
+        "action": "DoNothing",
+        "post_delay": 500,
         "next": [
-            "黎明界_BOSS胜利获得物品继续"
+            "黎明界_BOSS战斗胜利继续点击"
         ]
     },
-    "黎明界_BOSS胜利获得物品继续": {
+    "黎明界_BOSS战斗胜利标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_win.png",
+        "roi": [
+            400,
+            0,
+            500,
+            220
+        ],
+        "threshold": 0.82,
+        "action": "DoNothing"
+    },
+    "黎明界_BOSS战斗胜利伤害报告判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss_battle_damage_report_button.png",
+        "roi": [
+            860,
+            140,
+            390,
+            100
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing"
+    },
+    "黎明界_BOSS战斗胜利继续点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/common/next_blue_button.png",
@@ -180,7 +201,64 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS结算RESULT继续"
+            "黎明界_BOSS战斗后结果等待"
+        ]
+    },
+    "黎明界_BOSS胜利获得物品继续": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/limingjie/ex_win_drop_title.png",
+            "jp/limingjie/win_drop_title.png"
+        ],
+        "roi": [
+            380,
+            40,
+            560,
+            200
+        ],
+        "threshold": 0.82,
+        "action": "DoNothing",
+        "post_delay": 300,
+        "next": [
+            "黎明界_BOSS胜利获得物品继续点击"
+        ],
+        "on_error": [
+            "黎明界_BOSS战斗后结果等待"
+        ]
+    },
+    "黎明界_BOSS胜利获得物品继续点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/next_blue_button.png",
+        "roi": [
+            930,
+            600,
+            340,
+            100
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "黎明界_BOSS战斗后结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_BOSS战斗后结果等待": {
+        "timeout": 10000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "黎明界_BOSS战斗胜利继续",
+            "黎明界_BOSS胜利获得物品继续",
+            "黎明界_BOSS结算RESULT继续",
+            "黎明界_BOSS宝箱开封关闭",
+            "黎明界_BOSS最终物品获得关闭",
+            "黎明界_失败处理"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -221,7 +299,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS结算RESULT继续"
+            "黎明界_BOSS战斗后结果等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -241,7 +319,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS宝箱开封关闭"
+            "黎明界_BOSS战斗后结果等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -281,7 +359,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS最终物品获得关闭"
+            "黎明界_BOSS战斗后结果等待"
         ],
         "on_error": [
             "黎明界_全局状态分流"
