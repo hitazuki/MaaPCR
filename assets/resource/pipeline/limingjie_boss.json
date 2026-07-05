@@ -180,16 +180,37 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS结算加入角色继续"
+            "黎明界_BOSS结算RESULT继续"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_BOSS结算加入角色继续": {
+    "黎明界_BOSS结算RESULT继续": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
-        "template": "jp/common/close_white_button.png",
+        "template": "jp/limingjie/result_title.png",
+        "roi": [
+            480,
+            25,
+            340,
+            120
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "post_delay": 300,
+        "next": [
+            "黎明界_BOSS结算RESULT下一步点击",
+            "黎明界_BOSS结算RESULT关闭点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_BOSS结算RESULT下一步点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/result_next_button.png",
         "roi": [
             480,
             600,
@@ -200,13 +221,13 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "黎明界_BOSS结算分数关闭"
+            "黎明界_BOSS结算RESULT继续"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_BOSS结算分数关闭": {
+    "黎明界_BOSS结算RESULT关闭点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/common/close_white_button.png",
@@ -227,6 +248,26 @@
         ]
     },
     "黎明界_BOSS宝箱开封关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/result_treasure_title.png",
+        "roi": [
+            480,
+            20,
+            340,
+            80
+        ],
+        "threshold": 0.9,
+        "action": "DoNothing",
+        "post_delay": 300,
+        "next": [
+            "黎明界_BOSS宝箱开封OK点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_BOSS宝箱开封OK点击": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/common/ok_white_button.png",
