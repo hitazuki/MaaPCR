@@ -186,7 +186,7 @@
         ],
         "post_delay": 1500,
         "next": [
-            "黎明界_同行公会确认出发",
+            "黎明界_同行公会难易度可选入口",
             "黎明界_选择同行公会"
         ]
     },
@@ -328,6 +328,396 @@
     },
     "黎明界_选择同行公会失败兜底": {
         "next": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_同行公会难易度可选入口": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "黎明界_同行公会确认出发"
+        ]
+    },
+    "黎明界_难易度变更入口": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/guild_difficulty_change_button.png",
+        "roi": [
+            500,
+            585,
+            290,
+            95
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            640,
+            632
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_难易度变更页面等待"
+        ],
+        "on_error": [
+            "黎明界_同行公会确认出发"
+        ]
+    },
+    "黎明界_难易度变更页面等待": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_change_title.png",
+        "roi": [
+            560,
+            25,
+            170,
+            60
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing",
+        "post_delay": 300,
+        "next": [
+            "黎明界_难易度目标搜索"
+        ],
+        "on_error": [
+            "黎明界_同行公会确认出发"
+        ]
+    },
+    "黎明界_难易度目标搜索": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向下扫描1"
+        ]
+    },
+    "黎明界_难易度目标搜索D1": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向下扫描2"
+        ]
+    },
+    "黎明界_难易度目标搜索D2": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向下扫描3"
+        ]
+    },
+    "黎明界_难易度目标搜索D3": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向下扫描4"
+        ]
+    },
+    "黎明界_难易度目标搜索D4": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向上扫描1"
+        ]
+    },
+    "黎明界_难易度目标搜索U1": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向上扫描2"
+        ]
+    },
+    "黎明界_难易度目标搜索U2": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向上扫描3"
+        ]
+    },
+    "黎明界_难易度目标搜索U3": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度向上扫描4"
+        ]
+    },
+    "黎明界_难易度目标搜索U4": {
+        "timeout": 1000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中",
+            "黎明界_难易度取消按钮点击"
+        ]
+    },
+    "黎明界_难易度向下扫描1": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            560
+        ],
+        "end": [
+            640,
+            250
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索D1"
+        ]
+    },
+    "黎明界_难易度向下扫描2": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            560
+        ],
+        "end": [
+            640,
+            250
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索D2"
+        ]
+    },
+    "黎明界_难易度向下扫描3": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            560
+        ],
+        "end": [
+            640,
+            250
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索D3"
+        ]
+    },
+    "黎明界_难易度向下扫描4": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            560
+        ],
+        "end": [
+            640,
+            250
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索D4"
+        ]
+    },
+    "黎明界_难易度向上扫描1": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            250
+        ],
+        "end": [
+            640,
+            560
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索U1"
+        ]
+    },
+    "黎明界_难易度向上扫描2": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            250
+        ],
+        "end": [
+            640,
+            560
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索U2"
+        ]
+    },
+    "黎明界_难易度向上扫描3": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            250
+        ],
+        "end": [
+            640,
+            560
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索U3"
+        ]
+    },
+    "黎明界_难易度向上扫描4": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            250
+        ],
+        "end": [
+            640,
+            560
+        ],
+        "duration": 500,
+        "post_delay": 800,
+        "next": [
+            "黎明界_难易度目标搜索U4"
+        ]
+    },
+    "黎明界_目标难易度已选中": {
+        "timeout": 500,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_目标难易度文字判定",
+            "黎明界_目标难易度已选中圆圈判定"
+        ],
+        "action": "Click",
+        "target": [
+            493,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_同行公会确认出发"
+        ]
+    },
+    "黎明界_目标难易度未选中": {
+        "timeout": 500,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_目标难易度文字判定",
+            "黎明界_目标难易度未选中圆圈判定"
+        ],
+        "action": "Click",
+        "target": "黎明界_目标难易度文字判定",
+        "target_offset": [
+            -75,
+            42,
+            0,
+            0
+        ],
+        "post_delay": 500,
+        "next": [
+            "黎明界_难易度变更按钮点击"
+        ]
+    },
+    "黎明界_目标难易度文字判定": {
+        "recognition": "OCR",
+        "expected": "難易度\\s*6",
+        "roi": [
+            340,
+            85,
+            600,
+            465
+        ],
+        "action": "DoNothing"
+    },
+    "黎明界_目标难易度已选中圆圈判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_circle_selected.png",
+        "roi": "黎明界_目标难易度文字判定",
+        "roi_offset": [
+            -80,
+            10,
+            70,
+            100
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing"
+    },
+    "黎明界_目标难易度未选中圆圈判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_circle_unselected.png",
+        "roi": "黎明界_目标难易度文字判定",
+        "roi_offset": [
+            -80,
+            10,
+            70,
+            100
+        ],
+        "threshold": 0.85,
+        "action": "DoNothing"
+    },
+    "黎明界_难易度变更按钮点击": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_change_title.png",
+        "roi": [
+            560,
+            25,
+            170,
+            60
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            785,
+            640
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界_难易度变更后等待"
+        ]
+    },
+    "黎明界_难易度变更后等待": {
+        "timeout": 5000,
+        "rate_limit": 250,
+        "next": [
+            "黎明界_难易度取消按钮点击",
+            "黎明界_同行公会确认出发"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_难易度取消按钮点击": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_change_title.png",
+        "roi": [
+            560,
+            25,
+            170,
+            60
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            493,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界_同行公会确认出发"
+        ],
+        "on_error": [
             "黎明界_全局状态分流"
         ]
     },
