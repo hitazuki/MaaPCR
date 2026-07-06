@@ -24,8 +24,8 @@
             "黎明界_地图选择BOSS",
             "黎明界_地图选择EX",
             "黎明界_地图选择NORMAL",
-            "黎明界_地图选择EVENT",
             "黎明界_地图选择角色",
+            "黎明界_地图选择EVENT",
             "黎明界_地图选择遗物",
             "黎明界_地图选择SHOP",
             "[JumpBack]黎明界_角色特写跳过点击"
@@ -57,6 +57,12 @@
     "黎明界_地图可达BOSS判定": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_node_boss_reachable.png",
+        "roi": [
+            0,
+            90,
+            1280,
+            520
+        ],
         "threshold": 0.85
     },
     "黎明界_地图可达EX判定": {
@@ -172,7 +178,7 @@
     },
     "黎明界_SHOP节点移动后目标等待": {
         "timeout": 8000,
-        "rate_limit": 250,
+        "rate_limit": 500,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
@@ -200,6 +206,12 @@
         "timeout": 5000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_node_boss_reachable.png",
+        "roi": [
+            0,
+            90,
+            1280,
+            520
+        ],
         "threshold": 0.85,
         "action": "Click",
         "post_delay": 2000,
