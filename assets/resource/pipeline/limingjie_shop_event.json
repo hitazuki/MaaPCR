@@ -30,9 +30,32 @@
             70
         ],
         "threshold": 0.85,
-        "action": "DoNothing",
+        "action": "Custom",
+        "custom_action": "LimingjieShopPurchase",
+        "custom_action_param": {
+            "max_purchase_count": 20,
+            "first_buy_button": [
+                330,
+                350
+            ],
+            "balance_roi": [
+                990,
+                640,
+                185,
+                65
+            ],
+            "first_price_roi": [
+                120,
+                320,
+                240,
+                80
+            ],
+            "ocr_retry_count": 3,
+            "purchase_result_timeout_ms": 12000
+        },
+        "post_delay": 300,
         "next": [
-            "黎明界_SHOP购买点击"
+            "黎明界_SHOP商店关闭"
         ],
         "on_error": [
             "黎明界_全局状态分流"
