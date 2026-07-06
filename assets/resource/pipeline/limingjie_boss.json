@@ -33,9 +33,13 @@
             "strategy": "top_power_15",
             "teams": 3,
             "members_per_team": 5,
+            "setup_ex_equipment": true,
             "click_delay_ms": 250,
             "switch_delay_ms": 800,
-            "settle_delay_ms": 300
+            "settle_delay_ms": 300,
+            "ex_click_delay_ms": 700,
+            "ex_page_delay_ms": 1200,
+            "connecting_timeout_ms": 12000
         },
         "post_delay": 300,
         "next": [

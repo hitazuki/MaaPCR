@@ -27,10 +27,21 @@
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/party_title.png",
-        "action": "DoNothing",
+        "action": "Custom",
+        "custom_action": "LimingjieBattleFormation",
+        "custom_action_param": {
+            "strategy": "top_power_5",
+            "members_per_team": 5,
+            "setup_ex_equipment": true,
+            "click_delay_ms": 250,
+            "settle_delay_ms": 300,
+            "ex_click_delay_ms": 700,
+            "ex_page_delay_ms": 1200,
+            "connecting_timeout_ms": 12000
+        },
         "post_delay": 300,
         "next": [
-            "黎明界_战斗核心编队选择候补1"
+            "黎明界_战斗核心队伍战斗开始"
         ],
         "on_error": [
             "黎明界_全局状态分流"
