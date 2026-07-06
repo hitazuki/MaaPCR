@@ -80,12 +80,12 @@
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/character_cutin_nameplate_core_block.png",
         "roi": [
-            820,
-            520,
-            110,
-            100
+            980,
+            620,
+            230,
+            55
         ],
-        "threshold": 0.8,
+        "threshold": 0.85,
         "action": "Click",
         "target": [
             640,
@@ -386,8 +386,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向下扫描1"
         ]
     },
@@ -395,8 +394,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向下扫描2"
         ]
     },
@@ -404,8 +402,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向下扫描3"
         ]
     },
@@ -413,8 +410,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向下扫描4"
         ]
     },
@@ -422,8 +418,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向上扫描1"
         ]
     },
@@ -431,8 +426,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向上扫描2"
         ]
     },
@@ -440,8 +434,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向上扫描3"
         ]
     },
@@ -449,8 +442,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度向上扫描4"
         ]
     },
@@ -458,8 +450,7 @@
         "timeout": 1000,
         "rate_limit": 250,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中",
+            "黎明界_目标难易度文字判定",
             "黎明界_难易度取消按钮点击"
         ]
     },
@@ -593,11 +584,16 @@
     },
     "黎明界_目标难易度已选中": {
         "timeout": 500,
-        "recognition": "And",
-        "all_of": [
-            "黎明界_目标难易度文字判定",
-            "黎明界_目标难易度已选中圆圈判定"
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_circle_selected.png",
+        "roi": "黎明界_目标难易度文字判定",
+        "roi_offset": [
+            -80,
+            10,
+            70,
+            100
         ],
+        "threshold": 0.85,
         "action": "Click",
         "target": [
             493,
@@ -610,19 +606,18 @@
     },
     "黎明界_目标难易度未选中": {
         "timeout": 500,
-        "recognition": "And",
-        "all_of": [
-            "黎明界_目标难易度文字判定",
-            "黎明界_目标难易度未选中圆圈判定"
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/difficulty_circle_unselected.png",
+        "roi": "黎明界_目标难易度文字判定",
+        "roi_offset": [
+            -80,
+            10,
+            70,
+            100
         ],
+        "threshold": 0.85,
         "action": "Click",
-        "target": "黎明界_目标难易度文字判定",
-        "target_offset": [
-            -75,
-            42,
-            0,
-            0
-        ],
+        "target": true,
         "post_delay": 500,
         "next": [
             "黎明界_难易度变更按钮点击"
@@ -637,33 +632,11 @@
             600,
             465
         ],
-        "action": "DoNothing"
-    },
-    "黎明界_目标难易度已选中圆圈判定": {
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/difficulty_circle_selected.png",
-        "roi": "黎明界_目标难易度文字判定",
-        "roi_offset": [
-            -80,
-            10,
-            70,
-            100
-        ],
-        "threshold": 0.85,
-        "action": "DoNothing"
-    },
-    "黎明界_目标难易度未选中圆圈判定": {
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/difficulty_circle_unselected.png",
-        "roi": "黎明界_目标难易度文字判定",
-        "roi_offset": [
-            -80,
-            10,
-            70,
-            100
-        ],
-        "threshold": 0.85,
-        "action": "DoNothing"
+        "action": "DoNothing",
+        "next": [
+            "黎明界_目标难易度已选中",
+            "黎明界_目标难易度未选中"
+        ]
     },
     "黎明界_难易度变更按钮点击": {
         "timeout": 3000,
