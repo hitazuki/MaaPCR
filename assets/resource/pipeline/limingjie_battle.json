@@ -298,6 +298,18 @@
     },
     "黎明界_战斗核心战斗胜利继续": {
         "timeout": 60000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界_战斗核心胜利伤害报告判定",
+            "黎明界_战斗核心胜利继续按钮判定"
+        ],
+        "action": "DoNothing",
+        "post_delay": 500,
+        "next": [
+            "黎明界_战斗核心战斗胜利继续点击"
+        ]
+    },
+    "黎明界_战斗核心胜利伤害报告判定": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/battle_damage_report_button.png",
         "roi": [
@@ -306,12 +318,18 @@
             250,
             65
         ],
-        "threshold": 0.88,
-        "action": "DoNothing",
-        "post_delay": 500,
-        "next": [
-            "黎明界_战斗核心战斗胜利继续点击"
-        ]
+        "threshold": 0.88
+    },
+    "黎明界_战斗核心胜利继续按钮判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/common/next_blue_button.png",
+        "roi": [
+            930,
+            600,
+            340,
+            100
+        ],
+        "threshold": 0.9
     },
     "黎明界_战斗核心战斗胜利继续点击": {
         "timeout": 10000,
@@ -383,8 +401,8 @@
             "黎明界_地图选择BOSS",
             "黎明界_地图选择EX",
             "黎明界_地图选择NORMAL",
-            "黎明界_地图选择EVENT",
             "黎明界_地图选择角色",
+            "黎明界_地图选择EVENT",
             "黎明界_地图选择遗物",
             "黎明界_地图选择SHOP",
             "[JumpBack]黎明界_角色特写跳过点击"
