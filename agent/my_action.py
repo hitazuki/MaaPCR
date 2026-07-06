@@ -114,11 +114,15 @@ class SetTermTemplatesAction(CustomAction):
 class LimingjieBossFormationAction(CustomAction):
     LOG_PREFIX = "黎明界BOSS编队"
     SELECTED_CHECK_NODE = "LimingjieFormationSelectedCheck"
+    EMPTY_SLOT_CHECK_NODE = "LimingjieFormationEmptySlotCheck"
+    EX_RECOMMEND_OK_NODE = "LimingjieExRecommendOkCheck"
     SELECTED_CHECK_TEMPLATES = [
         "jp/limingjie/party_selected_check_1.png",
         "jp/limingjie/party_selected_check_2.png",
         "jp/limingjie/party_selected_check_3.png",
     ]
+    EMPTY_SLOT_TEMPLATE = "jp/limingjie/party_member_empty_slot.png"
+    EX_RECOMMEND_OK_TEMPLATE = "jp/common/OK.png"
     DEFAULT_TEAM_TABS = {
         1: (130, 120),
         2: (285, 120),
@@ -207,6 +211,8 @@ class LimingjieBossFormationAction(CustomAction):
                     ):
                         return CustomAction.RunResult(success=False)
 
+                self._log_team_empty_slots(context, controller, params, f"第{team}队")
+
                 if setup_ex_equipment and not self._setup_ex_equipment(
                     context,
                     controller,
@@ -253,6 +259,7 @@ class LimingjieBossFormationAction(CustomAction):
             logger.info(f"{self.LOG_PREFIX}: {label} 已选中，跳过点击")
             return True
 
+        before_empty_slots = self._count_empty_member_slots(context, controller, params, f"{label}点击前")
         if not self._click(controller, x, y, delay_ms, label):
             return False
 
@@ -266,8 +273,28 @@ class LimingjieBossFormationAction(CustomAction):
             logger.debug(f"{self.LOG_PREFIX}: {label} 点击后已确认选中")
             return True
 
-        logger.error(f"{self.LOG_PREFIX}失败: {label} 点击后未识别到已选中标记")
-        return False
+        after_empty_slots = self._count_empty_member_slots(context, controller, params, f"{label}点击后")
+        if (
+            before_empty_slots is not None
+            and after_empty_slots is not None
+            and after_empty_slots < before_empty_slots
+        ):
+            logger.info(
+                f"{self.LOG_PREFIX}: {label} 点击后成员空槽减少 {before_empty_slots}->{after_empty_slots}，按入队成功处理"
+            )
+            return True
+
+        logger.warning(f"{self.LOG_PREFIX}: {label} 点击后未确认入队，继续尝试后续候补")
+        return True
+
+    def _log_team_empty_slots(self, context, controller, params, team_label):
+        empty_slots = self._count_empty_member_slots(context, controller, params, f"{team_label}选择完成")
+        if empty_slots is None:
+            return
+        if empty_slots > 0:
+            logger.warning(f"{self.LOG_PREFIX}: {team_label} 当前仍有 {empty_slots} 个空成员槽，继续后续流程")
+        else:
+            logger.info(f"{self.LOG_PREFIX}: {team_label} 成员槽已填满")
 
     def _is_candidate_selected(self, context, controller, x, y, params, label):
         roi = self._candidate_selected_roi(x, y, params)
@@ -315,6 +342,62 @@ class LimingjieBossFormationAction(CustomAction):
         roi_x = max(0, int(x) + int(offset[0]))
         roi_y = max(0, int(y) + int(offset[1]))
         return [roi_x, roi_y, int(size[0]), int(size[1])]
+
+    def _count_empty_member_slots(self, context, controller, params, label):
+        if not bool(params.get("track_member_empty_slots", True)):
+            return None
+
+        roi = params.get("member_empty_slot_roi", [50, 530, 760, 165])
+        threshold = float(params.get("member_empty_slot_threshold", 0.85))
+        template = params.get("member_empty_slot_template", self.EMPTY_SLOT_TEMPLATE)
+        if isinstance(template, str):
+            template = [template]
+
+        try:
+            image = controller.post_screencap().wait().get()
+            detail = context.run_recognition(
+                self.EMPTY_SLOT_CHECK_NODE,
+                image,
+                pipeline_override={
+                    self.EMPTY_SLOT_CHECK_NODE: {
+                        "recognition": "TemplateMatch",
+                        "template": template,
+                        "roi": roi,
+                        "threshold": threshold,
+                        "action": "DoNothing",
+                    }
+                },
+            )
+            count = self._recognition_count(detail)
+            logger.debug(
+                f"{self.LOG_PREFIX}成员空槽检查: {label}, count={count}, roi={roi}, threshold={threshold}, {self._recognition_debug(detail)}"
+            )
+            return count
+        except Exception as e:
+            logger.warning(f"{self.LOG_PREFIX}成员空槽检查失败: {label}, roi={roi}: {e}")
+            return None
+
+    def _recognition_count(self, detail):
+        if not detail:
+            return 0
+
+        filtered = getattr(detail, "filtered_results", None)
+        if filtered is not None:
+            try:
+                return len(filtered)
+            except TypeError:
+                pass
+
+        raw_detail = getattr(detail, "raw_detail", None)
+        if isinstance(raw_detail, dict):
+            filtered = raw_detail.get("filtered")
+            if isinstance(filtered, list):
+                return len(filtered)
+            best = raw_detail.get("best")
+            if best:
+                return 1
+
+        return 1 if bool(getattr(detail, "hit", False)) else 0
 
     def _recognition_debug(self, detail):
         if not detail:
@@ -374,7 +457,13 @@ class LimingjieBossFormationAction(CustomAction):
             return False
         if not self._click(controller, *recommend_button, click_delay_ms, "おまかせ装備"):
             return False
-        if not self._click(controller, *recommend_ok_button, page_delay_ms, "おまかせEX装備設定 OK"):
+        if not self._click_ex_recommend_ok_with_retry(
+            context,
+            controller,
+            params,
+            recommend_ok_button,
+            page_delay_ms,
+        ):
             return False
         if not self._click(controller, *confirm_button, page_delay_ms, "装備確定"):
             return False
@@ -394,6 +483,101 @@ class LimingjieBossFormationAction(CustomAction):
             return False
 
         return True
+
+    def _click_ex_recommend_ok_with_retry(self, context, controller, params, point, delay_ms):
+        retry_count = int(params.get("ex_recommend_ok_retry_count", 3))
+        visible_timeout_ms = int(params.get("ex_recommend_ok_visible_timeout_ms", 5000))
+        gone_timeout_ms = int(params.get("ex_recommend_ok_gone_timeout_ms", 2500))
+        pre_click_delay_ms = int(params.get("ex_recommend_ok_pre_click_delay_ms", 500))
+        retry_delay_ms = int(params.get("ex_recommend_ok_retry_delay_ms", 700))
+
+        for attempt in range(1, retry_count + 1):
+            if not self._wait_ex_recommend_ok_state(
+                context,
+                controller,
+                params,
+                True,
+                visible_timeout_ms,
+                f"第{attempt}次点击前",
+            ):
+                logger.error(f"{self.LOG_PREFIX}失败: おまかせEX装備設定 OK 未出现，无法点击")
+                return False
+
+            if pre_click_delay_ms > 0:
+                time.sleep(pre_click_delay_ms / 1000)
+
+            visible = self._is_ex_recommend_ok_visible(context, controller, params, f"第{attempt}次稳定确认")
+            if visible is None:
+                return False
+            if not visible:
+                logger.info(f"{self.LOG_PREFIX}: おまかせEX装備設定 OK 已消失，按已生效处理")
+                return True
+
+            if not self._click(controller, *point, delay_ms, f"おまかせEX装備設定 OK({attempt}/{retry_count})"):
+                return False
+
+            if self._wait_ex_recommend_ok_state(
+                context,
+                controller,
+                params,
+                False,
+                gone_timeout_ms,
+                f"第{attempt}次点击后",
+            ):
+                logger.info(f"{self.LOG_PREFIX}: おまかせEX装備設定 OK 点击已生效")
+                return True
+
+            logger.warning(f"{self.LOG_PREFIX}: おまかせEX装備設定 OK 点击后仍停留在弹窗，准备重试")
+            if retry_delay_ms > 0:
+                time.sleep(retry_delay_ms / 1000)
+
+        logger.error(f"{self.LOG_PREFIX}失败: おまかせEX装備設定 OK 重试 {retry_count} 次后仍未生效")
+        return False
+
+    def _wait_ex_recommend_ok_state(self, context, controller, params, expected_visible, timeout_ms, label):
+        interval_ms = int(params.get("ex_recommend_ok_check_interval_ms", 300))
+        deadline = time.monotonic() + timeout_ms / 1000
+
+        while time.monotonic() < deadline:
+            visible = self._is_ex_recommend_ok_visible(context, controller, params, label)
+            if visible is None:
+                return False
+            if visible == expected_visible:
+                return True
+            time.sleep(interval_ms / 1000)
+
+        return False
+
+    def _is_ex_recommend_ok_visible(self, context, controller, params, label):
+        roi = params.get("ex_recommend_ok_roi", [620, 585, 330, 105])
+        threshold = float(params.get("ex_recommend_ok_threshold", 0.85))
+        template = params.get("ex_recommend_ok_template", self.EX_RECOMMEND_OK_TEMPLATE)
+        if isinstance(template, str):
+            template = [template]
+
+        try:
+            image = controller.post_screencap().wait().get()
+            detail = context.run_recognition(
+                self.EX_RECOMMEND_OK_NODE,
+                image,
+                pipeline_override={
+                    self.EX_RECOMMEND_OK_NODE: {
+                        "recognition": "TemplateMatch",
+                        "template": template,
+                        "roi": roi,
+                        "threshold": threshold,
+                        "action": "DoNothing",
+                    }
+                },
+            )
+            hit = bool(detail and detail.hit)
+            logger.debug(
+                f"{self.LOG_PREFIX}推荐EX装备OK检查: {label}, hit={hit}, roi={roi}, threshold={threshold}, {self._recognition_debug(detail)}"
+            )
+            return hit
+        except Exception as e:
+            logger.warning(f"{self.LOG_PREFIX}推荐EX装备OK检查失败: {label}, roi={roi}: {e}")
+            return None
 
     def _is_party_page(self, context, controller):
         try:
@@ -527,6 +711,8 @@ class LimingjieBattleFormationAction(LimingjieBossFormationAction):
                     params,
                 ):
                     return CustomAction.RunResult(success=False)
+
+            self._log_team_empty_slots(context, controller, params, "核心队伍")
 
             if setup_ex_equipment and not self._setup_ex_equipment(
                 context,
