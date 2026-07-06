@@ -14,12 +14,12 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
     SHOP_TITLE_NODE = "黎明界_SHOP商店标题"
     SHOP_CONFIRM_NODE = "黎明界_SHOP购买确认OK"
     SHOP_COMPLETE_NODE = "黎明界_SHOP购买完成OK"
-    SHOP_INSUFFICIENT_NODE = "黎明界_SHOP购买不足停止购买"
-    SHOP_SOLD_OUT_NODE = "黎明界_SHOP首个道具位SOLDOUT停止购买"
+    SHOP_SOLD_OUT_NODE = "LimingjieShopSoldOutCheck"
     CHARACTER_CUTIN_NODE = "黎明界_角色特写跳过点击"
     CHARACTER_JOIN_NODE = "黎明界_通用角色加入关闭"
     SHOP_OCR_BALANCE_NODE = "LimingjieShopBalanceOcr"
     SHOP_OCR_PRICE_NODE = "LimingjieShopFirstPriceOcr"
+    SHOP_SOLD_OUT_TEMPLATE = "jp/limingjie/shop_first_item_sold_out.png"
 
     def run(self, context: Context, argv: CustomAction.RunArg):
         try:
@@ -68,7 +68,7 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
                 if result == "purchased":
                     purchased_count += 1
                     continue
-                if result in ("insufficient", "sold_out"):
+                if result == "sold_out":
                     logger.info(f"{self.LOG_PREFIX}: 购买结果={result}，停止购买")
                     break
                 if result == "shop":
@@ -213,9 +213,7 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
                 if self._wait_shop_page(context, controller, params):
                     return "purchased"
                 continue
-            if self._recognize_node(context, image, self.SHOP_INSUFFICIENT_NODE):
-                return "insufficient"
-            if self._recognize_node(context, image, self.SHOP_SOLD_OUT_NODE):
+            if self._is_sold_out_image(context, image, params):
                 return "sold_out"
             if self._recognize_node(context, image, self.CHARACTER_CUTIN_NODE):
                 if not self._click(controller, 640, 240, click_delay_ms, "商店购买角色特写跳过"):
@@ -253,7 +251,43 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
 
     def _is_sold_out(self, context, controller, params):
         image = controller.post_screencap().wait().get()
-        return self._recognize_node(context, image, self.SHOP_SOLD_OUT_NODE)
+        return self._is_sold_out_image(context, image, params)
+
+    def _is_sold_out_image(self, context, image, params):
+        return self._recognize_template(
+            context,
+            image,
+            self.SHOP_SOLD_OUT_NODE,
+            params.get("sold_out_template", self.SHOP_SOLD_OUT_TEMPLATE),
+            params.get("sold_out_roi", [150, 210, 210, 120]),
+            float(params.get("sold_out_threshold", 0.85)),
+        )
+
+    def _recognize_template(self, context, image, node_name, template, roi, threshold):
+        if isinstance(template, str):
+            template = [template]
+        try:
+            detail = context.run_recognition(
+                node_name,
+                image,
+                pipeline_override={
+                    node_name: {
+                        "recognition": "TemplateMatch",
+                        "template": template,
+                        "roi": roi,
+                        "threshold": threshold,
+                        "action": "DoNothing",
+                    }
+                },
+            )
+            hit = bool(detail and detail.hit)
+            logger.debug(
+                f"{self.LOG_PREFIX}识别: {node_name}, hit={hit}, roi={roi}, threshold={threshold}, {self._recognition_debug(detail)}"
+            )
+            return hit
+        except Exception as e:
+            logger.warning(f"{self.LOG_PREFIX}识别失败: {node_name}: {e}")
+            return False
 
     def _recognize_node(self, context, image, node_name):
         try:

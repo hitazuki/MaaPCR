@@ -298,40 +298,20 @@
     },
     "黎明界_战斗核心战斗胜利继续": {
         "timeout": 60000,
-        "recognition": "And",
-        "all_of": [
-            "黎明界_战斗核心战斗胜利标题判定",
-            "黎明界_战斗核心战斗胜利伤害报告判定"
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_damage_report_button.png",
+        "roi": [
+            1010,
+            25,
+            250,
+            65
         ],
+        "threshold": 0.88,
         "action": "DoNothing",
         "post_delay": 500,
         "next": [
             "黎明界_战斗核心战斗胜利继续点击"
         ]
-    },
-    "黎明界_战斗核心战斗胜利标题判定": {
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_win.png",
-        "roi": [
-            400,
-            0,
-            500,
-            220
-        ],
-        "threshold": 0.7,
-        "action": "DoNothing"
-    },
-    "黎明界_战斗核心战斗胜利伤害报告判定": {
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_damage_report_button.png",
-        "roi": [
-            980,
-            20,
-            290,
-            80
-        ],
-        "threshold": 0.88,
-        "action": "DoNothing"
     },
     "黎明界_战斗核心战斗胜利继续点击": {
         "timeout": 10000,
