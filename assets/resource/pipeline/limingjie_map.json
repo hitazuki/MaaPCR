@@ -1,19 +1,6 @@
 {
-    "黎明界_地图页快速判定": {
-        "timeout": 3000,
-        "rate_limit": 200,
-        "recognition": "And",
-        "all_of": [
-            "黎明界_地图菜单判定",
-            "黎明界_地图可达节点判定"
-        ],
-        "action": "DoNothing",
-        "next": [
-            "黎明界_地图循环"
-        ]
-    },
     "黎明界_地图循环": {
-        "timeout": 60000,
+        "timeout": 20000,
         "rate_limit": 500,
         "recognition": "And",
         "all_of": [
@@ -29,6 +16,9 @@
             "黎明界_地图选择遗物",
             "黎明界_地图选择SHOP",
             "[JumpBack]黎明界_角色特写跳过点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
         ]
     },
     "黎明界_地图菜单判定": {
@@ -68,7 +58,7 @@
     "黎明界_地图可达EX判定": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_node_extreme_reachable.png",
-        "threshold": 0.9
+        "threshold": 0.82
     },
     "黎明界_地图可达NORMAL判定": {
         "recognition": "TemplateMatch",
@@ -170,7 +160,7 @@
             "[JumpBack]黎明界_通用地图移动确认OK",
             "[JumpBack]黎明界_通用遗物获得选择",
             "[JumpBack]黎明界_通用白色关闭点击",
-            "黎明界_地图页快速判定"
+            "黎明界_地图循环"
         ],
         "on_error": [
             "黎明界_全局状态分流"
@@ -224,7 +214,7 @@
         "timeout": 5000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/map_node_extreme_reachable.png",
-        "threshold": 0.9,
+        "threshold": 0.82,
         "action": "Click",
         "post_delay": 2000,
         "next": [

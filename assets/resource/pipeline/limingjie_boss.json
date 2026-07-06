@@ -17,67 +17,26 @@
         ],
         "post_delay": 3000,
         "next": [
-            "黎明界_BOSS队伍编成1"
+            "黎明界_BOSS三队自动编成"
         ],
         "on_error": [
             "黎明界_全局状态分流"
         ]
     },
-    "黎明界_BOSS队伍编成1": {
+    "黎明界_BOSS三队自动编成": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/party_title.png",
-        "action": "DoNothing",
-        "post_delay": 300,
-        "next": [
-            "黎明界_BOSS队伍1切换队伍2"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_BOSS队伍1切换队伍2": {
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            1135,
-            605
-        ],
-        "post_delay": 800,
-        "next": [
-            "黎明界_BOSS队伍编成2"
-        ]
-    },
-    "黎明界_BOSS队伍编成2": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/party_title.png",
-        "action": "DoNothing",
-        "post_delay": 300,
-        "next": [
-            "黎明界_BOSS队伍2切换队伍3"
-        ],
-        "on_error": [
-            "黎明界_全局状态分流"
-        ]
-    },
-    "黎明界_BOSS队伍2切换队伍3": {
-        "recognition": "DirectHit",
-        "action": "Click",
-        "target": [
-            1135,
-            605
-        ],
-        "post_delay": 800,
-        "next": [
-            "黎明界_BOSS队伍编成3"
-        ]
-    },
-    "黎明界_BOSS队伍编成3": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/party_title.png",
-        "action": "DoNothing",
+        "action": "Custom",
+        "custom_action": "LimingjieBossFormation",
+        "custom_action_param": {
+            "strategy": "top_power_15",
+            "teams": 3,
+            "members_per_team": 5,
+            "click_delay_ms": 250,
+            "switch_delay_ms": 800,
+            "settle_delay_ms": 300
+        },
         "post_delay": 300,
         "next": [
             "黎明界_BOSS队伍战斗开始"
@@ -165,14 +124,14 @@
     },
     "黎明界_BOSS战斗胜利标题判定": {
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/battle_win.png",
+        "template": "jp/limingjie/boss_battle_win_title.png",
         "roi": [
             400,
             0,
             500,
             220
         ],
-        "threshold": 0.7,
+        "threshold": 0.82,
         "action": "DoNothing"
     },
     "黎明界_BOSS战斗胜利伤害报告判定": {
@@ -192,9 +151,9 @@
         "recognition": "TemplateMatch",
         "template": "jp/common/next_blue_button.png",
         "roi": [
-            930,
-            600,
-            340,
+            900,
+            620,
+            360,
             100
         ],
         "threshold": 0.9,
@@ -211,6 +170,7 @@
             "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]黎明界_通用过场跳过点击",
             "黎明界_BOSS战斗胜利继续",
+            "[JumpBack]黎明界_通用遗物获得选择",
             "[JumpBack]黎明界_通用胜利获得物品继续",
             "黎明界_BOSS结算RESULT继续",
             "黎明界_BOSS宝箱开封关闭",
