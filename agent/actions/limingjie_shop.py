@@ -87,26 +87,32 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
     def _read_shop_number(self, context, controller, params, kind):
         if kind == "balance":
             node_name = self.SHOP_OCR_BALANCE_NODE
-            roi = params.get("balance_roi", [990, 640, 185, 65])
+            roi = params.get("balance_roi", [820, 625, 150, 55])
+            fallback_rois = params.get("balance_fallback_rois", [[850, 625, 120, 55]])
             label = "余额"
         elif kind == "price":
             node_name = self.SHOP_OCR_PRICE_NODE
             roi = params.get("first_price_roi", [120, 320, 240, 80])
+            fallback_rois = params.get("first_price_fallback_rois", [])
             label = "首个价格"
         else:
             raise ValueError(f"未知数字类型: {kind}")
 
         retry_count = int(params.get("ocr_retry_count", 3))
         retry_delay_ms = int(params.get("ocr_retry_delay_ms", 250))
-        for attempt in range(1, retry_count + 1):
-            value, text = self._run_shop_ocr(context, controller, node_name, roi)
-            logger.debug(f"{self.LOG_PREFIX}OCR: {label} 第{attempt}次 value={value}, text={text!r}, roi={roi}")
-            if value is not None:
-                return value
-            if retry_delay_ms > 0:
-                time.sleep(retry_delay_ms / 1000)
+        rois = [roi] + fallback_rois
+        for current_roi in rois:
+            for attempt in range(1, retry_count + 1):
+                value, text = self._run_shop_ocr(context, controller, node_name, current_roi)
+                logger.debug(
+                    f"{self.LOG_PREFIX}OCR: {label} 第{attempt}次 value={value}, text={text!r}, roi={current_roi}"
+                )
+                if value is not None:
+                    return value
+                if retry_delay_ms > 0:
+                    time.sleep(retry_delay_ms / 1000)
 
-        logger.warning(f"{self.LOG_PREFIX}: {label} OCR失败，roi={roi}")
+        logger.warning(f"{self.LOG_PREFIX}: {label} OCR失败，rois={rois}")
         return None
 
     def _run_shop_ocr(self, context, controller, node_name, roi):
