@@ -39,7 +39,7 @@
     },
     "确定免费扭蛋OK": {
         "recognition": "TemplateMatch",
-        "template": "jp/common/OK3.png",
+        "template": "jp/common/OK2.png",
         "action": "Click",
         "post_delay": 1510
     },
