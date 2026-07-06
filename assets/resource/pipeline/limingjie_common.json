@@ -134,15 +134,6 @@
         "threshold": 0.85,
         "action": "DoNothing"
     },
-    "黎明界_入口待补充": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/title_limingjie.png",
-        "action": "DoNothing",
-        "next": [
-            "黎明界_全局状态分流"
-        ]
-    },
     "黎明界_第二层出发": {
         "timeout": 60000,
         "recognition": "TemplateMatch",

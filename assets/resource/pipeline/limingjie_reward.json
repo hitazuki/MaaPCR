@@ -65,11 +65,24 @@
             720
         ],
         "threshold": 0.88,
-        "action": "Click",
-        "target": [
-            640,
-            580
+        "action": "DoNothing",
+        "next": [
+            "黎明界_通用物品获得关闭按钮点击"
+        ]
+    },
+    "黎明界_通用物品获得关闭按钮点击": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            450,
+            570,
+            380,
+            120
         ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": true,
         "post_delay": 1500
     },
     "黎明界_通用遗物获得选择": {
