@@ -1,0 +1,57 @@
+{
+    "黎明界_失败处理": {
+        "timeout": 60000,
+        "recognition": "Or",
+        "any_of": [
+            "黎明界_失败标题判定",
+            "黎明界_失败按钮页判定"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界_失败后停止"
+        ]
+    },
+    "黎明界_失败标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_failed.png",
+        "roi": [
+            350,
+            10,
+            550,
+            360
+        ],
+        "threshold": 0.7
+    },
+    "黎明界_失败按钮页判定": {
+        "recognition": "And",
+        "all_of": [
+            "黎明界_失败结束按钮判定",
+            "黎明界_失败再挑战按钮判定"
+        ]
+    },
+    "黎明界_失败结束按钮判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/failed_exit_button.png",
+        "roi": [
+            560,
+            620,
+            390,
+            95
+        ],
+        "threshold": 0.9
+    },
+    "黎明界_失败再挑战按钮判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/failed_retry_button.png",
+        "roi": [
+            900,
+            620,
+            340,
+            95
+        ],
+        "threshold": 0.9
+    },
+    "黎明界_失败后停止": {
+        "action": "StopTask"
+    }
+}

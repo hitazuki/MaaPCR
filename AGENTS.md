@@ -17,6 +17,7 @@ This repo is a MaaFramework automation project for Princess Connect! Re:Dive.
 - `python` may not be on `PATH`. Use the bundled runtime when needed:
   `C:\Users\SMALL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`
 - Avoid embedding Chinese literals in piped inline Python that writes files; PowerShell can convert them to `???`.
+- PowerShell may display UTF-8 Chinese docs as mojibake even when the file is fine. When inspecting Chinese docs, use `Get-Content -Encoding UTF8`, set `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`, or inspect through bundled Python with `unicode_escape`; do not treat display mojibake as file corruption without verifying the bytes/UTF-8 parse.
 
 ## Pipeline Editing
 

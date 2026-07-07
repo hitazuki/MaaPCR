@@ -462,5 +462,15 @@
         "on_error": [
             "黎明界_全局状态分流"
         ]
+    },
+    "黎明界_通用编队开始": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/party_title.png",
+        "action": "DoNothing",
+        "post_delay": 300,
+        "next": [
+            "黎明界_战斗核心队伍编成"
+        ]
     }
 }
