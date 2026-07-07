@@ -668,6 +668,7 @@
             "cases": [
                 {
                     "name": "ベノムサラマンドラ",
+                    "label": "贝诺姆沙拉曼德拉",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
                             "enabled": true
@@ -676,6 +677,7 @@
                 },
                 {
                     "name": "フロストハウンド",
+                    "label": "冰霜猎犬",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
                             "enabled": true
@@ -684,6 +686,7 @@
                 },
                 {
                     "name": "グレーターゴーレム",
+                    "label": "巨型魔像",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_巨型魔像": {
                             "enabled": true
@@ -692,6 +695,7 @@
                 },
                 {
                     "name": "マダムエレクトラ",
+                    "label": "夫人雷鸟",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
                             "enabled": true
@@ -700,6 +704,7 @@
                 },
                 {
                     "name": "ダークガーゴイル",
+                    "label": "黑暗石像鬼",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
                             "enabled": true
@@ -716,6 +721,7 @@
             "cases": [
                 {
                     "name": "ラースドラゴン",
+                    "label": "愤怒龙",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_愤怒龙": {
                             "enabled": true
@@ -724,6 +730,7 @@
                 },
                 {
                     "name": "ジャバウォック",
+                    "label": "加巴沃克",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_加巴沃克": {
                             "enabled": true
@@ -732,6 +739,7 @@
                 },
                 {
                     "name": "キマイラ",
+                    "label": "奇美拉",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_奇美拉": {
                             "enabled": true
@@ -740,6 +748,7 @@
                 },
                 {
                     "name": "ゴブリンロード",
+                    "label": "哥布林领主",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_哥布林领主": {
                             "enabled": true
@@ -748,6 +757,7 @@
                 },
                 {
                     "name": "アルティマガーディアン",
+                    "label": "终极守护者",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_终极守护者": {
                             "enabled": true
