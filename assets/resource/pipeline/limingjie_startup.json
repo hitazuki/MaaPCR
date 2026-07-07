@@ -479,47 +479,6 @@
             "黎明界_难易度目标搜索U4"
         ]
     },
-    "黎明界_目标难易度已选中": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/difficulty_circle_selected.png",
-        "roi": "黎明界_目标难易度文字判定",
-        "roi_offset": [
-            -80,
-            10,
-            70,
-            100
-        ],
-        "threshold": 0.85,
-        "action": "Click",
-        "target": [
-            493,
-            640
-        ],
-        "post_delay": 1000,
-        "next": [
-            "黎明界_同行公会确认出发"
-        ]
-    },
-    "黎明界_目标难易度未选中": {
-        "timeout": 500,
-        "recognition": "TemplateMatch",
-        "template": "jp/limingjie/difficulty_circle_unselected.png",
-        "roi": "黎明界_目标难易度文字判定",
-        "roi_offset": [
-            -80,
-            10,
-            70,
-            100
-        ],
-        "threshold": 0.85,
-        "action": "Click",
-        "target": true,
-        "post_delay": 500,
-        "next": [
-            "黎明界_难易度变更按钮点击"
-        ]
-    },
     "黎明界_目标难易度文字判定": {
         "recognition": "OCR",
         "expected": "難易度\\s*6",
@@ -529,10 +488,11 @@
             600,
             465
         ],
-        "action": "DoNothing",
+        "action": "Click",
+        "target": true,
+        "post_delay": 500,
         "next": [
-            "黎明界_目标难易度已选中",
-            "黎明界_目标难易度未选中"
+            "黎明界_难易度变更按钮点击"
         ]
     },
     "黎明界_难易度变更按钮点击": {

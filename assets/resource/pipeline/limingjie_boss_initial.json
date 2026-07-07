@@ -110,23 +110,15 @@
         "timeout": 10000,
         "rate_limit": 500,
         "next": [
-            "黎明界刷Boss_三层目标Boss一致",
+            "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉",
+            "黎明界刷Boss_三层目标Boss_冰霜猎犬",
+            "黎明界刷Boss_三层目标Boss_巨型魔像",
+            "黎明界刷Boss_三层目标Boss_夫人雷鸟",
+            "黎明界刷Boss_三层目标Boss_黑暗石像鬼",
             "黎明界刷Boss_三层目标Boss不一致"
         ],
         "on_error": [
             "黎明界刷Boss初始"
-        ]
-    },
-    "黎明界刷Boss_三层目标Boss一致": {
-        "timeout": 3000,
-        "recognition": "And",
-        "all_of": [
-            "黎明界刷Boss_Boss详情标题判定",
-            "黎明界刷Boss_三层目标Boss判定"
-        ],
-        "action": "DoNothing",
-        "next": [
-            "黎明界刷Boss_Boss详情关闭后五层"
         ]
     },
     "黎明界刷Boss_三层目标Boss不一致": {
@@ -145,19 +137,20 @@
             "黎明界刷Boss_Boss详情关闭后撤退"
         ]
     },
-    "黎明界刷Boss_三层目标Boss判定": {
-        "recognition": "Or",
-        "any_of": [
-            "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉",
-            "黎明界刷Boss_三层目标Boss_冰霜猎犬",
-            "黎明界刷Boss_三层目标Boss_巨型魔像",
-            "黎明界刷Boss_三层目标Boss_夫人雷鸟",
-            "黎明界刷Boss_三层目标Boss_黑暗石像鬼"
-        ],
-        "action": "DoNothing"
-    },
     "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss模板_贝诺姆沙拉曼德拉"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss模板_贝诺姆沙拉曼德拉": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_venom_salamandra.png",
         "roi": [
@@ -171,6 +164,18 @@
     },
     "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss模板_冰霜猎犬"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss模板_冰霜猎犬": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_frost_hound.png",
         "roi": [
@@ -184,6 +189,18 @@
     },
     "黎明界刷Boss_三层目标Boss_巨型魔像": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss模板_巨型魔像"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss模板_巨型魔像": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_greater_golem.png",
         "roi": [
@@ -197,6 +214,18 @@
     },
     "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss模板_夫人雷鸟"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss模板_夫人雷鸟": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_madame_electra.png",
         "roi": [
@@ -210,6 +239,18 @@
     },
     "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss模板_黑暗石像鬼"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss模板_黑暗石像鬼": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_dark_gargoyle.png",
         "roi": [
@@ -305,23 +346,15 @@
         "timeout": 10000,
         "rate_limit": 500,
         "next": [
-            "黎明界刷Boss_五层目标Boss一致",
+            "黎明界刷Boss_五层目标Boss_愤怒龙",
+            "黎明界刷Boss_五层目标Boss_加巴沃克",
+            "黎明界刷Boss_五层目标Boss_奇美拉",
+            "黎明界刷Boss_五层目标Boss_哥布林领主",
+            "黎明界刷Boss_五层目标Boss_终极守护者",
             "黎明界刷Boss_五层目标Boss不一致"
         ],
         "on_error": [
             "黎明界刷Boss初始"
-        ]
-    },
-    "黎明界刷Boss_五层目标Boss一致": {
-        "timeout": 3000,
-        "recognition": "And",
-        "all_of": [
-            "黎明界刷Boss_Boss详情标题判定",
-            "黎明界刷Boss_五层目标Boss判定"
-        ],
-        "action": "DoNothing",
-        "next": [
-            "黎明界刷Boss_Boss详情关闭后完成"
         ]
     },
     "黎明界刷Boss_五层目标Boss不一致": {
@@ -340,19 +373,20 @@
             "黎明界刷Boss_Boss详情关闭后撤退"
         ]
     },
-    "黎明界刷Boss_五层目标Boss判定": {
-        "recognition": "Or",
-        "any_of": [
-            "黎明界刷Boss_五层目标Boss_愤怒龙",
-            "黎明界刷Boss_五层目标Boss_加巴沃克",
-            "黎明界刷Boss_五层目标Boss_奇美拉",
-            "黎明界刷Boss_五层目标Boss_哥布林领主",
-            "黎明界刷Boss_五层目标Boss_终极守护者"
-        ],
-        "action": "DoNothing"
-    },
     "黎明界刷Boss_五层目标Boss_愤怒龙": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss模板_愤怒龙"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss模板_愤怒龙": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_wrath_dragon.png",
         "roi": [
@@ -366,6 +400,18 @@
     },
     "黎明界刷Boss_五层目标Boss_加巴沃克": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss模板_加巴沃克"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss模板_加巴沃克": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_jabberwock.png",
         "roi": [
@@ -379,6 +425,18 @@
     },
     "黎明界刷Boss_五层目标Boss_奇美拉": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss模板_奇美拉"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss模板_奇美拉": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_chimera.png",
         "roi": [
@@ -392,6 +450,18 @@
     },
     "黎明界刷Boss_五层目标Boss_哥布林领主": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss模板_哥布林领主"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss模板_哥布林领主": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_goblin_lord.png",
         "roi": [
@@ -405,6 +475,18 @@
     },
     "黎明界刷Boss_五层目标Boss_终极守护者": {
         "enabled": false,
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss模板_终极守护者"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss模板_终极守护者": {
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/boss/boss_avatar_ultima_guardian.png",
         "roi": [
