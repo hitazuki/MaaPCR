@@ -1,0 +1,499 @@
+{
+    "黎明界刷Boss初始": {
+        "post_delay": 1000,
+        "timeout": 180000,
+        "next": [
+            "黎明界_任务页入口",
+            "黎明界_主页进入任务页",
+            "黎明界刷Boss_开始链路候选"
+        ]
+    },
+    "黎明界刷Boss_开始链路候选": {
+        "timeout": 5000,
+        "rate_limit": 500,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用角色加入关闭",
+            "[JumpBack]黎明界_角色特写跳过点击",
+            "黎明界_出发Bonus关闭",
+            "黎明界_第二层出发",
+            "黎明界_选择同行公会",
+            "黎明界_初始角色选择",
+            "黎明界刷Boss_地图页面待命"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_初始角色地图入口": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/initial_character_map_button.png",
+        "roi": [
+            45,
+            600,
+            95,
+            95
+        ],
+        "threshold": 0.88,
+        "action": "Click",
+        "target": [
+            88,
+            638
+        ],
+        "post_delay": 1500,
+        "next": [
+            "黎明界刷Boss_地图进入等待"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_地图进入等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "黎明界刷Boss_地图页面待命"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_地图页面待命": {
+        "timeout": 20000,
+        "rate_limit": 500,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_menu.png",
+        "roi": [
+            1150,
+            15,
+            130,
+            120
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_三层Boss按钮"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_三层Boss按钮": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_header_boss_button.png",
+        "roi": [
+            625,
+            20,
+            105,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            676,
+            51
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_三层Boss详情等待"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_三层Boss详情等待": {
+        "timeout": 10000,
+        "rate_limit": 500,
+        "next": [
+            "黎明界刷Boss_三层目标Boss一致",
+            "黎明界刷Boss_三层目标Boss不一致"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss一致": {
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_三层目标Boss判定"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后五层"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss不一致": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss_detail_title.png",
+        "roi": [
+            500,
+            30,
+            280,
+            60
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后撤退"
+        ]
+    },
+    "黎明界刷Boss_三层目标Boss判定": {
+        "recognition": "Or",
+        "any_of": [
+            "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉",
+            "黎明界刷Boss_三层目标Boss_冰霜猎犬",
+            "黎明界刷Boss_三层目标Boss_巨型魔像",
+            "黎明界刷Boss_三层目标Boss_夫人雷鸟",
+            "黎明界刷Boss_三层目标Boss_黑暗石像鬼"
+        ],
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_三层目标Boss_巨型魔像": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_Boss详情标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss_detail_title.png",
+        "roi": [
+            500,
+            30,
+            280,
+            60
+        ],
+        "threshold": 0.88
+    },
+    "黎明界刷Boss_Boss详情关闭后五层": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            500,
+            595,
+            280,
+            90
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_五层Boss按钮"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_Boss详情关闭后撤退": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            500,
+            595,
+            280,
+            90
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_地图撤退无报酬"
+        ]
+    },
+    "黎明界刷Boss_五层Boss按钮": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_header_boss_button.png",
+        "roi": [
+            780,
+            20,
+            105,
+            70
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            828,
+            51
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_五层Boss详情等待"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_五层Boss详情等待": {
+        "timeout": 10000,
+        "rate_limit": 500,
+        "next": [
+            "黎明界刷Boss_五层目标Boss一致",
+            "黎明界刷Boss_五层目标Boss不一致"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss一致": {
+        "timeout": 3000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_Boss详情标题判定",
+            "黎明界刷Boss_五层目标Boss判定"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后完成"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss不一致": {
+        "timeout": 1000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss_detail_title.png",
+        "roi": [
+            500,
+            30,
+            280,
+            60
+        ],
+        "threshold": 0.88,
+        "action": "DoNothing",
+        "next": [
+            "黎明界刷Boss_Boss详情关闭后撤退"
+        ]
+    },
+    "黎明界刷Boss_五层目标Boss判定": {
+        "recognition": "Or",
+        "any_of": [
+            "黎明界刷Boss_五层目标Boss_愤怒龙",
+            "黎明界刷Boss_五层目标Boss_加巴沃克",
+            "黎明界刷Boss_五层目标Boss_奇美拉",
+            "黎明界刷Boss_五层目标Boss_哥布林领主",
+            "黎明界刷Boss_五层目标Boss_终极守护者"
+        ],
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_五层目标Boss_愤怒龙": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_五层目标Boss_加巴沃克": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_五层目标Boss_奇美拉": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_五层目标Boss_哥布林领主": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_五层目标Boss_终极守护者": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "roi": [
+            350,
+            140,
+            160,
+            150
+        ],
+        "threshold": 1.0,
+        "action": "DoNothing"
+    },
+    "黎明界刷Boss_Boss详情关闭后完成": {
+        "timeout": 5000,
+        "recognition": "TemplateMatch",
+        "template": "jp/common/close_white_button.png",
+        "roi": [
+            500,
+            595,
+            280,
+            90
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_目标Boss确认完成"
+        ]
+    },
+    "黎明界刷Boss_地图撤退无报酬": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/map_retreat_no_reward_button.png",
+        "roi": [
+            780,
+            600,
+            260,
+            90
+        ],
+        "threshold": 0.86,
+        "action": "Click",
+        "target": [
+            910,
+            634
+        ],
+        "post_delay": 1000,
+        "next": [
+            "黎明界刷Boss_终了确认OK"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_终了确认OK": {
+        "timeout": 10000,
+        "recognition": "And",
+        "all_of": [
+            "黎明界刷Boss_终了确认标题判定",
+            "黎明界刷Boss_终了确认OK判定"
+        ],
+        "action": "Click",
+        "target": [
+            790,
+            496
+        ],
+        "post_delay": 4000,
+        "next": [
+            "黎明界刷Boss_开始链路候选"
+        ],
+        "on_error": [
+            "黎明界刷Boss初始"
+        ]
+    },
+    "黎明界刷Boss_终了确认标题判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/finish_confirm_title.png",
+        "roi": [
+            520,
+            160,
+            250,
+            75
+        ],
+        "threshold": 0.88
+    },
+    "黎明界刷Boss_终了确认OK判定": {
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/finish_confirm_ok_button.png",
+        "roi": [
+            620,
+            440,
+            340,
+            110
+        ],
+        "threshold": 0.9
+    },
+    "黎明界刷Boss_目标Boss确认完成": {
+        "action": "StopTask"
+    }
+}

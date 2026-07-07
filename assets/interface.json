@@ -166,6 +166,67 @@
                 "黎明界完成策略"
             ]
         },
+        {
+            "name": "黎明界刷Boss初始",
+            "entry": "黎明界刷Boss初始",
+            "option": [
+                "黎明界目标公会",
+                "黎明界难易度",
+                "黎明界刷Boss三层目标Boss",
+                "黎明界刷Boss五层目标Boss"
+            ],
+            "pipeline_override": {
+                "黎明界_主页进入任务页": {
+                    "next": [
+                        "黎明界_任务页入口",
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_任务页入口": {
+                    "next": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_出发Bonus关闭": {
+                    "next": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_第二层出发": {
+                    "next": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_选择同行公会失败兜底": {
+                    "next": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_同行公会确认出发": {
+                    "next": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_难易度变更后等待": {
+                    "on_error": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_难易度取消按钮点击": {
+                    "next": [
+                        "黎明界_同行公会确认出发"
+                    ],
+                    "on_error": [
+                        "黎明界刷Boss_开始链路候选"
+                    ]
+                },
+                "黎明界_初始角色选择": {
+                    "next": [
+                        "黎明界刷Boss_初始角色地图入口"
+                    ]
+                }
+            }
+        },
         /*
         {
             "name": "-----挂机或关闭游戏-----",
@@ -602,6 +663,112 @@
                 }
             ],
             "type": "select"
+        },
+        "黎明界刷Boss三层目标Boss": {
+            "cases": [
+                {
+                    "name": "ベノムサラマンドラ",
+                    "pipeline_override": {
+                        "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
+                            "template": "jp/limingjie/boss/boss_avatar_venom_salamandra.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "フロストハウンド",
+                    "pipeline_override": {
+                        "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
+                            "template": "jp/limingjie/boss/boss_avatar_frost_hound.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "グレーターゴーレム",
+                    "pipeline_override": {
+                        "黎明界刷Boss_三层目标Boss_巨型魔像": {
+                            "template": "jp/limingjie/boss/boss_avatar_greater_golem.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "マダムエレクトラ",
+                    "pipeline_override": {
+                        "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
+                            "template": "jp/limingjie/boss/boss_avatar_madame_electra.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "ダークガーゴイル",
+                    "pipeline_override": {
+                        "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
+                            "template": "jp/limingjie/boss/boss_avatar_dark_gargoyle.png",
+                            "threshold": 0.88
+                        }
+                    }
+                }
+            ],
+            "type": "checkbox",
+            "default_case": [
+                "フロストハウンド"
+            ]
+        },
+        "黎明界刷Boss五层目标Boss": {
+            "cases": [
+                {
+                    "name": "ラースドラゴン",
+                    "pipeline_override": {
+                        "黎明界刷Boss_五层目标Boss_愤怒龙": {
+                            "template": "jp/limingjie/boss/boss_avatar_wrath_dragon.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "ジャバウォック",
+                    "pipeline_override": {
+                        "黎明界刷Boss_五层目标Boss_加巴沃克": {
+                            "template": "jp/limingjie/boss/boss_avatar_jabberwock.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "キマイラ",
+                    "pipeline_override": {
+                        "黎明界刷Boss_五层目标Boss_奇美拉": {
+                            "template": "jp/limingjie/boss/boss_avatar_chimera.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "ゴブリンロード",
+                    "pipeline_override": {
+                        "黎明界刷Boss_五层目标Boss_哥布林领主": {
+                            "template": "jp/limingjie/boss/boss_avatar_goblin_lord.png",
+                            "threshold": 0.88
+                        }
+                    }
+                },
+                {
+                    "name": "アルティマガーディアン",
+                    "pipeline_override": {
+                        "黎明界刷Boss_五层目标Boss_终极守护者": {
+                            "template": "jp/limingjie/boss/boss_avatar_ultima_guardian.png",
+                            "threshold": 0.88
+                        }
+                    }
+                }
+            ],
+            "type": "checkbox",
+            "default_case": [
+                "ラースドラゴン"
+            ]
         },
         "选择加速器": {
             "cases": [
