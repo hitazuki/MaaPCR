@@ -1,0 +1,113 @@
+{
+    "黎明界_EVENT节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用地图移动确认OK",
+            "黎明界_EVENT事件选择"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT事件选择": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/event_title.png",
+        "action": "DoNothing",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EVENT事件选择按钮点击"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT事件选择按钮点击": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/select_text_button.png",
+        "roi": [
+            80,
+            520,
+            1120,
+            140
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "黎明界_EVENT事件结果等待"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT事件结果等待": {
+        "timeout": 10000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用白色关闭点击",
+            "[JumpBack]黎明界_通用角色加入关闭",
+            "[JumpBack]黎明界_角色特写跳过点击",
+            "黎明界_EVENT_NORMAL战斗节点预览",
+            "黎明界_EVENT_EX战斗节点预览",
+            "黎明界_地图循环"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
+    "黎明界_EVENT_NORMAL战斗节点预览": {
+        "timeout": 3000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_preview_title_normal.png",
+        "roi": [
+            0,
+            20,
+            420,
+            100
+        ],
+        "threshold": 0.86,
+        "action": "Click",
+        "target": [
+            1090,
+            610
+        ],
+        "post_delay": 3000,
+        "next": [
+            "黎明界_战斗核心队伍编成"
+        ],
+        "on_error": [
+            "黎明界_EVENT_EX战斗节点预览"
+        ]
+    },
+    "黎明界_EVENT_EX战斗节点预览": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/battle_preview_challenge_button.png",
+        "roi": [
+            930,
+            560,
+            320,
+            105
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": [
+            1090,
+            610
+        ],
+        "post_delay": 3000,
+        "next": [
+            "黎明界_战斗核心队伍编成"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    }
+}

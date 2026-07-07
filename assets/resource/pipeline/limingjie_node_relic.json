@@ -1,0 +1,17 @@
+{
+    "黎明界_RELIC节点移动后目标等待": {
+        "timeout": 12000,
+        "rate_limit": 500,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用地图移动确认OK",
+            "[JumpBack]黎明界_通用遗物获得选择",
+            "[JumpBack]黎明界_通用白色关闭点击",
+            "黎明界_地图循环"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    }
+}

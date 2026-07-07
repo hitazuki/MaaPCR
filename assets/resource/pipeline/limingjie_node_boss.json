@@ -1,4 +1,17 @@
 {
+    "黎明界_BOSS节点移动后目标等待": {
+        "timeout": 8000,
+        "rate_limit": 250,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]黎明界_通用过场跳过点击",
+            "[JumpBack]黎明界_通用地图移动确认OK",
+            "黎明界_BOSS战斗节点预览"
+        ],
+        "on_error": [
+            "黎明界_全局状态分流"
+        ]
+    },
     "黎明界_BOSS战斗节点预览": {
         "timeout": 10000,
         "recognition": "TemplateMatch",
@@ -286,5 +299,11 @@
         "on_error": [
             "黎明界_全局状态分流"
         ]
+    },
+    "黎明界_完成": {
+        "timeout": 60000,
+        "recognition": "TemplateMatch",
+        "template": "jp/limingjie/limingjie_departure_button.png",
+        "action": "StopTask"
     }
 }
