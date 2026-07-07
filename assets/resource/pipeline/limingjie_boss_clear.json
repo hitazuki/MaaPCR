@@ -107,8 +107,8 @@
         "action": "DoNothing",
         "post_delay": 3000,
         "next": [
-            "黎明界_BOSS战斗胜利继续",
             "[JumpBack]黎明界_通用胜利获得物品继续",
+            "黎明界_BOSS战斗胜利继续",
             "黎明界_失败处理",
             "黎明界_BOSS战斗结果等待"
         ]
