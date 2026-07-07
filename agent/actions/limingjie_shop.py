@@ -221,13 +221,10 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
                 continue
             if self._is_sold_out_image(context, image, params):
                 return "sold_out"
-            if self._recognize_node(context, image, self.CHARACTER_CUTIN_NODE):
-                if not self._click(controller, 640, 240, click_delay_ms, "商店购买角色特写跳过"):
-                    return "click_failed"
-                continue
-            if self._recognize_node(context, image, self.CHARACTER_JOIN_NODE):
-                if not self._click(controller, 640, 580, click_delay_ms, "商店购买角色加入关闭"):
-                    return "click_failed"
+            character_result = self._handle_character_join_flow(context, controller, image, click_delay_ms)
+            if character_result == "click_failed":
+                return "click_failed"
+            if character_result == "handled":
                 continue
             if self._recognize_node(context, image, self.SHOP_TITLE_NODE):
                 if time.monotonic() - start_time < shop_fallback_after_ms / 1000:
@@ -247,13 +244,30 @@ class LimingjieShopPurchaseAction(LimingjieActionBase):
     def _wait_shop_page(self, context, controller, params):
         timeout_ms = int(params.get("shop_page_timeout_ms", 5000))
         interval_ms = int(params.get("shop_page_check_interval_ms", 250))
+        click_delay_ms = int(params.get("shop_dialog_click_delay_ms", 700))
         deadline = time.monotonic() + timeout_ms / 1000
         while time.monotonic() < deadline:
             image = controller.post_screencap().wait().get()
             if self._recognize_node(context, image, self.SHOP_TITLE_NODE):
                 return True
+            character_result = self._handle_character_join_flow(context, controller, image, click_delay_ms)
+            if character_result == "click_failed":
+                return False
+            if character_result == "handled":
+                continue
             time.sleep(interval_ms / 1000)
         return False
+
+    def _handle_character_join_flow(self, context, controller, image, click_delay_ms):
+        if self._recognize_node(context, image, self.CHARACTER_CUTIN_NODE):
+            if not self._click(controller, 640, 240, click_delay_ms, "商店购买角色特写跳过"):
+                return "click_failed"
+            return "handled"
+        if self._recognize_node(context, image, self.CHARACTER_JOIN_NODE):
+            if not self._click(controller, 640, 580, click_delay_ms, "商店购买角色加入关闭"):
+                return "click_failed"
+            return "handled"
+        return "miss"
 
     def _is_sold_out(self, context, controller, params):
         image = controller.post_screencap().wait().get()
