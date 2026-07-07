@@ -44,6 +44,18 @@
             ]
         }
     ],
+    "group": [
+        {
+            "name": "daily",
+            "label": "日常",
+            "default_expand": true
+        },
+        {
+            "name": "shop_purchase",
+            "label": "商店购买",
+            "default_expand": true
+        }
+    ],
     "agent": {
         "child_exec": "python",
         "child_args": [
@@ -64,7 +76,10 @@
         //},
         {
             "name": "行程表/日程表",
-            "entry": "行程表"
+            "entry": "行程表",
+            "group": [
+                "daily"
+            ]
         },
         //{
         //    "name": "商店买药",
@@ -77,13 +92,19 @@
         {
             "name": "主线扫荡预设",
             "entry": "主线扫荡预设",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "选择预设扫荡"
             ]
         },
         {
             "name": "领取礼物邮件",
-            "entry": "礼物"
+            "entry": "礼物",
+            "group": [
+                "daily"
+            ]
         },
         //{
         //    "name": "宝石买体力",
@@ -94,7 +115,10 @@
         //},
         {
             "name": "领取日常奖励",
-            "entry": "领取任务奖励"
+            "entry": "领取任务奖励",
+            "group": [
+                "daily"
+            ]
         },
         //{
         //    "name": "遗迹/圣迹",
@@ -106,11 +130,17 @@
         //},
         {
             "name": "探险领取",
-            "entry": "每日探险"
+            "entry": "每日探险",
+            "group": [
+                "daily"
+            ]
         },
         {
             "name": "探险缩短时间",
             "entry": "探险加速",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "选择加速的队伍"
             ]
@@ -118,6 +148,9 @@
         {
             "name": "探险事件",
             "entry": "探险事件",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "概率事件选择"
             ]
@@ -153,6 +186,9 @@
         {
             "name": "地下城角色碎片",
             "entry": "商店买地下城角色碎片",
+            "group": [
+                "shop_purchase"
+            ],
             "option": [
                 "地下城角色碎片选择",
                 "刷新次数"
@@ -161,6 +197,9 @@
         {
             "name": "竞技场角色碎片",
             "entry": "商店买竞技场角色碎片",
+            "group": [
+                "shop_purchase"
+            ],
             "option": [
                 "竞技场角色碎片选择",
                 "竞技场商店刷新次数"
@@ -169,6 +208,9 @@
         {
             "name": "公主竞技场角色碎片",
             "entry": "商店买公主竞技场角色碎片",
+            "group": [
+                "shop_purchase"
+            ],
             "option": [
                 "公主竞技场角色碎片选择",
                 "公主竞技场商店刷新次数"
