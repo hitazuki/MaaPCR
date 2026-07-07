@@ -670,8 +670,7 @@
                     "name": "ベノムサラマンドラ",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
-                            "template": "jp/limingjie/boss/boss_avatar_venom_salamandra.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -679,8 +678,7 @@
                     "name": "フロストハウンド",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
-                            "template": "jp/limingjie/boss/boss_avatar_frost_hound.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -688,8 +686,7 @@
                     "name": "グレーターゴーレム",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_巨型魔像": {
-                            "template": "jp/limingjie/boss/boss_avatar_greater_golem.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -697,8 +694,7 @@
                     "name": "マダムエレクトラ",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
-                            "template": "jp/limingjie/boss/boss_avatar_madame_electra.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -706,8 +702,7 @@
                     "name": "ダークガーゴイル",
                     "pipeline_override": {
                         "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
-                            "template": "jp/limingjie/boss/boss_avatar_dark_gargoyle.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 }
@@ -723,8 +718,7 @@
                     "name": "ラースドラゴン",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_愤怒龙": {
-                            "template": "jp/limingjie/boss/boss_avatar_wrath_dragon.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -732,8 +726,7 @@
                     "name": "ジャバウォック",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_加巴沃克": {
-                            "template": "jp/limingjie/boss/boss_avatar_jabberwock.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -741,8 +734,7 @@
                     "name": "キマイラ",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_奇美拉": {
-                            "template": "jp/limingjie/boss/boss_avatar_chimera.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -750,8 +742,7 @@
                     "name": "ゴブリンロード",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_哥布林领主": {
-                            "template": "jp/limingjie/boss/boss_avatar_goblin_lord.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 },
@@ -759,8 +750,7 @@
                     "name": "アルティマガーディアン",
                     "pipeline_override": {
                         "黎明界刷Boss_五层目标Boss_终极守护者": {
-                            "template": "jp/limingjie/boss/boss_avatar_ultima_guardian.png",
-                            "threshold": 0.88
+                            "enabled": true
                         }
                     }
                 }

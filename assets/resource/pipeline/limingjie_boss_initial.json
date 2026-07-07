@@ -157,63 +157,68 @@
         "action": "DoNothing"
     },
     "黎明界刷Boss_三层目标Boss_贝诺姆沙拉曼德拉": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_venom_salamandra.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_三层目标Boss_冰霜猎犬": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_frost_hound.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_三层目标Boss_巨型魔像": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_greater_golem.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_三层目标Boss_夫人雷鸟": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_madame_electra.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_三层目标Boss_黑暗石像鬼": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_dark_gargoyle.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_Boss详情标题判定": {
@@ -347,63 +352,68 @@
         "action": "DoNothing"
     },
     "黎明界刷Boss_五层目标Boss_愤怒龙": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_wrath_dragon.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_五层目标Boss_加巴沃克": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_jabberwock.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_五层目标Boss_奇美拉": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_chimera.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_五层目标Boss_哥布林领主": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_goblin_lord.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_五层目标Boss_终极守护者": {
+        "enabled": false,
         "recognition": "TemplateMatch",
-        "template": "jp/limingjie/boss/boss_avatar_disabled_marker.png",
+        "template": "jp/limingjie/boss/boss_avatar_ultima_guardian.png",
         "roi": [
             350,
             140,
             160,
             150
         ],
-        "threshold": 1.0,
+        "threshold": 0.88,
         "action": "DoNothing"
     },
     "黎明界刷Boss_Boss详情关闭后完成": {
