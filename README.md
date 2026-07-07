@@ -89,6 +89,8 @@
 
 | 版本 | 主要变更 |
 | ---- | -------- |
+| [v1.0.1](https://github.com/hitazuki/MaaPCR/releases/tag/v1.0.1) | 新增黎明界刷Boss初始入口，支持三层/五层目标 Boss 多选；优化黎明界难易度选择为直接点击目标数字并保留取消兜底 |
+| [v1.0.0](https://github.com/hitazuki/MaaPCR/releases/tag/v1.0.0) | 新增黎明界自动化基础框架，支持目标公会、难易度、失败策略、商店策略与完成策略配置 |
 | [v0.4.0](https://github.com/hitazuki/MaaPCR/releases/tag/v0.4.0) | 究极炼成新增 HP、TP上升、物理/魔法攻击力、物理防御贯通等词条选项 |
 | [v0.3.2](https://github.com/hitazuki/MaaPCR/releases/tag/v0.3.2) | 重构角色全部强化流程，引入 JumpBack 循环机制 |
 | [v0.3.1](https://github.com/hitazuki/MaaPCR/releases/tag/v0.3.1) | — |
