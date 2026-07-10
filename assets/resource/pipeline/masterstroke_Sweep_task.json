@@ -80,7 +80,7 @@
             496
         ],
         "next": [
-            "主线扫荡退出"
+            "确认主线扫荡预设页面"
         ]
     },
     "主线扫荡体力不足": {
@@ -155,7 +155,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "主线扫荡退出"
+            "确认主线扫荡预设页面"
         ]
     },
     "扫荡取消回复次数": {
@@ -167,7 +167,7 @@
             644
         ],
         "next": [
-            "主线扫荡退出"
+            "确认主线扫荡预设页面"
         ]
     },
     "主线扫荡开始": {
@@ -179,23 +179,42 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "[JumpBack]点击跳过完了",
-            "主线扫荡结果确认",
-            "扫荡后续流程表"
+            "扫荡播放监控"
         ]
     },
-    "点击跳过完了": {
+    "扫荡播放监控": {
         "timeout": 60000,
+        "rate_limit": 100,
+        "next": [
+            "主线扫荡结果确认",
+            "[JumpBack]提前跳过扫荡播放",
+            "[JumpBack]主线扫荡等级提升",
+            "[JumpBack]活动日常特别内容解放",
+            "[JumpBack]公会战次数增加页面",
+            "[JumpBack]限定商店",
+            "[JumpBack]主线扫荡通用确认关闭",
+            "[JumpBack]主线扫荡通用弹窗关闭",
+            "确认主线扫荡预设页面"
+        ]
+    },
+    "提前跳过扫荡播放": {
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/跳过完了.png"
         ],
         "action": "Click",
-        "pre_delay": 300,
-        "post_delay": 1000
+        "roi": [
+            480,
+            580,
+            320,
+            120
+        ],
+        "threshold": 0.82,
+        "pre_delay": 0,
+        "post_delay": 300,
+        "max_hit": 1
     },
     "主线扫荡结果确认": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/main_quest/主线扫荡_跳过完了.png"
@@ -205,25 +224,44 @@
             640,
             640
         ],
-        "post_delay": 2000,
+        "pre_delay": 0,
+        "post_delay": 500,
         "next": [
             "扫荡后续流程表"
         ]
     },
     "扫荡后续流程表": {
-        "timeout": 60000,
+        "timeout": 8000,
         "next": [
-            "主线扫荡结果确认",
-            "扫荡结束确认",
-            "主线扫荡等级提升",
-            "限定商店",
-            "公会战次数增加页面",
-            "活动日常特别内容解放",
-            "主线扫荡退出"
+            "[JumpBack]主线扫荡结果补点",
+            "[JumpBack]扫荡结束确认",
+            "[JumpBack]主线扫荡等级提升",
+            "[JumpBack]活动日常特别内容解放",
+            "[JumpBack]公会战次数增加页面",
+            "[JumpBack]限定商店",
+            "[JumpBack]主线扫荡通用确认关闭",
+            "[JumpBack]主线扫荡通用弹窗关闭",
+            "确认主线扫荡预设页面"
+        ],
+        "on_error": [
+            "主线扫荡未知结算页面"
         ]
     },
+    "主线扫荡结果补点": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/main_quest/主线扫荡_跳过完了.png"
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            640
+        ],
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 2
+    },
     "扫荡结束确认": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/勾选框_未勾选.png"
@@ -231,47 +269,48 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "点击OK2回到扫荡主页"
+            "扫荡结束确认OK"
         ]
     },
-    "活动日常特别内容解放": {
-        "timeout": 1800000,
-        "recognition": "TemplateMatch",
-        "template": "jp/event/活动特别内容解放.png",
-        "next": [
-            "点击OK2回到扫荡主页"
-        ]
-    },
-    "点击OK2回到扫荡主页": {
-        "timeout": 60000,
+    "扫荡结束确认OK": {
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/OK2.png"
         ],
         "action": "Click",
-        "post_delay": 2000,
+        "pre_delay": 0,
+        "post_delay": 500
+    },
+    "活动日常特别内容解放": {
+        "recognition": "TemplateMatch",
+        "template": "jp/event/活动特别内容解放.png",
         "next": [
-            "主线扫荡退出"
+            "活动日常特别内容解放OK"
         ]
     },
+    "活动日常特别内容解放OK": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/OK2.png"
+        ],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 500
+    },
     "公会战次数增加页面": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/guild/公会战次数增加页面.png"
         ],
         "action": "Click",
-        "post_delay": 2000,
         "target": [
             514,
             583
         ],
-        "next": [
-            "主线扫荡退出"
-        ]
+        "pre_delay": 0,
+        "post_delay": 500
     },
     "主线扫荡等级提升": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/等级提升.png"
@@ -281,59 +320,162 @@
         ]
     },
     "主线扫荡等级提升下一步": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/OK2.png"
         ],
         "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "限定商店",
-            "公会战次数增加页面",
-            "主线扫荡退出"
-        ]
+        "pre_delay": 0,
+        "post_delay": 500
     },
     "限定商店": {
-        "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
             "jp/shop/限定商店.png"
         ],
-        "post_delay": 2000,
         "next": [
-            "限定商店2"
+            "限定商店关闭"
         ]
     },
-    "限定商店2": {
+    "限定商店关闭": {
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/取消.png"
         ],
         "action": "Click",
-        "post_delay": 2500,
+        "roi": [
+            700,
+            580,
+            260,
+            120
+        ],
+        "pre_delay": 0,
+        "post_delay": 800
+    },
+    "主线扫荡通用弹窗关闭": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/关闭.png"
+        ],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 5
+    },
+    "主线扫荡通用确认关闭": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/OK2.png",
+            "jp/common/OK.png"
+        ],
+        "action": "Click",
+        "roi": [
+            480,
+            580,
+            320,
+            120
+        ],
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 5
+    },
+    "确认主线扫荡预设页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/main_quest/主线扫荡预设列表.png"
+        ],
         "next": [
-            "公会战次数增加页面",
-            "主线扫荡退出"
+            "关闭主线扫荡预设页面"
         ]
     },
-    "主线扫荡退出": {
+    "关闭主线扫荡预设页面": {
         "recognition": "TemplateMatch",
         "template": [
             "jp/common/取消.png"
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "roi": [
+            630,
+            590,
+            320,
+            120
+        ],
+        "pre_delay": 0,
+        "post_delay": 1000,
         "next": [
-            "主线扫荡退出",
+            "确认主线地图"
+        ]
+    },
+    "确认主线地图": {
+        "timeout": 20000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/main_quest/主线地图.png"
+        ],
+        "next": [
             "主线扫荡返回主页"
         ]
     },
     "主线扫荡返回主页": {
         "action": "Click",
         "target": [
-            129,
+            128,
             684
+        ],
+        "post_delay": 3000,
+        "next": [
+            "主页弹窗收敛"
         ]
+    },
+    "主页弹窗收敛": {
+        "timeout": 20000,
+        "next": [
+            "[JumpBack]主页通用确认关闭",
+            "[JumpBack]主页通用弹窗关闭",
+            "主线扫荡主页已到达"
+        ],
+        "on_error": [
+            "主线扫荡主页确认失败"
+        ]
+    },
+    "主页通用弹窗关闭": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/关闭.png"
+        ],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 5
+    },
+    "主页通用确认关闭": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/OK2.png",
+            "jp/common/OK.png"
+        ],
+        "action": "Click",
+        "roi": [
+            480,
+            580,
+            320,
+            120
+        ],
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 5
+    },
+    "主线扫荡主页已到达": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/shop/商店.png"
+        ],
+        "action": "StopTask"
+    },
+    "主线扫荡未知结算页面": {
+        "action": "StopTask"
+    },
+    "主线扫荡主页确认失败": {
+        "action": "StopTask"
     }
 }
