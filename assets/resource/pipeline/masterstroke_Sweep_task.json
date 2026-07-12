@@ -15,7 +15,17 @@
             687
         ],
         "next": [
-            "选择进入主线冒险",
+            "主线冒险入口加载等待"
+        ]
+    },
+    "主线冒险入口加载等待": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "选择进入主线冒险"
+        ],
+        "on_error": [
             "进入主线冒险"
         ]
     },
@@ -27,6 +37,14 @@
         ],
         "action": "Click",
         "next": [
+            "主线冒险页面加载等待"
+        ]
+    },
+    "主线冒险页面加载等待": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "主线冒险扫荡"
         ]
     },
@@ -37,24 +55,62 @@
             "jp/main_quest/主线扫荡.png"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "post_delay": 500,
         "next": [
             "主线冒险扫荡预设队伍"
         ]
     },
     "主线冒险扫荡预设队伍": {
-        "post_delay": 1500,
+        "post_delay": 500,
+        "next": [
+            "主线扫荡预设页面加载等待"
+        ]
+    },
+    "主线扫荡预设页面加载等待": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "主线扫荡预设页面稳定"
+        ]
+    },
+    "主线扫荡预设页面稳定": {
+        "timeout": 20000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/main_quest/主线扫荡预设列表.png"
+        ],
+        "action": "DoNothing",
         "next": [
             "主线冒险扫荡下一步"
         ]
     },
     "主线冒险扫荡下一步": {
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 500,
         "target": [
             1128,
             655
         ],
+        "next": [
+            "主线扫荡确认页面加载等待"
+        ]
+    },
+    "主线扫荡确认页面加载等待": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "主线扫荡确认页面稳定"
+        ]
+    },
+    "主线扫荡确认页面稳定": {
+        "timeout": 20000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/main_quest/主线扫荡确认页.png"
+        ],
+        "action": "DoNothing",
         "next": [
             "识别主线扫荡是否有次数"
         ]
@@ -62,6 +118,7 @@
     "识别主线扫荡是否有次数": {
         "rate_limit": 2000,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "主线扫荡回复次数",
             "主线扫荡体力不足",
             "主线体力回复",
@@ -186,6 +243,7 @@
         "timeout": 60000,
         "rate_limit": 100,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "主线扫荡结果确认",
             "[JumpBack]提前跳过扫荡播放",
             "[JumpBack]主线扫荡等级提升",
@@ -233,6 +291,7 @@
     "扫荡后续流程表": {
         "timeout": 8000,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]主线扫荡结果补点",
             "[JumpBack]扫荡结束确认",
             "[JumpBack]主线扫荡等级提升",
@@ -403,6 +462,14 @@
         "pre_delay": 0,
         "post_delay": 1000,
         "next": [
+            "主线扫荡地图加载等待"
+        ]
+    },
+    "主线扫荡地图加载等待": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "确认主线地图"
         ]
     },
@@ -430,6 +497,7 @@
     "主页弹窗收敛": {
         "timeout": 20000,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
             "[JumpBack]主页通用确认关闭",
             "[JumpBack]主页通用弹窗关闭",
             "主线扫荡主页已到达"
