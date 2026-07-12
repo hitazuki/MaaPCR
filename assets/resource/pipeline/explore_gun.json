@@ -30,13 +30,37 @@
 		]
 	},
 	"探险加速的队伍": {
-		"rate_limit": 10,
+		"rate_limit": 500,
+		"timeout": 8000,
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/explore/探险队伍一览.png"
+		],
 		"target": [
 			970,
 			219
 		],
 		"action": "Click",
 		"post_delay": 1500,
+		"next": [
+			"等待时间缩短设定弹窗"
+		],
+		"on_error": [
+			"探险加速的队伍"
+		]
+	},
+	"等待时间缩短设定弹窗": {
+		"rate_limit": 10,
+		"recognition": "TemplateMatch",
+		"template": [
+			"jp/explore/探险时间缩短设定标题.png"
+		],
+		"roi": [
+			520,
+			25,
+			240,
+			65
+		],
 		"next": [
 			"探险券已达上限",
 			"[JumpBack]使用探险加速券"
