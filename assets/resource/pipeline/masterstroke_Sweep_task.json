@@ -462,8 +462,25 @@
         "rate_limit": 300,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]主线扫荡预设页面关闭补点",
             "确认主线地图"
         ]
+    },
+    "主线扫荡预设页面关闭补点": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/取消.png"
+        ],
+        "action": "Click",
+        "roi": [
+            630,
+            590,
+            320,
+            120
+        ],
+        "pre_delay": 0,
+        "post_delay": 500,
+        "max_hit": 3
     },
     "确认主线地图": {
         "timeout": 20000,
