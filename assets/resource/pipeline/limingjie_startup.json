@@ -56,8 +56,15 @@
     },
     "黎明界_选择同行公会": {
         "timeout": 60000,
+        "threshold": 0.9,
         "recognition": "TemplateMatch",
         "template": "jp/limingjie/guild_select_title.png",
+        "roi": [
+            390,
+            85,
+            500,
+            90
+        ],
         "next": [
             "黎明界_选择目标公会",
             "黎明界_同行公会向右扫描1"
