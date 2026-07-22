@@ -415,9 +415,9 @@
         "action": "Click",
         "roi": [
             480,
-            580,
+            430,
             320,
-            120
+            270
         ],
         "pre_delay": 0,
         "post_delay": 500,
