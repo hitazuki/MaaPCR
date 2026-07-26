@@ -133,7 +133,7 @@
             496
         ],
         "next": [
-            "确认主线扫荡预设页面"
+            "主线扫荡直接退出收敛"
         ]
     },
     "主线扫荡体力不足": {
@@ -208,7 +208,7 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "确认主线扫荡预设页面"
+            "主线扫荡直接退出收敛"
         ]
     },
     "扫荡取消回复次数": {
@@ -220,7 +220,16 @@
             644
         ],
         "next": [
-            "确认主线扫荡预设页面"
+            "主线扫荡直接退出收敛"
+        ]
+    },
+    "主线扫荡直接退出收敛": {
+        "timeout": 30000,
+        "rate_limit": 300,
+        "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]确认主线扫荡预设页面",
+            "确认主线地图"
         ]
     },
     "主线扫荡开始": {
@@ -287,19 +296,20 @@
         ]
     },
     "扫荡后续流程表": {
-        "timeout": 30000,
+        "timeout": 60000,
         "rate_limit": 250,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
             "主线扫荡结果确认",
             "[JumpBack]扫荡结束确认",
             "[JumpBack]主线扫荡等级提升",
-            "[JumpBack]活动日常特别内容解放",
-            "[JumpBack]公会战次数增加页面",
             "[JumpBack]限定商店",
+            "[JumpBack]公会战次数增加页面",
+            "[JumpBack]活动日常特别内容解放",
             "[JumpBack]主线扫荡通用确认关闭",
             "[JumpBack]主线扫荡通用弹窗关闭",
-            "确认主线扫荡预设页面"
+            "[JumpBack]确认主线扫荡预设页面",
+            "确认主线地图"
         ],
         "on_error": [
             "主线扫荡未知结算页面"
@@ -446,35 +456,7 @@
             120
         ],
         "pre_delay": 0,
-        "post_delay": 1000,
-        "next": [
-            "主线扫荡地图加载等待"
-        ]
-    },
-    "主线扫荡地图加载等待": {
-        "timeout": 30000,
-        "rate_limit": 300,
-        "next": [
-            "[JumpBack]黎明界_通用Connecting等待",
-            "[JumpBack]主线扫荡预设页面关闭补点",
-            "确认主线地图"
-        ]
-    },
-    "主线扫荡预设页面关闭补点": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "jp/common/取消.png"
-        ],
-        "action": "Click",
-        "roi": [
-            630,
-            590,
-            320,
-            120
-        ],
-        "pre_delay": 0,
-        "post_delay": 500,
-        "max_hit": 3
+        "post_delay": 1000
     },
     "确认主线地图": {
         "timeout": 20000,
