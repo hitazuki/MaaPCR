@@ -122,13 +122,16 @@
     },
     "竞技场碎片购买确认": {
         "timeout": 60000,
+        "threshold": 0.85,
+        "roi": [
+            1150,
+            560,
+            90,
+            45
+        ],
         "recognition": "TemplateMatch",
         "template": [
-            "jp/shop/角色碎片一次购买.png"
-        ],
-        "target": [
-            995,
-            583
+            "jp/common/批量购买.png"
         ],
         "action": "Click",
         "next": [
