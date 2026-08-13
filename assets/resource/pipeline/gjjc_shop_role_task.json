@@ -210,9 +210,16 @@
         ]
     },
     "点击公主竞技场碎片刷新": {
-        "target": [
-            794,
-            583
+        "threshold": 0.85,
+        "roi": [
+            870,
+            550,
+            205,
+            70
+        ],
+        "recognition": "TemplateMatch",
+        "template": [
+            "jp/common/立即更新.png"
         ],
         "action": "Click",
         "next": [
