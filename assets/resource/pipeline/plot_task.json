@@ -189,13 +189,14 @@
         "timeout": 60000,
         "pre_delay": 1000,
         "next": [
-            "[JumpBack]一键强化确认",
             "[JumpBack]一键强化完成",
+            "[JumpBack]一键强化确认",
             "[JumpBack]装备强化物品返还-点击OK2",
             "一键强化主页面"
         ]
     },
     "一键强化确认": {
+        "threshold": 0.9,
         "timeout": 60000,
         "recognition": "TemplateMatch",
         "template": [
