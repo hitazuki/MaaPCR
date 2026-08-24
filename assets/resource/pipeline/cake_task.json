@@ -432,9 +432,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [
-                    220,
-                    170
+                "target": true,
+                "target_offset": [
+                    -150,
+                    8,
+                    0,
+                    0
                 ]
             }
         },
@@ -465,9 +468,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [
-                    620,
-                    170
+                "target": true,
+                "target_offset": [
+                    -150,
+                    8,
+                    0,
+                    0
                 ]
             }
         },
@@ -498,9 +504,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [
-                    1020,
-                    170
+                "target": true,
+                "target_offset": [
+                    -150,
+                    8,
+                    0,
+                    0
                 ]
             }
         },
