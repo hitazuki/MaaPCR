@@ -132,6 +132,7 @@
         },
         "next": [
             "羁绊等级已完成",
+            "羁绊剧情已全部公开",
             "点击羁绊等级提升"
         ]
     },
@@ -165,6 +166,26 @@
             "识别返回主页并结束任务"
         ]
     },
+    "羁绊剧情已全部公开": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/character/羁绊剧情已全部公开.png"
+                ],
+                "roi": [
+                    390,
+                    175,
+                    490,
+                    55
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "关闭羁绊剧情列表"
+        ]
+    },
     "点击羁绊等级提升": {
         "action": {
             "type": "Click",
@@ -183,7 +204,6 @@
             }
         },
         "next": [
-            "羁绊已满",
             "点击最大强化"
         ]
     },
@@ -197,7 +217,6 @@
                 ]
             }
         },
-        "post_delay": 500,
         "$__mpe_code": {
             "position": {
                 "x": 972,
@@ -205,6 +224,7 @@
             }
         },
         "next": [
+            "羁绊已满",
             "点击赠送"
         ]
     },
@@ -213,11 +233,16 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "jp/character/羁绊等级max.png"
+                    "jp/character/羁绊等级最大提示.png"
+                ],
+                "roi": [
+                    500,
+                    330,
+                    270,
+                    55
                 ]
             }
         },
-        "post_delay": 710,
         "$__mpe_code": {
             "position": {
                 "x": 972,
