@@ -225,7 +225,31 @@
             }
         },
         "next": [
-            "关闭解放列表"
+            "羁绊已满点击通用取消"
+        ]
+    },
+    "羁绊已满点击通用取消": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/common/取消.png"
+                ],
+                "roi": [
+                    340,
+                    590,
+                    310,
+                    100
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "next": [
+            "关闭羁绊剧情列表"
         ]
     },
     "点击赠送": {
