@@ -143,7 +143,7 @@
                 "template": [
                     "jp/character/羁绊等级12.png"
                 ],
-                "threshold": 0.7,
+                "threshold": 0.9,
                 "roi": [
                     574,
                     116,
