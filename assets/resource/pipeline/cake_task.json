@@ -131,7 +131,38 @@
             }
         },
         "next": [
+            "羁绊等级已完成",
             "点击羁绊等级提升"
+        ]
+    },
+    "羁绊等级已完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "jp/character/羁绊等级12.png"
+                ],
+                "threshold": 0.7,
+                "roi": [
+                    574,
+                    116,
+                    40,
+                    31
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    493,
+                    640
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "识别返回主页并结束任务"
         ]
     },
     "点击羁绊等级提升": {
@@ -200,23 +231,8 @@
             }
         },
         "next": [
-            "完成羁绊提升"
+            "关闭解放列表"
         ]
-    },
-    "完成羁绊提升": {
-        "action": {
-            "type": "StopTask",
-            "param": {}
-        },
-        "focus": {
-            "Node.Action.Succeeded": "已完成角色羁绊提升"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1292,
-                "y": 44
-            }
-        }
     },
     "点击赠送": {
         "action": {
