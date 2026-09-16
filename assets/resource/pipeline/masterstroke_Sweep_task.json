@@ -391,6 +391,9 @@
         ],
         "next": [
             "主线扫荡等级提升下一步"
+        ],
+        "on_error": [
+            "扫荡后续流程表"
         ]
     },
     "主线扫荡等级提升下一步": {
@@ -400,7 +403,7 @@
         ],
         "action": "Click",
         "pre_delay": 0,
-        "post_delay": 500
+        "post_delay": 1500
     },
     "限定商店": {
         "recognition": "TemplateMatch",
