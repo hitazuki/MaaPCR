@@ -24,6 +24,12 @@
         "template": [
             "jp/explore/探险文字.png"
         ],
+        "roi": [
+            890,
+            110,
+            190,
+            135
+        ],
         "action": "Click",
         "post_delay": 3000,
         "next": [
