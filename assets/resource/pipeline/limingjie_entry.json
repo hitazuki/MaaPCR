@@ -26,8 +26,8 @@
         "template": "jp/limingjie/quest_limingjie_entrance.png",
         "action": "Click",
         "target": [
-            1155,
-            540
+            1169,
+            365
         ],
         "post_delay": 3000,
         "next": [
