@@ -1,0 +1,9 @@
+{
+    "ShopFragmentPurchaseLimit": {
+        "recognition": "TemplateMatch",
+        "template": "jp/shop/fragment_purchase_limit.png",
+        "threshold": 0.8,
+        "roi": [330, 200, 900, 350],
+        "action": "DoNothing"
+    }
+}
