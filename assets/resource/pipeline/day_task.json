@@ -3,6 +3,7 @@
 		"post_delay": 3000,
 		"timeout": 60000,
 		"next": [
+			"行程表完成判断",
 			"全部一键执行",
 			"[JumpBack]进入行程表",
 			"[JumpBack]回到主页"
@@ -21,6 +22,7 @@
 			"jp/daily/行程表_一键执行.png"
 		],
 		"action": "Click",
+		"post_delay": 0,
 		"next": [
 			"行程表完成判断",
 			"行程表事件"
@@ -39,13 +41,17 @@
 	},
 	"行程表事件": {
 		"timeout": 60000,
-		"rate_limit": 100,
+		"rate_limit": 1000,
 		"next": [
 			"购买mana",
 			"扫荡地下城",
 			"地下城跳过失败",
 			"mana冒险",
-			"行程表事件"
+			"经验值冒险",
+			"公会点赞",
+			"行程表领取奖励",
+			"行程表扫荡结果确认",
+			"行程表完成判断"
 		]
 	},
 	"地下城跳过失败": {
@@ -61,7 +67,7 @@
 		"post_delay": 2000,
 		"action": "Click",
 		"next": [
-			"mana冒险"
+			"行程表事件"
 		]
 	},
 	"购买mana": {
@@ -83,17 +89,7 @@
 			500
 		],
 		"next": [
-			"购买mana2"
-		]
-	},
-	"购买mana2": {
-		"timeout": 60000,
-		"rate_limit": 100,
-		"next": [
-			"地下城跳过失败",
-			"扫荡地下城",
-			"mana冒险",
-			"购买mana2"
+			"行程表事件"
 		]
 	},
 	"扫荡地下城": {
@@ -118,23 +114,9 @@
 			648
 		],
 		"action": "Click",
+		"post_delay": 1000,
 		"next": [
-			"扫荡地下城下一步2"
-		]
-	},
-	"扫荡地下城下一步2": {
-		"recognition": "TemplateMatch",
-		"template": [
-			"jp/common/OK2.png"
-		],
-		"timeout": 60000,
-		"target": [
-			665,
-			648
-		],
-		"action": "Click",
-		"next": [
-			"mana冒险"
+			"行程表事件"
 		]
 	},
 	"mana冒险": {
@@ -159,23 +141,9 @@
 			640
 		],
 		"action": "Click",
+		"post_delay": 1000,
 		"next": [
-			"mana冒险下一步2"
-		]
-	},
-	"mana冒险下一步2": {
-		"recognition": "TemplateMatch",
-		"template": [
-			"jp/common/OK2.png"
-		],
-		"timeout": 60000,
-		"target": [
-			636,
-			640
-		],
-		"action": "Click",
-		"next": [
-			"经验值冒险"
+			"行程表事件"
 		]
 	},
 	"经验值冒险": {
@@ -200,32 +168,21 @@
 			648
 		],
 		"action": "Click",
+		"post_delay": 1000,
 		"next": [
-			"经验值冒险下一步2"
+			"行程表事件"
 		]
 	},
-	"经验值冒险下一步2": {
-		"timeout": 60000,
+	"行程表扫荡结果确认": {
 		"recognition": "TemplateMatch",
-		"template": [
-			"jp/common/OK2.png"
-		],
-		"target": [
-			661,
-			648
-		],
+		"template": "jp/common/OK2.png",
+		"roi": [480, 440, 320, 250],
 		"action": "Click",
+		"target": true,
+		"pre_delay": 500,
+		"post_delay": 1000,
 		"next": [
-			"经验值冒险下一步3"
-		]
-	},
-	"经验值冒险下一步3": {
-		"timeout": 60000,
-		"rate_limit": 100,
-		"next": [
-			"公会点赞",
-			"行程表领取奖励",
-			"经验值冒险下一步3"
+			"行程表事件"
 		]
 	},
 	"公会点赞": {
@@ -241,7 +198,7 @@
 		"action": "Click",
 		"post_delay": 1000,
 		"next": [
-			"行程表领取奖励"
+			"行程表事件"
 		]
 	},
 	"行程表领取奖励": {
