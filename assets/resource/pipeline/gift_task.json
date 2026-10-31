@@ -71,7 +71,36 @@
         ]
     },
     "礼物返回主页": {
-        "action": "ClickKey",
-        "key": 111
+        "timeout": 20000,
+        "rate_limit": 300,
+        "next": [
+            "礼物关闭窗口",
+            "礼物主页已到达"
+        ]
+    },
+    "礼物关闭窗口": {
+        "recognition": "TemplateMatch",
+        "template": "jp/common/取消.png",
+        "roi": [
+            630,
+            590,
+            320,
+            100
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 1000,
+        "max_hit": 3,
+        "next": [
+            "礼物返回主页"
+        ]
+    },
+    "礼物主页已到达": {
+        "recognition": "TemplateMatch",
+        "template": "jp/common/确认主界面.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "action": "DoNothing"
     }
 }
