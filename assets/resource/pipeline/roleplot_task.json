@@ -219,19 +219,12 @@
     "剧情下载发生错误": {
         "threshold": 0.8,
         "recognition": "TemplateMatch",
-        "template": "jp/common/下载发生错误.png",
+        "template": "jp/common/下载重试.png",
         "target": [
-            801,
-            500,
-            0,
-            0
+            784,
+            493
         ],
-        "target_offset": [
-            0,
-            0,
-            0,
-            0
-        ],
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1500
     }
 }
