@@ -229,6 +229,7 @@
         "rate_limit": 300,
         "next": [
             "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]主线扫荡活动代币弹窗取消",
             "[JumpBack]确认主线扫荡预设页面",
             "确认主线地图"
         ]
@@ -498,6 +499,8 @@
         ],
         "threshold": 0.8,
         "next": [
+            "[JumpBack]黎明界_通用Connecting等待",
+            "[JumpBack]主线扫荡活动代币弹窗取消",
             "关闭主线扫荡预设页面"
         ]
     },
