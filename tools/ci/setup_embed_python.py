@@ -92,21 +92,25 @@ def ensure_pip(python_executable, python_install_dir):
         print("错误: Python 可执行文件未找到，无法安装 pip。")
         return False
 
-    get_pip_url = "https://bootstrap.pypa.io/get-pip.py"
-    # 将 get-pip.py 下载到 Python 安装目录下，执行后再删除
-    get_pip_script_path = os.path.join(python_install_dir, "get-pip.py")
+    # get-pip.py 26.3 通过名为 pip 的目录启动安装，在 Windows 上会
+    # 触发 pip 的自修改保护。使用 PyPA 的独立 zip 应用引导安装。
+    get_pip_url = "https://bootstrap.pypa.io/pip/pip.pyz"
+    get_pip_script_path = os.path.join(python_install_dir, "pip.pyz")
 
-    print(f"正在下载 get-pip.py 从 {get_pip_url}")
+    print(f"正在下载 pip.pyz 从 {get_pip_url}")
     try:
         download_file(get_pip_url, get_pip_script_path)
     except Exception as e:
-        print(f"下载 get-pip.py 失败: {e}")
+        print(f"下载 pip.pyz 失败: {e}")
         return False
 
-    print("正在使用 get-pip.py 安装 pip...")
+    print("正在使用 pip.pyz 安装 pip...")
     try:
-        # 在 Python 安装目录下执行 get-pip.py
-        subprocess.run([python_executable, get_pip_script_path], check=True)
+        subprocess.run(
+            [python_executable, get_pip_script_path, "install", "--upgrade", "pip"],
+            check=True,
+        )
+        subprocess.run([python_executable, "-m", "pip", "--version"], check=True)
         print("pip 安装成功。")
         return True
     except (subprocess.CalledProcessError, OSError) as e:
@@ -134,6 +138,7 @@ def main():
             print("Python 和 pip 已配置。跳过安装。")
         else:
             print("Python 存在但 pip 配置失败。请检查。")
+            sys.exit(1)
         return
 
     if os.path.exists(DEST_DIR):
@@ -311,6 +316,7 @@ def main():
         print("嵌入式 Python 环境安装和 pip 配置完成。")
     else:
         print("嵌入式 Python 环境安装完成，但 pip 配置失败。")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
